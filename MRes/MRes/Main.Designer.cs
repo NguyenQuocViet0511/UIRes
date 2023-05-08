@@ -29,10 +29,11 @@ namespace MRes
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            this.btn_food = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
@@ -41,25 +42,32 @@ namespace MRes
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.ManagerController = new DevExpress.XtraEditors.GroupControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_add = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_excel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager1
+            // 
+            splashScreenManager1.ClosingDelay = 500;
             // 
             // navBarItem1
             // 
@@ -79,13 +87,14 @@ namespace MRes
             this.navBarItem2.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.SmallImage")));
             this.navBarItem2.Name = "navBarItem2";
             // 
-            // navBarItem3
+            // btn_food
             // 
-            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.navBarItem3.Appearance.Options.UseFont = true;
-            this.navBarItem3.Caption = "Món Ăn";
-            this.navBarItem3.ImageOptions.LargeImage = global::MRes.Properties.Resources.hamburger;
-            this.navBarItem3.Name = "navBarItem3";
+            this.btn_food.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_food.Appearance.Options.UseFont = true;
+            this.btn_food.Caption = "Món Ăn";
+            this.btn_food.ImageOptions.LargeImage = global::MRes.Properties.Resources.hamburger;
+            this.btn_food.Name = "btn_food";
+            this.btn_food.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_food_LinkClicked);
             // 
             // navBarItem4
             // 
@@ -121,7 +130,7 @@ namespace MRes
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_food),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
             this.navBarGroup1.Name = "navBarGroup1";
@@ -173,15 +182,15 @@ namespace MRes
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarItem1,
             this.navBarItem2,
-            this.navBarItem3,
+            this.btn_food,
             this.navBarItem4,
             this.navBarItem5,
             this.navBarItem6});
             this.navBarControl1.Location = new System.Drawing.Point(0, 157);
             this.navBarControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 292;
-            this.navBarControl1.Size = new System.Drawing.Size(292, 553);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 268;
+            this.navBarControl1.Size = new System.Drawing.Size(268, 553);
             this.navBarControl1.TabIndex = 8;
             this.navBarControl1.Text = "Nhân Viên";
             this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Black");
@@ -191,15 +200,15 @@ namespace MRes
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
-            // groupControl1
+            // ManagerController
             // 
-            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(292, 157);
-            this.groupControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(883, 553);
-            this.groupControl1.TabIndex = 13;
+            this.ManagerController.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.ManagerController.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ManagerController.Location = new System.Drawing.Point(268, 157);
+            this.ManagerController.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ManagerController.Name = "ManagerController";
+            this.ManagerController.Size = new System.Drawing.Size(907, 553);
+            this.ManagerController.TabIndex = 13;
             // 
             // barButtonItem4
             // 
@@ -239,50 +248,50 @@ namespace MRes
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4,
             this.ribbonPageGroup3,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Home";
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroup4
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             // 
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btn_add);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
             this.ribbonPageGroup3.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
-            // barButtonItem1
+            // btn_add
             // 
-            this.barButtonItem1.Caption = "Thêm";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
-            this.barButtonItem1.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
-            this.barButtonItem1.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Disabled.Options.UseForeColor = true;
-            this.barButtonItem1.ItemAppearance.Disabled.Options.UseTextOptions = true;
-            this.barButtonItem1.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem1.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
-            this.barButtonItem1.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.barButtonItem1.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem1.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.barButtonItem1.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem1.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.barButtonItem1.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.Gray;
-            this.barButtonItem1.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
-            this.barButtonItem1.LargeWidth = 70;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.SmallWithoutTextWidth = 200;
+            this.btn_add.Caption = "Thêm";
+            this.btn_add.Id = 2;
+            this.btn_add.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btn_add.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btn_add.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_add.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
+            this.btn_add.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btn_add.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.btn_add.ItemAppearance.Disabled.Options.UseTextOptions = true;
+            this.btn_add.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.btn_add.ItemAppearance.Hovered.Options.UseFont = true;
+            this.btn_add.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.btn_add.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.btn_add.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_add.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.btn_add.ItemInMenuAppearance.Hovered.BackColor = System.Drawing.Color.Gray;
+            this.btn_add.ItemInMenuAppearance.Hovered.Options.UseBackColor = true;
+            this.btn_add.LargeWidth = 70;
+            this.btn_add.Name = "btn_add";
+            this.btn_add.SmallWithoutTextWidth = 200;
+            this.btn_add.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_add_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -300,7 +309,6 @@ namespace MRes
             this.barButtonItem2.ItemAppearance.Normal.Options.UseForeColor = true;
             this.barButtonItem2.LargeWidth = 70;
             this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -317,20 +325,12 @@ namespace MRes
             this.barButtonItem3.LargeWidth = 70;
             this.barButtonItem3.Name = "barButtonItem3";
             // 
-            // barButtonItem6
+            // ribbonPageGroup2
             // 
-            this.barButtonItem6.Caption = "Hủy bỏ";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Red;
-            this.barButtonItem6.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.barButtonItem6.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem6.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.barButtonItem6.LargeWidth = 70;
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_excel);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // barButtonItem7
             // 
@@ -348,7 +348,39 @@ namespace MRes
             this.barButtonItem7.ItemAppearance.Normal.Options.UseForeColor = true;
             this.barButtonItem7.LargeWidth = 70;
             this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Hủy bỏ";
+            this.barButtonItem6.Id = 7;
+            this.barButtonItem6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
+            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barButtonItem6.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Red;
+            this.barButtonItem6.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.barButtonItem6.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.barButtonItem6.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem6.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.barButtonItem6.LargeWidth = 70;
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
+            // btn_excel
+            // 
+            this.btn_excel.Caption = "Xuất Excel";
+            this.btn_excel.Id = 13;
+            this.btn_excel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.Image")));
+            this.btn_excel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.LargeImage")));
+            this.btn_excel.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excel.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
+            this.btn_excel.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btn_excel.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.btn_excel.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.btn_excel.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.btn_excel.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_excel.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.btn_excel.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_excel.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.btn_excel.Name = "btn_excel";
             // 
             // ribbonControl2
             // 
@@ -359,18 +391,26 @@ namespace MRes
             this.ribbonControl2.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl2.ExpandCollapseItem,
             this.ribbonControl2.SearchEditItem,
-            this.barButtonItem1,
+            this.btn_add,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem6,
-            this.barButtonItem7});
+            this.barButtonItem7,
+            this.barSubItem1,
+            this.btn_excel});
             this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ribbonControl2.MaxItemId = 12;
+            this.ribbonControl2.MaxItemId = 14;
             this.ribbonControl2.Name = "ribbonControl2";
             this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl2.Size = new System.Drawing.Size(1175, 157);
+            // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Id = 12;
+            this.barSubItem1.LargeWidth = 200;
+            this.barSubItem1.Name = "barSubItem1";
             // 
             // Main
             // 
@@ -378,7 +418,7 @@ namespace MRes
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 710);
-            this.Controls.Add(this.groupControl1);
+            this.Controls.Add(this.ManagerController);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -387,8 +427,9 @@ namespace MRes
             this.Ribbon = this.ribbonControl2;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -398,7 +439,7 @@ namespace MRes
         #endregion
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem btn_food;
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
@@ -407,7 +448,7 @@ namespace MRes
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl ManagerController;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.RibbonGalleryBarItem ribbonGalleryBarItem1;
@@ -415,12 +456,15 @@ namespace MRes
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btn_add;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem btn_excel;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
     }
 }
