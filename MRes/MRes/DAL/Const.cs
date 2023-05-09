@@ -13,6 +13,9 @@ namespace MRes.DAL
 
 
         public static string URL = "http://127.0.0.1:8000/api/";
+        public static string MANAGER_FOOD = "QLFOOD";
+        public static string MANAGER_CATEGORY = "QLCATEGORY";
+        public static string MANAGER_STAFF = "QLSTAFF";
 
         public static Const Instance
         {
@@ -76,5 +79,9 @@ namespace MRes.DAL
                 return;
             }
         }
+  
+
+
+
     }
 }

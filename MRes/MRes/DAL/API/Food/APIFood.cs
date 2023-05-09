@@ -43,13 +43,14 @@ namespace MRes.DAL.API.Food
             FoodData data = JsonConvert.DeserializeObject<FoodData>(Result);
             return data;
         }
-        public async Task<string> Add(string name, string price, string discount, string id_category)
+        public string Add(string name, double price, string discount,string status,string created_by, string id_category)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            table["price"] = price;
+            table["price"] = price.ToString();
             table["discount"] = discount;
-            table["count"] = "0";
+            table["status"] = status;
+            table["created_by"] = created_by;
             table["id_category"] = id_category;
             string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
             return Result;

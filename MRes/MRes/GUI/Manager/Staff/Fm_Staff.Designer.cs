@@ -242,11 +242,13 @@ namespace MRes.GUI.Manager.Staff
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(80, 62);
+            this.txt_email.Location = new System.Drawing.Point(80, 58);
             this.txt_email.Name = "txt_email";
             this.txt_email.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.txt_email.Properties.Appearance.Options.UseForeColor = true;
             this.txt_email.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txt_email.Properties.Mask.EditMask = "n";
+            this.txt_email.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txt_email.Size = new System.Drawing.Size(228, 24);
             this.txt_email.TabIndex = 7;
             // 

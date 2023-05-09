@@ -1,4 +1,5 @@
-﻿using MRes.GUI.Manager.Category;
+﻿using MRes.DAL;
+using MRes.GUI.Manager.Category;
 using MRes.GUI.Manager.Food;
 using MRes.GUI.Manager.Staff;
 using System;
@@ -18,7 +19,11 @@ namespace MRes
 {
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-
+        string Chonse = "";
+        bool CheckClick = false;
+        Fm_category Category;
+        Fm_Staff staff;
+        QL_Food food;
         public Main()
         {
             InitializeComponent();
@@ -27,11 +32,12 @@ namespace MRes
         private void btn_food_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            QL_Food food = new QL_Food();
-
+            food = new QL_Food();
             CreateForm(food,null);
+            this.Chonse = Const.MANAGER_FOOD;
+
         }
-    
+
 
         //Created one new form
         private void CreateForm(Form form = null ,UserControl userControl = null)
@@ -61,20 +67,148 @@ namespace MRes
 
         private void btn_add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Fm_Add fm_Add = new Fm_Add();
-            fm_Add.ShowDialog();
+            ChoseAdd(this.Chonse);
+            this.CheckClick = true;
+           
         }
 
         private void btn_staff_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_Staff staff = new Fm_Staff();
+            staff = new Fm_Staff();
             CreateForm(staff, null);
         }
 
         private void btn_category_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_category Category = new Fm_category();
+            Category = new Fm_category();
             CreateForm(Category, null);
+        }
+        //
+        private void setshoseadd(bool set)
+        {
+            btn_edit.Enabled = set;
+            btn_delete.Enabled = set;
+        }
+
+        private void setshoseedit(bool set)
+        {
+            btn_add.Enabled = set;
+            btn_delete.Enabled = set;
+        }
+        private void setshoseall(bool set)
+        {
+            btn_add.Enabled = set;
+            btn_delete.Enabled = set;
+            btn_edit.Enabled = set;
+        }
+        private void ChoseAdd(string text)
+        {
+        //public static string MANAGER_FOOD = "QLFOOD";
+        //public static string MANAGER_CATEGORY = "QLCATEGORY";
+        //public static string MANAGER_STAFF = "QLSTAFF";
+            switch (text)
+            {
+                case "QLFOOD":
+                    food.setPanel(true);
+                    food.Cleartext();
+                    setshoseadd(false);
+                    break;
+                case "QLCATEGORY":
+
+                    break;
+                case "QLSTAFF":
+
+                    break;
+            }    
+        }
+        private void Choseclose(string text)
+        {
+            //public static string MANAGER_FOOD = "QLFOOD";
+            //public static string MANAGER_CATEGORY = "QLCATEGORY";
+            //public static string MANAGER_STAFF = "QLSTAFF";
+            switch (text)
+            {
+                case "QLFOOD":
+                    food.setPanel(false);
+                    food.ClearandAdd();
+                    break;
+                case "QLCATEGORY":
+
+                    break;
+                case "QLSTAFF":
+
+                    break;
+            }
+        }
+        private void Chosesave(string text)
+        {
+            //public static string MANAGER_FOOD = "QLFOOD";
+            //public static string MANAGER_CATEGORY = "QLCATEGORY";
+            //public static string MANAGER_STAFF = "QLSTAFF";
+            switch (text)
+            {
+                case "QLFOOD":
+                    food.setPanel(false);
+                    food.Add();
+                    food.GetData();
+                    break;
+                case "QLCATEGORY":
+
+                    break;
+                case "QLSTAFF":
+
+                    break;
+            }
+        }
+        private void Chosedelete(string text)
+        {
+            //public static string MANAGER_FOOD = "QLFOOD";
+            //public static string MANAGER_CATEGORY = "QLCATEGORY";
+            //public static string MANAGER_STAFF = "QLSTAFF";
+            switch (text)
+            {
+                case "QLFOOD":
+                    food.delete();    
+                    break;
+                case "QLCATEGORY":
+
+                    break;
+                case "QLSTAFF":
+
+                    break;
+            }
+        }
+        private void btn_save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(CheckClick == true)
+            {
+                if (MessageBox.Show("Bạn Có Muốn Lưu Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    Chosesave(this.Chonse);
+                    setshoseall(true);
+                    CheckClick = false;
+                }
+            }   
+           
+        }
+
+        private void btn_close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không","Thông Báo",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                Choseclose(this.Chonse);
+                setshoseall(true);
+                CheckClick = false;
+            }
+        }
+
+        private void btn_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                Chosedelete(this.Chonse);
+
+            }
         }
     }
 }
