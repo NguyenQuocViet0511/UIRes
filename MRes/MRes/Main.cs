@@ -1,4 +1,6 @@
-﻿using MRes.GUI.Manager.Food;
+﻿using MRes.GUI.Manager.Category;
+using MRes.GUI.Manager.Food;
+using MRes.GUI.Manager.Staff;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -61,6 +63,18 @@ namespace MRes
         {
             Fm_Add fm_Add = new Fm_Add();
             fm_Add.ShowDialog();
+        }
+
+        private void btn_staff_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Fm_Staff staff = new Fm_Staff();
+            CreateForm(staff, null);
+        }
+
+        private void btn_category_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Fm_category Category = new Fm_category();
+            CreateForm(Category, null);
         }
     }
 }

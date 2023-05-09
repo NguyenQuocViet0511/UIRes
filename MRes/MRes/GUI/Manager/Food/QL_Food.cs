@@ -16,46 +16,84 @@ namespace MRes.GUI.Manager.Food
     public partial class QL_Food : Form
     {    
         FoodData food;
-        DataTable dt;
-        ThreadStart ts;
-        Thread th;
         Item_Food item_food;
         public QL_Food()
         {
             InitializeComponent();
-
-            //ts = new ThreadStart(GetData);
-            //th = new Thread(ts);
-            //th.Start();
             GetData();
+
+
         }
-    
-      
+        public  void GetData()
+        {
+            Task t = new Task(
+                () =>
+                {
+                    food = APIFood.Instance.GetAll();
 
+                    gridController.BeginInvoke((Action)delegate ()
+                    {
+                        gridController.DataSource = food.data.data;
+                        ClearandAdd();
 
+                    });
+                }
+                );
+            t.Start();
 
-   
-
-
-        private void GetData()
-        { 
-            layoutController.Controls.Clear();
-            food =  APIFood.Instance.GetAll();
-            foreach (var item in food.data.data)
-            {
-                item_food = new Item_Food();
-                item_food.Width = 220;
-                item_food.Height = 270;
-                item_food.Id = item.id;
-                item_food.Name = item.name;
-                item_food.Price = string.Format("{0:0,0}", item.price);
-                item_food.Discount = item.discount.ToString();
-                item_food.Count = item.count.ToString();
-                item_food.Name_category = item.Category_name;
-                layoutController.Controls.Add(item_food);
-            }
-        
         }
 
+        private void ClearandAdd()
+        {
+            txt_id.DataBindings.Clear();
+            txt_id.DataBindings.Add("text", food.data.data, "id");
+            //
+            txt_name.DataBindings.Clear();
+            txt_name.DataBindings.Add("text", food.data.data, "name");
+            //
+            txt_count.DataBindings.Clear();
+            txt_count.DataBindings.Add("text", food.data.data, "count");
+            //
+            txt_created_by.DataBindings.Clear();
+            txt_created_by.DataBindings.Add("text", food.data.data, "username");
+            //
+            txt_discount.DataBindings.Clear();
+            txt_discount.DataBindings.Add("text", food.data.data, "discount");
+            //
+            txt_price.DataBindings.Clear();
+            txt_price.DataBindings.Add("text", food.data.data, "price");
+            //
+            cbn_status.DataBindings.Clear();
+            cbn_status.DataBindings.Add("text", food.data.data, "status");
+            //
+            cbn_category.DataBindings.Clear();
+            cbn_category.DataBindings.Add("text", food.data.data, "category");
+            //
+          
+        }
+        private void QL_Food_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_first_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position = 0;
+        }
+
+        private void btn_prev_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position--;
+        }
+
+        private void btn_next_Click(object sender, EventArgs e)
+        {
+            this.BindingContext[food.data.data].Position++;
+        }
+
+        private void btn_last_Click(object sender, EventArgs e)
+        {
+            int location = this.BindingContext[food.data.data].Count - 1;
+            this.BindingContext[food.data.data].Position = location;
+        }
     }
 }

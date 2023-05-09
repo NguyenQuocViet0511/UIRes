@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MRes.Models.Food
+namespace MRes.Models.Staff
 {
-    public class FoodDao
+    public class StaffDao
     {
 
         public string total;
-        public List<Food> data;
+        public List<Staff> data;
 
 
     }
-    public class FoodData
+    public class StaffData
     {
-        public FoodDao data;
+        public StaffDao data;
 
     }
 }

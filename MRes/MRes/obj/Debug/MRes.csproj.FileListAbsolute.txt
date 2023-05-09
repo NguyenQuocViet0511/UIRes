@@ -428,3 +428,5 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.Progress.awaitprogress.reso
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Food.Item_Food.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Food.QL_Food.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Food.Fm_Add.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Staff.Fm_Staff.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Category.Fm_category.resources

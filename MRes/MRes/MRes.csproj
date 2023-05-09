@@ -93,13 +93,21 @@
   <ItemGroup>
     <Compile Include="DAL\API\BaseAPI.cs" />
     <Compile Include="DAL\API\BaseAPIInterface.cs" />
+    <Compile Include="DAL\API\Category\APICategory.cs" />
     <Compile Include="DAL\API\Food\APIFood.cs" />
+    <Compile Include="DAL\API\Staff\APIStaff.cs" />
     <Compile Include="DAL\Const.cs" />
     <Compile Include="GUI\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Login\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\Category\Fm_category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Category\Fm_category.Designer.cs">
+      <DependentUpon>Fm_category.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\Food\Fm_Add.cs">
       <SubType>Form</SubType>
@@ -119,10 +127,22 @@
     <Compile Include="GUI\Manager\Food\QL_Food.Designer.cs">
       <DependentUpon>QL_Food.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\Staff\Fm_Staff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Staff\Fm_Staff.Designer.cs">
+      <DependentUpon>Fm_Staff.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Lib\GraphicsEditViewInfo .cs" />
+    <Compile Include="Lib\numbertextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Lib\numbertextbox.Designer.cs">
+      <DependentUpon>numbertextbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\RepositoryItemGraphicsEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,8 +152,12 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category\Category.cs" />
+    <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
+    <Compile Include="Models\Staff\Staff.cs" />
+    <Compile Include="Models\Staff\StaffDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Progress\awaitprogress.cs">
       <SubType>Form</SubType>
@@ -145,6 +169,9 @@
     <EmbeddedResource Include="GUI\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Category\Fm_category.resx">
+      <DependentUpon>Fm_category.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Food\Fm_Add.resx">
       <DependentUpon>Fm_Add.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Food\QL_Food.resx">
       <DependentUpon>QL_Food.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Staff\Fm_Staff.resx">
+      <DependentUpon>Fm_Staff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -207,10 +237,8 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="GUI\Manager\Category\" />
     <Folder Include="GUI\Manager\Customer\" />
     <Folder Include="GUI\Manager\Inventory\" />
-    <Folder Include="GUI\Manager\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5.png" />

@@ -29,6 +29,7 @@ namespace MRes.GUI.Manager.Food
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
             this.expandablePanel1 = new DevComponents.DotNetBar.ExpandablePanel();
             this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
@@ -43,6 +44,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_name = new DevExpress.XtraEditors.TextEdit();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.panel1.SuspendLayout();
             this.expandablePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
@@ -59,8 +61,18 @@ namespace MRes.GUI.Manager.Food
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.expandablePanel1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(220, 322);
+            this.panel1.TabIndex = 0;
+            // 
             // expandablePanel1
             // 
+            this.expandablePanel1.AutoSize = true;
             this.expandablePanel1.CanvasColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
             this.expandablePanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.expandablePanel1.Controls.Add(this.textEdit7);
@@ -76,10 +88,13 @@ namespace MRes.GUI.Manager.Food
             this.expandablePanel1.Controls.Add(this.txt_name);
             this.expandablePanel1.Controls.Add(this.txt_id);
             this.expandablePanel1.Controls.Add(this.pictureEdit1);
+            this.expandablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.expandablePanel1.ExpandButtonVisible = false;
+            this.expandablePanel1.ExpandOnTitleClick = true;
             this.expandablePanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expandablePanel1.Location = new System.Drawing.Point(0, 0);
             this.expandablePanel1.Name = "expandablePanel1";
-            this.expandablePanel1.Size = new System.Drawing.Size(249, 320);
+            this.expandablePanel1.Size = new System.Drawing.Size(220, 322);
             this.expandablePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
             this.expandablePanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
@@ -89,7 +104,7 @@ namespace MRes.GUI.Manager.Food
             this.expandablePanel1.Style.BorderWidth = 4;
             this.expandablePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.expandablePanel1.Style.GradientAngle = 90;
-            this.expandablePanel1.TabIndex = 14;
+            this.expandablePanel1.TabIndex = 17;
             this.expandablePanel1.TitleStyle.Alignment = System.Drawing.StringAlignment.Center;
             this.expandablePanel1.TitleStyle.BackColor1.Color = System.Drawing.Color.White;
             this.expandablePanel1.TitleStyle.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
@@ -135,7 +150,7 @@ namespace MRes.GUI.Manager.Food
             this.textEdit8.Properties.Appearance.Options.UseFont = true;
             this.textEdit8.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit8.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit8.Size = new System.Drawing.Size(101, 20);
+            this.textEdit8.Size = new System.Drawing.Size(105, 20);
             this.textEdit8.TabIndex = 23;
             // 
             // textEdit9
@@ -154,7 +169,7 @@ namespace MRes.GUI.Manager.Food
             this.textEdit9.Properties.Appearance.Options.UseFont = true;
             this.textEdit9.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit9.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit9.Size = new System.Drawing.Size(93, 20);
+            this.textEdit9.Size = new System.Drawing.Size(78, 20);
             this.textEdit9.TabIndex = 22;
             // 
             // textEdit10
@@ -173,7 +188,7 @@ namespace MRes.GUI.Manager.Food
             this.textEdit10.Properties.Appearance.Options.UseFont = true;
             this.textEdit10.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit10.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit10.Size = new System.Drawing.Size(93, 20);
+            this.textEdit10.Size = new System.Drawing.Size(64, 20);
             this.textEdit10.TabIndex = 21;
             // 
             // textEdit11
@@ -192,7 +207,7 @@ namespace MRes.GUI.Manager.Food
             this.textEdit11.Properties.Appearance.Options.UseFont = true;
             this.textEdit11.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit11.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit11.Size = new System.Drawing.Size(93, 20);
+            this.textEdit11.Size = new System.Drawing.Size(64, 20);
             this.textEdit11.TabIndex = 20;
             // 
             // textEdit12
@@ -211,7 +226,7 @@ namespace MRes.GUI.Manager.Food
             this.textEdit12.Properties.Appearance.Options.UseFont = true;
             this.textEdit12.Properties.Appearance.Options.UseForeColor = true;
             this.textEdit12.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit12.Size = new System.Drawing.Size(93, 20);
+            this.textEdit12.Size = new System.Drawing.Size(64, 20);
             this.textEdit12.TabIndex = 19;
             // 
             // txt_namecategory
@@ -232,7 +247,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_namecategory.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_namecategory.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_namecategory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txt_namecategory.Size = new System.Drawing.Size(135, 20);
+            this.txt_namecategory.Size = new System.Drawing.Size(106, 20);
             this.txt_namecategory.TabIndex = 18;
             // 
             // txt_count
@@ -252,7 +267,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_count.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_count.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_count.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txt_count.Size = new System.Drawing.Size(135, 20);
+            this.txt_count.Size = new System.Drawing.Size(106, 20);
             this.txt_count.TabIndex = 17;
             // 
             // txt_discount
@@ -273,7 +288,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_discount.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_discount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_discount.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txt_discount.Size = new System.Drawing.Size(135, 20);
+            this.txt_discount.Size = new System.Drawing.Size(106, 20);
             this.txt_discount.TabIndex = 16;
             // 
             // txt_price
@@ -299,7 +314,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_price.Properties.EditFormat.FormatString = "#,#";
             this.txt_price.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txt_price.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_price.Size = new System.Drawing.Size(135, 20);
+            this.txt_price.Size = new System.Drawing.Size(106, 20);
             this.txt_price.TabIndex = 15;
             // 
             // txt_name
@@ -320,7 +335,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_name.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_name.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_name.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txt_name.Size = new System.Drawing.Size(135, 20);
+            this.txt_name.Size = new System.Drawing.Size(106, 20);
             this.txt_name.TabIndex = 14;
             // 
             // txt_id
@@ -341,7 +356,7 @@ namespace MRes.GUI.Manager.Food
             this.txt_id.Properties.Appearance.Options.UseTextOptions = true;
             this.txt_id.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txt_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.txt_id.Size = new System.Drawing.Size(135, 20);
+            this.txt_id.Size = new System.Drawing.Size(106, 20);
             this.txt_id.TabIndex = 13;
             // 
             // pictureEdit1
@@ -355,7 +370,7 @@ namespace MRes.GUI.Manager.Food
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
             this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(243, 114);
+            this.pictureEdit1.Size = new System.Drawing.Size(214, 114);
             this.pictureEdit1.TabIndex = 1;
             // 
             // Item_Food
@@ -363,10 +378,12 @@ namespace MRes.GUI.Manager.Food
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
-            this.Controls.Add(this.expandablePanel1);
+            this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(3, 3, 3, 20);
             this.Name = "Item_Food";
-            this.Size = new System.Drawing.Size(251, 322);
+            this.Size = new System.Drawing.Size(220, 322);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.expandablePanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
@@ -387,6 +404,7 @@ namespace MRes.GUI.Manager.Food
 
         #endregion
 
+        private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.ExpandablePanel expandablePanel1;
         private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.TextEdit textEdit8;
