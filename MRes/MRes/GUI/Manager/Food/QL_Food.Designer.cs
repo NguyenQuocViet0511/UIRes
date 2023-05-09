@@ -45,6 +45,7 @@ namespace MRes.GUI.Manager.Food
             this.btn_last = new DevExpress.XtraEditors.SimpleButton();
             this.btn_first = new DevExpress.XtraEditors.SimpleButton();
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.txt_price = new DevExpress.XtraEditors.TextEdit();
             this.cbn_category = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txt_count = new MRes.Lib.numbertextbox();
@@ -62,13 +63,13 @@ namespace MRes.GUI.Manager.Food
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
-            this.txt_price = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GidController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_category.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).BeginInit();
@@ -78,7 +79,6 @@ namespace MRes.GUI.Manager.Food
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridController
@@ -294,12 +294,32 @@ namespace MRes.GUI.Manager.Food
             this.panel_info.Size = new System.Drawing.Size(1376, 149);
             this.panel_info.TabIndex = 4;
             // 
+            // txt_price
+            // 
+            this.txt_price.EditValue = 0D;
+            this.txt_price.Location = new System.Drawing.Point(91, 62);
+            this.txt_price.Name = "txt_price";
+            this.txt_price.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_price.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_price.Properties.Appearance.Options.UseFont = true;
+            this.txt_price.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_price.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txt_price.Properties.DisplayFormat.FormatString = "#,#";
+            this.txt_price.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_price.Properties.EditFormat.FormatString = "#,#";
+            this.txt_price.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txt_price.Properties.Mask.EditMask = "n0";
+            this.txt_price.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txt_price.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txt_price.Size = new System.Drawing.Size(228, 24);
+            this.txt_price.TabIndex = 25;
+            // 
             // cbn_category
             // 
             this.cbn_category.EditValue = "";
             this.cbn_category.Location = new System.Drawing.Point(91, 105);
             this.cbn_category.Name = "cbn_category";
-            this.cbn_category.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbn_category.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbn_category.Properties.Appearance.ForeColor = System.Drawing.Color.White;
             this.cbn_category.Properties.Appearance.Options.UseFont = true;
             this.cbn_category.Properties.Appearance.Options.UseForeColor = true;
@@ -322,7 +342,9 @@ namespace MRes.GUI.Manager.Food
             this.txt_count.Enabled = false;
             this.txt_count.Location = new System.Drawing.Point(830, 66);
             this.txt_count.Name = "txt_count";
+            this.txt_count.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_count.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_count.Properties.Appearance.Options.UseFont = true;
             this.txt_count.Properties.Appearance.Options.UseForeColor = true;
             this.txt_count.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_count.Size = new System.Drawing.Size(265, 24);
@@ -332,7 +354,9 @@ namespace MRes.GUI.Manager.Food
             // 
             this.txt_discount.Location = new System.Drawing.Point(424, 62);
             this.txt_discount.Name = "txt_discount";
+            this.txt_discount.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_discount.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_discount.Properties.Appearance.Options.UseFont = true;
             this.txt_discount.Properties.Appearance.Options.UseForeColor = true;
             this.txt_discount.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_discount.Size = new System.Drawing.Size(278, 24);
@@ -355,7 +379,9 @@ namespace MRes.GUI.Manager.Food
             this.txt_created_by.Enabled = false;
             this.txt_created_by.Location = new System.Drawing.Point(830, 20);
             this.txt_created_by.Name = "txt_created_by";
+            this.txt_created_by.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_created_by.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_created_by.Properties.Appearance.Options.UseFont = true;
             this.txt_created_by.Properties.Appearance.Options.UseForeColor = true;
             this.txt_created_by.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_created_by.Size = new System.Drawing.Size(265, 24);
@@ -374,6 +400,7 @@ namespace MRes.GUI.Manager.Food
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Gray;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(16, 109);
@@ -385,6 +412,7 @@ namespace MRes.GUI.Manager.Food
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Gray;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(732, 24);
@@ -398,7 +426,9 @@ namespace MRes.GUI.Manager.Food
             this.cbn_status.EditValue = "Chọn trạng thái";
             this.cbn_status.Location = new System.Drawing.Point(424, 105);
             this.cbn_status.Name = "cbn_status";
+            this.cbn_status.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbn_status.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cbn_status.Properties.Appearance.Options.UseFont = true;
             this.cbn_status.Properties.Appearance.Options.UseForeColor = true;
             this.cbn_status.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.cbn_status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -414,6 +444,7 @@ namespace MRes.GUI.Manager.Food
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Gray;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(336, 109);
@@ -427,6 +458,7 @@ namespace MRes.GUI.Manager.Food
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Gray;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(336, 66);
@@ -439,7 +471,9 @@ namespace MRes.GUI.Manager.Food
             // 
             this.txt_name.Location = new System.Drawing.Point(424, 21);
             this.txt_name.Name = "txt_name";
+            this.txt_name.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_name.Properties.Appearance.Options.UseFont = true;
             this.txt_name.Properties.Appearance.Options.UseForeColor = true;
             this.txt_name.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_name.Size = new System.Drawing.Size(278, 24);
@@ -448,6 +482,7 @@ namespace MRes.GUI.Manager.Food
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Gray;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(16, 66);
@@ -461,6 +496,7 @@ namespace MRes.GUI.Manager.Food
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Gray;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(336, 24);
@@ -472,6 +508,7 @@ namespace MRes.GUI.Manager.Food
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gray;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(16, 25);
@@ -485,29 +522,13 @@ namespace MRes.GUI.Manager.Food
             this.txt_id.Enabled = false;
             this.txt_id.Location = new System.Drawing.Point(91, 21);
             this.txt_id.Name = "txt_id";
+            this.txt_id.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_id.Properties.Appearance.Options.UseFont = true;
             this.txt_id.Properties.Appearance.Options.UseForeColor = true;
             this.txt_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_id.Size = new System.Drawing.Size(228, 24);
             this.txt_id.TabIndex = 0;
-            // 
-            // txt_price
-            // 
-            this.txt_price.EditValue = 0D;
-            this.txt_price.Location = new System.Drawing.Point(91, 62);
-            this.txt_price.Name = "txt_price";
-            this.txt_price.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_price.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_price.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.txt_price.Properties.DisplayFormat.FormatString = "#,#";
-            this.txt_price.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txt_price.Properties.EditFormat.FormatString = "#,#";
-            this.txt_price.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txt_price.Properties.Mask.EditMask = "n0";
-            this.txt_price.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_price.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txt_price.Size = new System.Drawing.Size(228, 24);
-            this.txt_price.TabIndex = 25;
             // 
             // QL_Food
             // 
@@ -528,6 +549,7 @@ namespace MRes.GUI.Manager.Food
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_category.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).EndInit();
@@ -537,7 +559,6 @@ namespace MRes.GUI.Manager.Food
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

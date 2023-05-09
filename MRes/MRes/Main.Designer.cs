@@ -60,11 +60,9 @@ namespace MRes
             this.btn_excel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.numbertextbox1 = new MRes.Lib.numbertextbox();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbertextbox1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // splashScreenManager1
@@ -301,8 +299,8 @@ namespace MRes
             // 
             this.btn_edit.Caption = "Sửa";
             this.btn_edit.Id = 3;
-            this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btn_edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.btn_edit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.Image")));
+            this.btn_edit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_edit.ImageOptions.LargeImage")));
             this.btn_edit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_edit.ItemAppearance.Hovered.Options.UseFont = true;
@@ -313,13 +311,14 @@ namespace MRes
             this.btn_edit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.btn_edit.LargeWidth = 70;
             this.btn_edit.Name = "btn_edit";
+            this.btn_edit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_edit_ItemClick);
             // 
             // btn_delete
             // 
             this.btn_delete.Caption = "Xóa";
             this.btn_delete.Id = 4;
-            this.btn_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.btn_delete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.btn_delete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.ImageOptions.Image")));
+            this.btn_delete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_delete.ImageOptions.LargeImage")));
             this.btn_delete.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_delete.ItemAppearance.Hovered.Options.UseForeColor = true;
             this.btn_delete.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -341,8 +340,8 @@ namespace MRes
             // 
             this.btn_save.Caption = "Lưu";
             this.btn_save.Id = 8;
-            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
-            this.btn_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.btn_save.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.Image")));
+            this.btn_save.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_save.ImageOptions.LargeImage")));
             this.btn_save.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
             this.btn_save.ItemAppearance.Hovered.Options.UseFont = true;
@@ -359,8 +358,8 @@ namespace MRes
             // 
             this.btn_close.Caption = "Hủy bỏ";
             this.btn_close.Id = 7;
-            this.btn_close.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.Image")));
-            this.btn_close.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.btn_close.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.ImageOptions.Image")));
+            this.btn_close.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_close.ImageOptions.LargeImage")));
             this.btn_close.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Red;
             this.btn_close.ItemAppearance.Hovered.Options.UseForeColor = true;
             this.btn_close.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -419,21 +418,12 @@ namespace MRes
             this.barSubItem1.LargeWidth = 200;
             this.barSubItem1.Name = "barSubItem1";
             // 
-            // numbertextbox1
-            // 
-            this.numbertextbox1.Location = new System.Drawing.Point(639, 101);
-            this.numbertextbox1.MenuManager = this.ribbonControl2;
-            this.numbertextbox1.Name = "numbertextbox1";
-            this.numbertextbox1.Size = new System.Drawing.Size(185, 22);
-            this.numbertextbox1.TabIndex = 15;
-            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 710);
-            this.Controls.Add(this.numbertextbox1);
             this.Controls.Add(this.ManagerController);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonControl2);
@@ -447,7 +437,6 @@ namespace MRes
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numbertextbox1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,6 +472,5 @@ namespace MRes
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btn_excel;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
-        private Lib.numbertextbox numbertextbox1;
     }
 }

@@ -55,13 +55,15 @@ namespace MRes.DAL.API.Food
             string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name, string price, string discount, string id_category)
+        public String Edit(string id, string name, double price, string discount, string status, string created_by, string id_category)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
-            table["price"] = price;
+            table["price"] = price.ToString();
             table["discount"] = discount;
+            table["status"] = status;
+            table["created_by"] = created_by;
             table["id_category"] = id_category;
             string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
             return Result;

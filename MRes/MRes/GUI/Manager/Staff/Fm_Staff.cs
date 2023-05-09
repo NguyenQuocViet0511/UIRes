@@ -26,7 +26,7 @@ namespace MRes.GUI.Manager.Staff
         {
             panel_info.Enabled = false;
         }
-
+        //get data
         public void GetData()
         {
             Task t = new Task(
@@ -44,7 +44,26 @@ namespace MRes.GUI.Manager.Staff
                 );
             t.Start();
         }
+        // get data role
+        //public void Getrole()
+        //{
+        //    Task t1 = new Task(
+        //     () =>
+        //     {
+        //         category = APICategory.Instance.GetAll();
+        //         cbn_category.BeginInvoke((Action)delegate ()
+        //         {
+        //             cbn_category.Properties.DisplayMember = "name";
+        //             cbn_category.Properties.ValueMember = "id";
+        //             cbn_category.Properties.DataSource = category.data.data;
 
+        //         });
+
+        //     }
+        //     );
+        //    t1.Start();
+        //}
+        // clear
         private void ClearandAdd()
         {
             txt_id.DataBindings.Clear();

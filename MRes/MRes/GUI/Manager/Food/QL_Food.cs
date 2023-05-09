@@ -16,7 +16,8 @@ using System.Windows.Forms;
 namespace MRes.GUI.Manager.Food
 {
     public partial class QL_Food : Form
-    {    
+    {
+        bool enable = false;
         FoodData food;
         CategoryData category;
         Item_Food item_food;
@@ -29,24 +30,17 @@ namespace MRes.GUI.Manager.Food
 
 
         }
-
+        // add intit
         private void init()
         {
             setPanel(false);
         }
-
+        // set panel 
         public void setPanel(bool check)
         {
-            if(check == false)
-            {
-                panel_info.Enabled = false;
-            }
-            if(check == true)
-            {
-                panel_info.Enabled = true;
-
-            }
+                panel_info.Enabled = check;
         }
+        //get data
         public  void GetData()
         {
             Task t = new Task(
@@ -66,6 +60,7 @@ namespace MRes.GUI.Manager.Food
             t.Start();
           
         }
+        //get category
         public void GetCategory()
         {
             Task t1 = new Task(
@@ -85,6 +80,7 @@ namespace MRes.GUI.Manager.Food
             t1.Start();
         }
 
+        //clearbingding
         public void ClearandAdd()
         {
             txt_id.DataBindings.Clear();
@@ -137,7 +133,7 @@ namespace MRes.GUI.Manager.Food
             int location = this.BindingContext[food.data.data].Count - 1;
             this.BindingContext[food.data.data].Position = location;
         }
-
+        //cleartext
         public void Cleartext()
         {
             txt_count.Text = "";
@@ -163,20 +159,36 @@ namespace MRes.GUI.Manager.Food
             this.cbn_category.DataBindings.Clear();
 
         }
-        public void Add()
+        //check empty
+        public bool check()
         {
+            if(string.IsNullOrEmpty(txt_name.Text) || string.IsNullOrEmpty(txt_discount.Text) || string.IsNullOrEmpty(txt_price.Text) || string.IsNullOrEmpty(txt_discount.Text) || string.IsNullOrEmpty(cbn_status.Text) || string.IsNullOrEmpty(cbn_category.Text))
+            {
+                return false;
 
-            Task add = new Task(
-             () =>
-             {
-                 String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, "US000000", cbn_category.EditValue.ToString());
-                 setPanel(false);
-                 GetData();
-                 MessageBox.Show("" + result);
-             }
-             );
-            add.Start();
+            }
+            return true;
         }
+        //create new 
+        public void  Add()
+        {
+         
+                Task add = new Task(
+                            () =>
+                            {
+                                String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, "US000000", cbn_category.EditValue.ToString());
+                                panel_info.BeginInvoke((Action)delegate ()
+                                {
+                                    setPanel(false);
+                                });
+                                GetData();
+                                MessageBox.Show("" + result);
+                            }
+                            );
+                add.Start();
+          
+        }
+        // delete
         public void delete()
         {
 
@@ -190,6 +202,21 @@ namespace MRes.GUI.Manager.Food
              }
              );
             delete.Start();
+        }
+        //edit
+        public void edit()
+        {
+
+            Task edit = new Task(
+             () =>
+             {
+                 String result = APIFood.Instance.Edit(txt_id.Text, txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, "US000000", cbn_category.EditValue.ToString());
+                 GetData();
+                 MessageBox.Show("" + result);
+
+             }
+             );
+            edit.Start();
         }
     }
 }

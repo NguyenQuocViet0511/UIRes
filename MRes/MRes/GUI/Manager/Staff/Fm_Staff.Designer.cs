@@ -30,6 +30,8 @@ namespace MRes.GUI.Manager.Staff
         private void InitializeComponent()
         {
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.cbn_role = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txt_number = new MRes.Lib.numbertextbox();
             this.date = new DevExpress.XtraEditors.DateEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -47,7 +49,6 @@ namespace MRes.GUI.Manager.Staff
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbn_role = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_next = new DevExpress.XtraEditors.SimpleButton();
@@ -66,6 +67,8 @@ namespace MRes.GUI.Manager.Staff
             this.colid_role = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).BeginInit();
@@ -75,7 +78,6 @@ namespace MRes.GUI.Manager.Staff
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
@@ -87,6 +89,7 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.panel_info.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panel_info.Appearance.Options.UseBackColor = true;
+            this.panel_info.Controls.Add(this.cbn_role);
             this.panel_info.Controls.Add(this.txt_number);
             this.panel_info.Controls.Add(this.date);
             this.panel_info.Controls.Add(this.pictureEdit1);
@@ -104,7 +107,6 @@ namespace MRes.GUI.Manager.Staff
             this.panel_info.Controls.Add(this.label3);
             this.panel_info.Controls.Add(this.label2);
             this.panel_info.Controls.Add(this.label1);
-            this.panel_info.Controls.Add(this.cbn_role);
             this.panel_info.Controls.Add(this.txt_id);
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_info.Location = new System.Drawing.Point(0, 0);
@@ -112,11 +114,36 @@ namespace MRes.GUI.Manager.Staff
             this.panel_info.Size = new System.Drawing.Size(1336, 149);
             this.panel_info.TabIndex = 0;
             // 
+            // cbn_role
+            // 
+            this.cbn_role.EditValue = "";
+            this.cbn_role.Location = new System.Drawing.Point(424, 62);
+            this.cbn_role.Name = "cbn_role";
+            this.cbn_role.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbn_role.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cbn_role.Properties.Appearance.Options.UseFont = true;
+            this.cbn_role.Properties.Appearance.Options.UseForeColor = true;
+            this.cbn_role.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.cbn_role.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbn_role.Properties.PopupView = this.gridLookUpEdit1View;
+            this.cbn_role.Size = new System.Drawing.Size(278, 24);
+            this.cbn_role.TabIndex = 21;
+            // 
+            // gridLookUpEdit1View
+            // 
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
             // txt_number
             // 
             this.txt_number.Location = new System.Drawing.Point(828, 104);
             this.txt_number.Name = "txt_number";
+            this.txt_number.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_number.Properties.Appearance.Options.UseFont = true;
             this.txt_number.Properties.Appearance.Options.UseForeColor = true;
             this.txt_number.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_number.Size = new System.Drawing.Size(252, 24);
@@ -125,9 +152,11 @@ namespace MRes.GUI.Manager.Staff
             // date
             // 
             this.date.EditValue = null;
-            this.date.Location = new System.Drawing.Point(80, 98);
+            this.date.Location = new System.Drawing.Point(85, 104);
             this.date.Name = "date";
+            this.date.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.date.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.date.Properties.Appearance.Options.UseFont = true;
             this.date.Properties.Appearance.Options.UseForeColor = true;
             this.date.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.date.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -150,11 +179,12 @@ namespace MRes.GUI.Manager.Staff
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(732, 104);
+            this.label9.BackColor = System.Drawing.Color.Gray;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(732, 108);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 16);
+            this.label9.Size = new System.Drawing.Size(95, 16);
             this.label9.TabIndex = 17;
             this.label9.Text = "Số Điện Thoại";
             // 
@@ -162,7 +192,9 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.txt_address.Location = new System.Drawing.Point(828, 62);
             this.txt_address.Name = "txt_address";
+            this.txt_address.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_address.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_address.Properties.Appearance.Options.UseFont = true;
             this.txt_address.Properties.Appearance.Options.UseForeColor = true;
             this.txt_address.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_address.Size = new System.Drawing.Size(252, 24);
@@ -171,22 +203,24 @@ namespace MRes.GUI.Manager.Staff
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(732, 62);
+            this.label8.BackColor = System.Drawing.Color.Gray;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(732, 70);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 16);
+            this.label8.Size = new System.Drawing.Size(52, 16);
             this.label8.TabIndex = 14;
             this.label8.Text = "Địa Chỉ";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(732, 24);
+            this.label7.BackColor = System.Drawing.Color.Gray;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(732, 29);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 16);
+            this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Giới Tính";
             // 
@@ -194,23 +228,33 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.cbn_sex.Location = new System.Drawing.Point(828, 21);
             this.cbn_sex.Name = "cbn_sex";
+            this.cbn_sex.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbn_sex.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cbn_sex.Properties.Appearance.Options.UseFont = true;
             this.cbn_sex.Properties.Appearance.Options.UseForeColor = true;
             this.cbn_sex.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.cbn_sex.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbn_sex.Properties.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.cbn_sex.Size = new System.Drawing.Size(149, 24);
             this.cbn_sex.TabIndex = 12;
             // 
             // cbn_status
             // 
-            this.cbn_status.Location = new System.Drawing.Point(424, 101);
+            this.cbn_status.Location = new System.Drawing.Point(424, 105);
             this.cbn_status.Name = "cbn_status";
+            this.cbn_status.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbn_status.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cbn_status.Properties.Appearance.Options.UseFont = true;
             this.cbn_status.Properties.Appearance.Options.UseForeColor = true;
             this.cbn_status.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.cbn_status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbn_status.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.cbn_status.Size = new System.Drawing.Size(278, 24);
             this.cbn_status.TabIndex = 11;
             // 
@@ -219,11 +263,12 @@ namespace MRes.GUI.Manager.Staff
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(336, 104);
+            this.label6.BackColor = System.Drawing.Color.Gray;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(336, 109);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(75, 16);
             this.label6.TabIndex = 10;
             this.label6.Text = "Trạng Thái";
             // 
@@ -232,19 +277,22 @@ namespace MRes.GUI.Manager.Staff
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(336, 62);
+            this.label5.BackColor = System.Drawing.Color.Gray;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(336, 70);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 16);
+            this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Chức Vụ";
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(80, 58);
+            this.txt_email.Location = new System.Drawing.Point(85, 62);
             this.txt_email.Name = "txt_email";
+            this.txt_email.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_email.Properties.Appearance.Options.UseFont = true;
             this.txt_email.Properties.Appearance.Options.UseForeColor = true;
             this.txt_email.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_email.Properties.Mask.EditMask = "n";
@@ -256,7 +304,9 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.txt_name.Location = new System.Drawing.Point(424, 21);
             this.txt_name.Name = "txt_name";
+            this.txt_name.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_name.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_name.Properties.Appearance.Options.UseFont = true;
             this.txt_name.Properties.Appearance.Options.UseForeColor = true;
             this.txt_name.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_name.Size = new System.Drawing.Size(278, 24);
@@ -265,22 +315,24 @@ namespace MRes.GUI.Manager.Staff
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 101);
+            this.label4.BackColor = System.Drawing.Color.Gray;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(12, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Ngày Sinh";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(12, 62);
+            this.label3.BackColor = System.Drawing.Color.Gray;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(12, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 16);
+            this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Email";
             // 
@@ -289,43 +341,35 @@ namespace MRes.GUI.Manager.Staff
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(336, 24);
+            this.label2.BackColor = System.Drawing.Color.Gray;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(336, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.Size = new System.Drawing.Size(52, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên NV";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Gray;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(12, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã NV";
-            // 
-            // cbn_role
-            // 
-            this.cbn_role.Location = new System.Drawing.Point(424, 59);
-            this.cbn_role.Name = "cbn_role";
-            this.cbn_role.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.cbn_role.Properties.Appearance.Options.UseForeColor = true;
-            this.cbn_role.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cbn_role.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbn_role.Size = new System.Drawing.Size(278, 24);
-            this.cbn_role.TabIndex = 1;
             // 
             // txt_id
             // 
             this.txt_id.Enabled = false;
-            this.txt_id.Location = new System.Drawing.Point(80, 21);
+            this.txt_id.Location = new System.Drawing.Point(85, 21);
             this.txt_id.Name = "txt_id";
+            this.txt_id.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_id.Properties.Appearance.Options.UseFont = true;
             this.txt_id.Properties.Appearance.Options.UseForeColor = true;
             this.txt_id.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_id.Size = new System.Drawing.Size(228, 24);
@@ -533,6 +577,8 @@ namespace MRes.GUI.Manager.Staff
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).EndInit();
@@ -542,7 +588,6 @@ namespace MRes.GUI.Manager.Staff
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
@@ -556,7 +601,6 @@ namespace MRes.GUI.Manager.Staff
 
         private DevExpress.XtraEditors.PanelControl panel_info;
         private DevExpress.XtraEditors.TextEdit txt_id;
-        private DevExpress.XtraEditors.ComboBoxEdit cbn_role;
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.TextEdit txt_address;
         private System.Windows.Forms.Label label8;
@@ -589,5 +633,7 @@ namespace MRes.GUI.Manager.Staff
         private DevExpress.XtraEditors.SimpleButton btn_last;
         private DevExpress.XtraGrid.Columns.GridColumn coldate;
         private Lib.numbertextbox txt_number;
+        private DevExpress.XtraEditors.GridLookUpEdit cbn_role;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
     }
 }

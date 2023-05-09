@@ -228,6 +228,7 @@ namespace MRes.GUI.Manager.Category
             // 
             // cbn_status
             // 
+            this.cbn_status.EditValue = "Chọn trạng Thái";
             this.cbn_status.Location = new System.Drawing.Point(444, 20);
             this.cbn_status.Name = "cbn_status";
             this.cbn_status.Properties.Appearance.ForeColor = System.Drawing.Color.White;
@@ -235,6 +236,9 @@ namespace MRes.GUI.Manager.Category
             this.cbn_status.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.cbn_status.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbn_status.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.cbn_status.Size = new System.Drawing.Size(278, 24);
             this.cbn_status.TabIndex = 12;
             // 
@@ -251,6 +255,7 @@ namespace MRes.GUI.Manager.Category
             // 
             // txt_count
             // 
+            this.txt_count.Enabled = false;
             this.txt_count.Location = new System.Drawing.Point(106, 107);
             this.txt_count.Name = "txt_count";
             this.txt_count.Properties.Appearance.ForeColor = System.Drawing.Color.White;

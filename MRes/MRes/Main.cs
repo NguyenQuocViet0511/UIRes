@@ -20,6 +20,7 @@ namespace MRes
     public partial class Main : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         string Chonse = "";
+        string type = "";
         bool CheckClick = false;
         Fm_category Category;
         Fm_Staff staff;
@@ -68,6 +69,7 @@ namespace MRes
         private void btn_add_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ChoseAdd(this.Chonse);
+            this.type = "add";
             this.CheckClick = true;
            
         }
@@ -101,11 +103,12 @@ namespace MRes
             btn_delete.Enabled = set;
             btn_edit.Enabled = set;
         }
+        //add
         private void ChoseAdd(string text)
         {
-        //public static string MANAGER_FOOD = "QLFOOD";
-        //public static string MANAGER_CATEGORY = "QLCATEGORY";
-        //public static string MANAGER_STAFF = "QLSTAFF";
+            //public static string MANAGER_FOOD = "QLFOOD";
+            //public static string MANAGER_CATEGORY = "QLCATEGORY";
+            //public static string MANAGER_STAFF = "QLSTAFF";
             switch (text)
             {
                 case "QLFOOD":
@@ -121,7 +124,7 @@ namespace MRes
                     break;
             }    
         }
-        private void Choseclose(string text)
+        private void Choseedit(string text)
         {
             //public static string MANAGER_FOOD = "QLFOOD";
             //public static string MANAGER_CATEGORY = "QLCATEGORY";
@@ -129,8 +132,8 @@ namespace MRes
             switch (text)
             {
                 case "QLFOOD":
-                    food.setPanel(false);
-                    food.ClearandAdd();
+                    food.setPanel(true);
+                    setshoseedit(false);
                     break;
                 case "QLCATEGORY":
 
@@ -140,6 +143,29 @@ namespace MRes
                     break;
             }
         }
+        //close
+        private void Choseclose(string text)
+        {
+            //public static string MANAGER_FOOD = "QLFOOD";
+            //public static string MANAGER_CATEGORY = "QLCATEGORY";
+            //public static string MANAGER_STAFF = "QLSTAFF";
+            switch (text)
+            {
+                case "QLFOOD":
+                        food.setPanel(false);
+                        food.ClearandAdd();
+                        setshoseall(true);
+                        CheckClick = false;
+                    break;
+                case "QLCATEGORY":
+
+                    break;
+                case "QLSTAFF":
+
+                    break;
+            }
+        }
+        // save
         private void Chosesave(string text)
         {
             //public static string MANAGER_FOOD = "QLFOOD";
@@ -148,9 +174,33 @@ namespace MRes
             switch (text)
             {
                 case "QLFOOD":
-                    food.setPanel(false);
-                    food.Add();
-                    food.GetData();
+                    if (this.type == "add")
+                    {
+                        if (food.check())
+                        {
+                            food.Add();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    if(this.type == "edit")
+                    {
+
+                        if (food.check())
+                        {
+                            food.edit();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
                     break;
                 case "QLCATEGORY":
 
@@ -168,7 +218,11 @@ namespace MRes
             switch (text)
             {
                 case "QLFOOD":
-                    food.delete();    
+                    if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                    {
+                        food.delete();
+
+                    }
                     break;
                 case "QLCATEGORY":
 
@@ -182,11 +236,9 @@ namespace MRes
         {
             if(CheckClick == true)
             {
-                if (MessageBox.Show("Bạn Có Muốn Lưu Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                if (MessageBox.Show("Bạn Có Muốn Lưu  Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
                     Chosesave(this.Chonse);
-                    setshoseall(true);
-                    CheckClick = false;
                 }
             }   
            
@@ -194,21 +246,28 @@ namespace MRes
 
         private void btn_close_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không","Thông Báo",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            if (CheckClick == true)
+            {
+                if (MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không","Thông Báo",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
                 Choseclose(this.Chonse);
-                setshoseall(true);
-                CheckClick = false;
+             
+            }
             }
         }
 
         private void btn_delete_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
-            {
+ 
                 Chosedelete(this.Chonse);
+        }
 
-            }
+        private void btn_edit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.type = "edit";
+            this.CheckClick = true;
+            Choseedit(this.Chonse);
+
         }
     }
 }
