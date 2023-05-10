@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,14 @@ namespace MRes.DAL
         public static string MANAGER_FOOD = "QLFOOD";
         public static string MANAGER_CATEGORY = "QLCATEGORY";
         public static string MANAGER_STAFF = "QLSTAFF";
+
+        public string GetProjectLinkDirectory()
+        {
+            string currentLink = Directory.GetCurrentDirectory();
+            string binLink = Directory.GetParent(currentLink).FullName;
+            string projectLink = Directory.GetParent(binLink).FullName;
+            return projectLink;
+        }
 
         public static Const Instance
         {

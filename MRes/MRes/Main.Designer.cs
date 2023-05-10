@@ -32,14 +32,17 @@ namespace MRes
             DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btn_staff = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem2 = new DevExpress.XtraNavBar.NavBarItem();
             this.btn_food = new DevExpress.XtraNavBar.NavBarItem();
             this.btn_category = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
-            this.btn_material = new DevExpress.XtraNavBar.NavBarControl();
+            this.a = new DevExpress.XtraNavBar.NavBarControl();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.btn_material = new DevExpress.XtraNavBar.NavBarItem();
+            this.btn_input = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ManagerController = new DevExpress.XtraEditors.GroupControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -59,10 +62,8 @@ namespace MRes
             this.btn_excel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_material)).BeginInit();
+            this.btn_table = new DevExpress.XtraNavBar.NavBarItem();
+            ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
             this.SuspendLayout();
@@ -80,15 +81,6 @@ namespace MRes
             this.btn_staff.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("btn_staff.ImageOptions.SmallImage")));
             this.btn_staff.Name = "btn_staff";
             this.btn_staff.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_staff_LinkClicked);
-            // 
-            // navBarItem2
-            // 
-            this.navBarItem2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.navBarItem2.Appearance.Options.UseFont = true;
-            this.navBarItem2.Caption = "Khách Hàng";
-            this.navBarItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.LargeImage")));
-            this.navBarItem2.ImageOptions.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarItem2.ImageOptions.SmallImage")));
-            this.navBarItem2.Name = "navBarItem2";
             // 
             // btn_food
             // 
@@ -127,13 +119,11 @@ namespace MRes
             this.navBarGroup1.AppearancePressed.Options.UseTextOptions = true;
             this.navBarGroup1.AppearancePressed.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.navBarGroup1.Caption = "Quản Lý";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroup1.ImageOptions.LargeImage = global::MRes.Properties.Resources.project_manager;
             this.navBarGroup1.ImageOptions.SmallImageSize = new System.Drawing.Size(20, 20);
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_staff),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_food),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_category)});
             this.navBarGroup1.Name = "navBarGroup1";
@@ -143,6 +133,11 @@ namespace MRes
             this.navBarGroup2.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.navBarGroup2.Appearance.Options.UseFont = true;
             this.navBarGroup2.Caption = "Gọi Món";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
+            this.navBarGroup2.ImageOptions.LargeImage = global::MRes.Properties.Resources.food;
+            this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_table)});
             this.navBarGroup2.Name = "navBarGroup2";
             // 
             // navBarGroup3
@@ -151,6 +146,7 @@ namespace MRes
             this.navBarGroup3.Appearance.Options.UseFont = true;
             this.navBarGroup3.Caption = "Thống Kê";
             this.navBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
+            this.navBarGroup3.ImageOptions.LargeImage = global::MRes.Properties.Resources.monitoring;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
             this.navBarGroup3.Name = "navBarGroup3";
@@ -160,37 +156,81 @@ namespace MRes
             this.navBarItem6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.navBarItem6.Appearance.Options.UseFont = true;
             this.navBarItem6.Caption = "Doanh Thu";
+            this.navBarItem6.ImageOptions.LargeImage = global::MRes.Properties.Resources.revenue;
             this.navBarItem6.Name = "navBarItem6";
             // 
-            // btn_material
+            // a
             // 
-            this.btn_material.ActiveGroup = this.navBarGroup1;
-            this.btn_material.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.btn_material.Appearance.Background.Options.UseFont = true;
-            this.btn_material.BackColor = System.Drawing.Color.Gray;
-            this.btn_material.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.btn_material.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_material.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.a.ActiveGroup = this.navBarGroup1;
+            this.a.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.a.Appearance.Background.Options.UseFont = true;
+            this.a.BackColor = System.Drawing.Color.Gray;
+            this.a.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.a.Dock = System.Windows.Forms.DockStyle.Left;
+            this.a.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup2,
             this.navBarGroup3,
             this.navBarGroup4});
-            this.btn_material.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.a.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.btn_staff,
-            this.navBarItem2,
             this.btn_food,
             this.btn_category,
             this.navBarItem6,
-            this.navBarItem1,
-            this.navBarItem3});
-            this.btn_material.Location = new System.Drawing.Point(0, 157);
-            this.btn_material.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_material,
+            this.btn_input,
+            this.navBarItem3,
+            this.btn_table});
+            this.a.Location = new System.Drawing.Point(0, 157);
+            this.a.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.a.Name = "a";
+            this.a.OptionsNavPane.ExpandedWidth = 268;
+            this.a.Size = new System.Drawing.Size(268, 553);
+            this.a.TabIndex = 8;
+            this.a.Text = "Nhân Viên";
+            this.a.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Black");
+            // 
+            // navBarGroup4
+            // 
+            this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarGroup4.Appearance.Options.UseFont = true;
+            this.navBarGroup4.Caption = "kho";
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
+            this.navBarGroup4.ImageOptions.SmallImage = global::MRes.Properties.Resources.warehouse;
+            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_material),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_input),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            this.navBarGroup4.Name = "navBarGroup4";
+            // 
+            // btn_material
+            // 
+            this.btn_material.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_material.Appearance.Options.UseFont = true;
+            this.btn_material.Caption = "Nguyên Liệu";
+            this.btn_material.ImageOptions.LargeImage = global::MRes.Properties.Resources.material;
+            this.btn_material.ImageOptions.SmallImage = global::MRes.Properties.Resources.raw_material;
             this.btn_material.Name = "btn_material";
-            this.btn_material.OptionsNavPane.ExpandedWidth = 268;
-            this.btn_material.Size = new System.Drawing.Size(268, 553);
-            this.btn_material.TabIndex = 8;
-            this.btn_material.Text = "Nhân Viên";
-            this.btn_material.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Black");
+            this.btn_material.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_material_LinkClicked);
+            // 
+            // btn_input
+            // 
+            this.btn_input.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_input.Appearance.Options.UseFont = true;
+            this.btn_input.Caption = "nhập xuất kho";
+            this.btn_input.ImageOptions.LargeImage = global::MRes.Properties.Resources.inventory;
+            this.btn_input.ImageOptions.SmallImage = global::MRes.Properties.Resources.healthy_food;
+            this.btn_input.Name = "btn_input";
+            this.btn_input.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_input_LinkClicked);
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarItem3.Appearance.Options.UseFont = true;
+            this.navBarItem3.Caption = "Tổng";
+            this.navBarItem3.ImageOptions.LargeImage = global::MRes.Properties.Resources.raw_material;
+            this.navBarItem3.Name = "navBarItem3";
             // 
             // ribbonPageGroup1
             // 
@@ -413,32 +453,11 @@ namespace MRes
             this.barSubItem1.LargeWidth = 200;
             this.barSubItem1.Name = "barSubItem1";
             // 
-            // navBarGroup4
+            // btn_table
             // 
-            this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarGroup4.Appearance.Options.UseFont = true;
-            this.navBarGroup4.Caption = "kho";
-            this.navBarGroup4.Expanded = true;
-            this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
-            this.navBarGroup4.ImageOptions.SmallImage = global::MRes.Properties.Resources.warehouse;
-            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
-            this.navBarGroup4.Name = "navBarGroup4";
-            // 
-            // navBarItem1
-            // 
-            this.navBarItem1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarItem1.Appearance.Options.UseFont = true;
-            this.navBarItem1.Caption = "Vật liệu";
-            this.navBarItem1.Name = "navBarItem1";
-            // 
-            // navBarItem3
-            // 
-            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navBarItem3.Appearance.Options.UseFont = true;
-            this.navBarItem3.Caption = "nhập xuất kho";
-            this.navBarItem3.Name = "navBarItem3";
+            this.btn_table.Caption = "Gọi Món";
+            this.btn_table.Name = "btn_table";
+            this.btn_table.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_table_LinkClicked);
             // 
             // Main
             // 
@@ -447,7 +466,7 @@ namespace MRes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 710);
             this.Controls.Add(this.ManagerController);
-            this.Controls.Add(this.btn_material);
+            this.Controls.Add(this.a);
             this.Controls.Add(this.ribbonControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -456,7 +475,7 @@ namespace MRes
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_material)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
             this.ResumeLayout(false);
@@ -466,13 +485,12 @@ namespace MRes
 
         #endregion
         private DevExpress.XtraNavBar.NavBarItem btn_staff;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraNavBar.NavBarItem btn_food;
         private DevExpress.XtraNavBar.NavBarItem btn_category;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarControl btn_material;
+        private DevExpress.XtraNavBar.NavBarControl a;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.GroupControl ManagerController;
@@ -494,7 +512,9 @@ namespace MRes
         private DevExpress.XtraBars.BarButtonItem btn_excel;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem btn_material;
+        private DevExpress.XtraNavBar.NavBarItem btn_input;
         private DevExpress.XtraNavBar.NavBarItem navBarItem3;
+        private DevExpress.XtraNavBar.NavBarItem btn_table;
     }
 }

@@ -1,7 +1,9 @@
 ﻿using MRes.DAL;
 using MRes.GUI.Manager.Category;
 using MRes.GUI.Manager.Food;
+using MRes.GUI.Manager.Inventory;
 using MRes.GUI.Manager.Staff;
+using MRes.GUI.Oder.Table;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -344,6 +346,26 @@ namespace MRes
             this.CheckClick = true;
             Choseedit(this.Chonse);
 
+        }
+
+        private void btn_input_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            Fm_Inventory inventory = new Fm_Inventory();
+            CreateForm(inventory, null);
+        }
+
+        private void btn_material_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+
+            Fm_Material Material = new Fm_Material();
+            CreateForm(Material, null);
+        }
+
+        private void btn_table_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Fm_Table table = new Fm_Table();
+            CreateForm(table, null);
         }
     }
 }

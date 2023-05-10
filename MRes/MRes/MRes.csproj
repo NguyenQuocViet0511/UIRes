@@ -128,11 +128,29 @@
     <Compile Include="GUI\Manager\Food\QL_Food.Designer.cs">
       <DependentUpon>QL_Food.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Inventory.Designer.cs">
+      <DependentUpon>Fm_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Material.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Material.Designer.cs">
+      <DependentUpon>Fm_Material.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\Staff\Fm_Staff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\Staff\Fm_Staff.Designer.cs">
       <DependentUpon>Fm_Staff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\Fm_Table.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\Fm_Table.Designer.cs">
+      <DependentUpon>Fm_Table.cs</DependentUpon>
     </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
@@ -188,8 +206,17 @@
     <EmbeddedResource Include="GUI\Manager\Food\QL_Food.resx">
       <DependentUpon>QL_Food.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Inventory.resx">
+      <DependentUpon>Fm_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Material.resx">
+      <DependentUpon>Fm_Material.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Staff\Fm_Staff.resx">
       <DependentUpon>Fm_Staff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Oder\Table\Fm_Table.resx">
+      <DependentUpon>Fm_Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -245,11 +272,29 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\API\Material\" />
+    <Folder Include="DAL\API\Table\" />
     <Folder Include="GUI\Manager\Customer\" />
-    <Folder Include="GUI\Manager\Inventory\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\raw-material.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\material.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitoring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
