@@ -25,11 +25,18 @@ namespace MRes.GUI.Manager.Category
 
         }
 
+
+        // add intit
         private void init()
         {
-            panel_info.Enabled = false;
+            setPanel(false);
         }
-
+        // set panel 
+        public void setPanel(bool check)
+        {
+            panel_info.Enabled = check;
+        }
+        //get data
         public void GetData()
         {
             Task t = new Task(
@@ -47,7 +54,9 @@ namespace MRes.GUI.Manager.Category
                 );
             t.Start();
         }
-        private void ClearandAdd()
+        // clear
+
+        public void ClearandAdd()
         {
             txt_id.DataBindings.Clear();
             txt_id.DataBindings.Add("text", category.data.data, "id");
@@ -86,6 +95,84 @@ namespace MRes.GUI.Manager.Category
         {
             int location = this.BindingContext[category.data.data].Count - 1;
             this.BindingContext[category.data.data].Position = location;
+        }
+        //clear
+        public void Cleartext()
+        {
+            txt_name.Text = "";
+            txt_id.Text = "mã tự động tăng";
+            cbn_status.Text = "";
+            //
+            txt_id.DataBindings.Clear();
+            //
+            txt_name.DataBindings.Clear();
+            //
+            cbn_status.DataBindings.Clear();
+            //
+            txt_count.DataBindings.Clear();
+            //
+ 
+
+        }
+        //check empty
+        public bool check()
+        {
+       
+            if (string.IsNullOrEmpty(txt_name.Text) || string.IsNullOrEmpty(cbn_status.Text) )
+            {
+                return false;
+
+            }
+            return true;
+        }
+        //create new 
+        public void Add()
+        {
+
+            Task add = new Task(
+                        () =>
+                        {
+                            String result = APICategory.Instance.Add(txt_name.Text, cbn_status.Text,"US000000");
+                            panel_info.BeginInvoke((Action)delegate ()
+                            {
+                                setPanel(false);
+                            });
+                            GetData();
+                            MessageBox.Show("" + result);
+                        }
+                        );
+            add.Start();
+
+        }
+        //delete
+        public void delete()
+        {
+
+            Task delete = new Task(
+             () =>
+             {
+                 String result = APICategory.Instance.delete(txt_id.Text);
+                 GetData();
+                 MessageBox.Show("" + result);
+
+             }
+             );
+            delete.Start();
+        }
+        //edit
+        public void edit()
+        {
+
+            Task edit = new Task(
+             () =>
+             {
+                 String result = APICategory.Instance.Edit(txt_id.Text, txt_name.Text, cbn_status.Text,txt_count.Text);
+                 GetData();
+                 MessageBox.Show("" + result);
+
+             }
+             );
+            edit.Start();
         }
     }
 }

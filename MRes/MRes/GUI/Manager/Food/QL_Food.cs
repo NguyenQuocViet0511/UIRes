@@ -50,9 +50,13 @@ namespace MRes.GUI.Manager.Food
 
                     gridController.BeginInvoke((Action)delegate ()
                     {
-                        gridController.DataSource = food.data.data;
-                        ClearandAdd();
-                        setPanel(false);
+                        if(food != null)
+                        {
+                            gridController.DataSource = food.data.data;
+                            ClearandAdd();
+                            setPanel(false);
+                        }
+                     
 
                     });
                 }
@@ -66,12 +70,16 @@ namespace MRes.GUI.Manager.Food
             Task t1 = new Task(
              () =>
              {
-                 category = APICategory.Instance.GetAll();
+                 category = APICategory.Instance.GetByStatus();
                  cbn_category.BeginInvoke((Action)delegate ()
                  {
+                     if(category != null)
+                     {
                      cbn_category.Properties.DisplayMember = "name";
                      cbn_category.Properties.ValueMember = "id";
                      cbn_category.Properties.DataSource = category.data.data;
+                     }
+                     
 
                  });
 
@@ -83,29 +91,36 @@ namespace MRes.GUI.Manager.Food
         //clearbingding
         public void ClearandAdd()
         {
-            txt_id.DataBindings.Clear();
-            txt_id.DataBindings.Add("text", food.data.data, "id");
-            //
-            txt_name.DataBindings.Clear();
-            txt_name.DataBindings.Add("text", food.data.data, "name");
-            //
-            txt_count.DataBindings.Clear();
-            txt_count.DataBindings.Add("text", food.data.data, "count");
-            //
-            txt_created_by.DataBindings.Clear();
-            txt_created_by.DataBindings.Add("text", food.data.data, "username");
-            //
-            txt_discount.DataBindings.Clear();
-            txt_discount.DataBindings.Add("text", food.data.data, "discount");
-            //
-            txt_price.DataBindings.Clear();
-            txt_price.DataBindings.Add("text", food.data.data, "price");
-            //
-            cbn_status.DataBindings.Clear();
-            cbn_status.DataBindings.Add("text", food.data.data, "status");
-            //
-            this.cbn_category.DataBindings.Clear();
-            this.cbn_category.DataBindings.Add("EditValue", food.data.data, "id_category");
+            if(food != null)
+                    {
+                txt_id.DataBindings.Clear();
+                txt_id.DataBindings.Add("text", food.data.data, "id");
+                //
+                txt_name.DataBindings.Clear();
+                txt_name.DataBindings.Add("text", food.data.data, "name");
+                //
+                txt_count.DataBindings.Clear();
+                txt_count.DataBindings.Add("text", food.data.data, "count");
+                //
+                txt_created_by.DataBindings.Clear();
+                txt_created_by.DataBindings.Add("text", food.data.data, "username");
+                //
+                txt_discount.DataBindings.Clear();
+                txt_discount.DataBindings.Add("text", food.data.data, "discount");
+                //
+                txt_price.DataBindings.Clear();
+                txt_price.DataBindings.Add("text", food.data.data, "price");
+                //
+                cbn_status.DataBindings.Clear();
+                cbn_status.DataBindings.Add("text", food.data.data, "status");
+                //
+                cbn_statuscategory.DataBindings.Clear();
+                cbn_statuscategory.DataBindings.Add("text", food.data.data, "category_status");
+                //
+                this.cbn_category.DataBindings.Clear();
+                this.cbn_category.DataBindings.Add("EditValue", food.data.data, "id_category");
+            }
+
             //
 
         }

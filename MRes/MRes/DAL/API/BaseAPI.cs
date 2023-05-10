@@ -28,14 +28,12 @@ namespace MRes.DAL.API
         public String All(string url, NameValueCollection Table, string Method)
         {
 
-            WebClient Client = new WebClient();
-            Client.Encoding = Encoding.UTF8;
-            var responsebytes = Client.UploadValues(url, Method, Table);
-            string reponsive = UnicodeEncoding.UTF8.GetString(responsebytes);
-            return reponsive;
-
-
-
+                    WebClient Client = new WebClient();
+                    Client.Encoding = Encoding.UTF8;
+                    var responsebytes = Client.UploadValues(url, Method, Table);
+                    string reponsive = UnicodeEncoding.UTF8.GetString(responsebytes);
+                    return reponsive;
+     
 
 
         }

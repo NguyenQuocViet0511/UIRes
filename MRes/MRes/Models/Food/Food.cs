@@ -16,6 +16,7 @@ namespace MRes.Models.Food
         private string Images;
         private string Status;
         private string Id_category;
+        private string Category_status;
         private string Category;
         private string Username;
 
@@ -23,7 +24,7 @@ namespace MRes.Models.Food
         {
 
         }
-        public Food(string id, string name, double price, double discount, int count, string images, bool status,string Status, string id_Category,string Created_by, string category_name)
+        public Food(string id, string name, double price, double discount, int count, string images, bool status,string Status, string id_Category,string category_status, string category_name, string Created_by )
         {
             this.ID = id;
             this.Name = name;
@@ -33,8 +34,10 @@ namespace MRes.Models.Food
             this.images = images;
             this.Status = Status;
             this.Id_category = id_Category;
-            this.Username = Created_by;
+            this.Category_status = category_status;
             this.Category = category_name;
+            this.Username = Created_by;
+          
         }
 
         public string id { get => ID; set => ID = value; }
@@ -47,5 +50,6 @@ namespace MRes.Models.Food
         public string id_category { get => Id_category; set => Id_category = value; }
         public string username { get => Username; set => Username = value; }
         public string category { get => Category; set => Category = value; }
+        public string category_status { get => Category_status; set => Category_status = value; }
     }
 }

@@ -35,6 +35,7 @@ namespace MRes.GUI.Manager.Category
             this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.status = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coliduser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_next = new DevExpress.XtraEditors.SimpleButton();
             this.btn_prev = new DevExpress.XtraEditors.SimpleButton();
@@ -92,7 +93,8 @@ namespace MRes.GUI.Manager.Category
             this.colid,
             this.colname,
             this.colusername,
-            this.status});
+            this.status,
+            this.coliduser});
             this.GidController.GridControl = this.gridController;
             this.GidController.Name = "GidController";
             this.GidController.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Cancel;
@@ -107,7 +109,7 @@ namespace MRes.GUI.Manager.Category
             // 
             // colid
             // 
-            this.colid.Caption = "Mã NV";
+            this.colid.Caption = "Mã Nhóm";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
@@ -116,7 +118,7 @@ namespace MRes.GUI.Manager.Category
             // 
             // colname
             // 
-            this.colname.Caption = "Tên NV";
+            this.colname.Caption = "Tên Nhóm";
             this.colname.FieldName = "name";
             this.colname.Name = "colname";
             this.colname.OptionsColumn.AllowEdit = false;
@@ -139,6 +141,14 @@ namespace MRes.GUI.Manager.Category
             this.status.Name = "status";
             this.status.Visible = true;
             this.status.VisibleIndex = 3;
+            // 
+            // coliduser
+            // 
+            this.coliduser.Caption = "Tạo Bởi";
+            this.coliduser.FieldName = "created_by";
+            this.coliduser.Name = "coliduser";
+            this.coliduser.Visible = true;
+            this.coliduser.VisibleIndex = 4;
             // 
             // panelControl2
             // 
@@ -366,5 +376,6 @@ namespace MRes.GUI.Manager.Category
         private DevExpress.XtraEditors.TextEdit txt_count;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_status;
+        private DevExpress.XtraGrid.Columns.GridColumn coliduser;
     }
 }

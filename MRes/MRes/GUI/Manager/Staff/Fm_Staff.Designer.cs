@@ -30,20 +30,20 @@ namespace MRes.GUI.Manager.Staff
         private void InitializeComponent()
         {
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.txt_address = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_number = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txt_email = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbn_role = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txt_number = new MRes.Lib.numbertextbox();
             this.date = new DevExpress.XtraEditors.DateEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label9 = new System.Windows.Forms.Label();
-            this.txt_address = new DevExpress.XtraEditors.TextEdit();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbn_sex = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cbn_status = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_email = new DevExpress.XtraEditors.TextEdit();
             this.txt_name = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,6 +57,7 @@ namespace MRes.GUI.Manager.Staff
             this.btn_first = new DevExpress.XtraEditors.SimpleButton();
             this.gridController = new DevExpress.XtraGrid.GridControl();
             this.GidController = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colemail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,18 +66,16 @@ namespace MRes.GUI.Manager.Staff
             this.colnumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coladdress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid_role = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colstatus = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_sex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -89,19 +88,19 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.panel_info.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panel_info.Appearance.Options.UseBackColor = true;
-            this.panel_info.Controls.Add(this.cbn_role);
+            this.panel_info.Controls.Add(this.txt_address);
             this.panel_info.Controls.Add(this.txt_number);
+            this.panel_info.Controls.Add(this.txt_email);
+            this.panel_info.Controls.Add(this.cbn_role);
             this.panel_info.Controls.Add(this.date);
             this.panel_info.Controls.Add(this.pictureEdit1);
             this.panel_info.Controls.Add(this.label9);
-            this.panel_info.Controls.Add(this.txt_address);
             this.panel_info.Controls.Add(this.label8);
             this.panel_info.Controls.Add(this.label7);
             this.panel_info.Controls.Add(this.cbn_sex);
             this.panel_info.Controls.Add(this.cbn_status);
             this.panel_info.Controls.Add(this.label6);
             this.panel_info.Controls.Add(this.label5);
-            this.panel_info.Controls.Add(this.txt_email);
             this.panel_info.Controls.Add(this.txt_name);
             this.panel_info.Controls.Add(this.label4);
             this.panel_info.Controls.Add(this.label3);
@@ -113,6 +112,74 @@ namespace MRes.GUI.Manager.Staff
             this.panel_info.Name = "panel_info";
             this.panel_info.Size = new System.Drawing.Size(1336, 149);
             this.panel_info.TabIndex = 0;
+            // 
+            // txt_address
+            // 
+            this.txt_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            // 
+            // 
+            // 
+            this.txt_address.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_address.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_address.Border.BorderBottomWidth = 2;
+            this.txt_address.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_address.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_address.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_address.Border.BorderRightWidth = 3;
+            this.txt_address.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_address.Border.Class = "TextBoxBorder";
+            this.txt_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_address.Location = new System.Drawing.Point(828, 64);
+            this.txt_address.Name = "txt_address";
+            this.txt_address.Size = new System.Drawing.Size(252, 23);
+            this.txt_address.TabIndex = 24;
+            this.txt_address.WatermarkText = "Có Thể để trống";
+            // 
+            // txt_number
+            // 
+            this.txt_number.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            // 
+            // 
+            // 
+            this.txt_number.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_number.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_number.Border.BorderBottomWidth = 2;
+            this.txt_number.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_number.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_number.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_number.Border.BorderRightWidth = 3;
+            this.txt_number.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_number.Border.Class = "TextBoxBorder";
+            this.txt_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_number.Location = new System.Drawing.Point(828, 103);
+            this.txt_number.MaxLength = 10;
+            this.txt_number.Name = "txt_number";
+            this.txt_number.Size = new System.Drawing.Size(252, 23);
+            this.txt_number.TabIndex = 23;
+            this.txt_number.WatermarkText = "Có Thể để trống";
+            this.txt_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_number_KeyPress);
+            // 
+            // txt_email
+            // 
+            this.txt_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            // 
+            // 
+            // 
+            this.txt_email.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_email.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_email.Border.BorderBottomWidth = 3;
+            this.txt_email.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_email.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_email.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_email.Border.BorderRightWidth = 3;
+            this.txt_email.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_email.Border.Class = "TextBoxBorder";
+            this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email.Location = new System.Drawing.Point(85, 63);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(228, 24);
+            this.txt_email.TabIndex = 22;
+            this.txt_email.WatermarkText = "Có Thể để trống";
             // 
             // cbn_role
             // 
@@ -137,18 +204,6 @@ namespace MRes.GUI.Manager.Staff
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // txt_number
-            // 
-            this.txt_number.Location = new System.Drawing.Point(828, 104);
-            this.txt_number.Name = "txt_number";
-            this.txt_number.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_number.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_number.Properties.Appearance.Options.UseFont = true;
-            this.txt_number.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_number.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.txt_number.Size = new System.Drawing.Size(252, 24);
-            this.txt_number.TabIndex = 20;
-            // 
             // date
             // 
             this.date.EditValue = null;
@@ -163,6 +218,8 @@ namespace MRes.GUI.Manager.Staff
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.date.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.date.Properties.Mask.EditMask = "yyyy-MM-dd";
+            this.date.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.date.Size = new System.Drawing.Size(228, 24);
             this.date.TabIndex = 19;
             // 
@@ -187,18 +244,6 @@ namespace MRes.GUI.Manager.Staff
             this.label9.Size = new System.Drawing.Size(95, 16);
             this.label9.TabIndex = 17;
             this.label9.Text = "Số Điện Thoại";
-            // 
-            // txt_address
-            // 
-            this.txt_address.Location = new System.Drawing.Point(828, 62);
-            this.txt_address.Name = "txt_address";
-            this.txt_address.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_address.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_address.Properties.Appearance.Options.UseFont = true;
-            this.txt_address.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_address.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.txt_address.Size = new System.Drawing.Size(252, 24);
-            this.txt_address.TabIndex = 15;
             // 
             // label8
             // 
@@ -285,20 +330,6 @@ namespace MRes.GUI.Manager.Staff
             this.label5.Size = new System.Drawing.Size(61, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "Chức Vụ";
-            // 
-            // txt_email
-            // 
-            this.txt_email.Location = new System.Drawing.Point(85, 62);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_email.Properties.Appearance.Options.UseFont = true;
-            this.txt_email.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_email.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.txt_email.Properties.Mask.EditMask = "n";
-            this.txt_email.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txt_email.Size = new System.Drawing.Size(228, 24);
-            this.txt_email.TabIndex = 7;
             // 
             // txt_name
             // 
@@ -471,6 +502,7 @@ namespace MRes.GUI.Manager.Staff
             this.GidController.Appearance.SelectedRow.Options.UseBackColor = true;
             this.GidController.Appearance.SelectedRow.Options.UseForeColor = true;
             this.GidController.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colemail,
             this.colid,
             this.colname,
             this.colusername,
@@ -478,7 +510,8 @@ namespace MRes.GUI.Manager.Staff
             this.colsex,
             this.colnumber,
             this.coladdress,
-            this.colid_role});
+            this.colid_role,
+            this.colstatus});
             this.GidController.GridControl = this.gridController;
             this.GidController.Name = "GidController";
             this.GidController.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Cancel;
@@ -490,6 +523,14 @@ namespace MRes.GUI.Manager.Staff
             this.GidController.OptionsFind.FindNullPrompt = "Nhập Vào Tên / hoặc từ gì cần tìm";
             this.GidController.OptionsFind.ShowFindButton = false;
             this.GidController.OptionsView.ShowGroupPanel = false;
+            // 
+            // colemail
+            // 
+            this.colemail.Caption = "Email";
+            this.colemail.FieldName = "email";
+            this.colemail.Name = "colemail";
+            this.colemail.Visible = true;
+            this.colemail.VisibleIndex = 3;
             // 
             // colid
             // 
@@ -521,10 +562,12 @@ namespace MRes.GUI.Manager.Staff
             // coldate
             // 
             this.coldate.Caption = "Ngày Sinh";
+            this.coldate.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.coldate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.coldate.FieldName = "date";
             this.coldate.Name = "coldate";
             this.coldate.Visible = true;
-            this.coldate.VisibleIndex = 3;
+            this.coldate.VisibleIndex = 4;
             // 
             // colsex
             // 
@@ -533,7 +576,7 @@ namespace MRes.GUI.Manager.Staff
             this.colsex.Name = "colsex";
             this.colsex.OptionsColumn.AllowEdit = false;
             this.colsex.Visible = true;
-            this.colsex.VisibleIndex = 4;
+            this.colsex.VisibleIndex = 5;
             // 
             // colnumber
             // 
@@ -542,7 +585,7 @@ namespace MRes.GUI.Manager.Staff
             this.colnumber.Name = "colnumber";
             this.colnumber.OptionsColumn.AllowEdit = false;
             this.colnumber.Visible = true;
-            this.colnumber.VisibleIndex = 5;
+            this.colnumber.VisibleIndex = 6;
             // 
             // coladdress
             // 
@@ -551,7 +594,7 @@ namespace MRes.GUI.Manager.Staff
             this.coladdress.Name = "coladdress";
             this.coladdress.OptionsColumn.AllowEdit = false;
             this.coladdress.Visible = true;
-            this.coladdress.VisibleIndex = 6;
+            this.coladdress.VisibleIndex = 7;
             // 
             // colid_role
             // 
@@ -560,7 +603,15 @@ namespace MRes.GUI.Manager.Staff
             this.colid_role.Name = "colid_role";
             this.colid_role.OptionsColumn.AllowEdit = false;
             this.colid_role.Visible = true;
-            this.colid_role.VisibleIndex = 7;
+            this.colid_role.VisibleIndex = 8;
+            // 
+            // colstatus
+            // 
+            this.colstatus.Caption = "Trạng Thái";
+            this.colstatus.FieldName = "status";
+            this.colstatus.Name = "colstatus";
+            this.colstatus.Visible = true;
+            this.colstatus.VisibleIndex = 9;
             // 
             // Fm_Staff
             // 
@@ -579,14 +630,11 @@ namespace MRes.GUI.Manager.Staff
             this.panel_info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_number.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_address.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_sex.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_email.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -602,14 +650,12 @@ namespace MRes.GUI.Manager.Staff
         private DevExpress.XtraEditors.PanelControl panel_info;
         private DevExpress.XtraEditors.TextEdit txt_id;
         private System.Windows.Forms.Label label9;
-        private DevExpress.XtraEditors.TextEdit txt_address;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_sex;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_status;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.TextEdit txt_email;
         private DevExpress.XtraEditors.TextEdit txt_name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -632,8 +678,12 @@ namespace MRes.GUI.Manager.Staff
         private DevExpress.XtraEditors.SimpleButton btn_prev;
         private DevExpress.XtraEditors.SimpleButton btn_last;
         private DevExpress.XtraGrid.Columns.GridColumn coldate;
-        private Lib.numbertextbox txt_number;
         private DevExpress.XtraEditors.GridLookUpEdit cbn_role;
         private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_email;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_address;
+        private DevComponents.DotNetBar.Controls.TextBoxX txt_number;
+        private DevExpress.XtraGrid.Columns.GridColumn colemail;
+        private DevExpress.XtraGrid.Columns.GridColumn colstatus;
     }
 }

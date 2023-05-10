@@ -95,6 +95,7 @@
     <Compile Include="DAL\API\BaseAPIInterface.cs" />
     <Compile Include="DAL\API\Category\APICategory.cs" />
     <Compile Include="DAL\API\Food\APIFood.cs" />
+    <Compile Include="DAL\API\Role\APIRole.cs" />
     <Compile Include="DAL\API\Staff\APIStaff.cs" />
     <Compile Include="DAL\Const.cs" />
     <Compile Include="GUI\Login\Login.cs">
@@ -156,6 +157,8 @@
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
+    <Compile Include="Models\Role\Role.cs" />
+    <Compile Include="Models\Role\RoleDao.cs" />
     <Compile Include="Models\Staff\Staff.cs" />
     <Compile Include="Models\Staff\StaffDao.cs" />
     <Compile Include="Program.cs" />

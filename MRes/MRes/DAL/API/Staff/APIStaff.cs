@@ -43,33 +43,40 @@ namespace MRes.DAL.API.Staff
             StaffData data = JsonConvert.DeserializeObject<StaffData>(Result);
             return data;
         }
-        public async Task<string> Add(string name, string price, string discount, string id_category)
+        public String Add(string name, string email,string sex, string status, string number, string id_role, string date,string address)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            table["price"] = price;
-            table["discount"] = discount;
-            table["count"] = "0";
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
+            table["email"] = email;
+            table["sex"] = sex;
+            table["status"] = status;
+            table["number"] = number;
+            table["address"] = address;
+            table["id_role"] = id_role;
+            table["date"] = date;
+            string Result = BaseAPI.Instance.All(Const.URL + "users/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name, string price, string discount, string id_category)
+        public String Edit(string id, string name,string email, string sex, string status, string number,string id_role,string date, string address)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
-            table["price"] = price;
-            table["discount"] = discount;
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
+            table["email"] = email;
+            table["sex"] = sex;
+            table["status"] = status;
+            table["number"] = number;
+            table["id_role"] = id_role;
+            table["address"] = address;
+            table["date"] = date;
+            string Result = BaseAPI.Instance.All(Const.URL + "users/update", table, "POST");
             return Result;
         }
         public string delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "users/delete", table, "POST");
             return Result;
         }
     }

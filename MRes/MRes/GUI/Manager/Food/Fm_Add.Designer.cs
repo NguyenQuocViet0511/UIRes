@@ -218,11 +218,11 @@ namespace MRes.GUI.Manager.Food
             // 
             // 
             // 
-            this.textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.DashDotDot;
+            this.textBoxX1.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Etched;
             this.textBoxX1.Border.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxX1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.DashDotDot;
-            this.textBoxX1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.DashDotDot;
-            this.textBoxX1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.DashDotDot;
+            this.textBoxX1.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.textBoxX1.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.textBoxX1.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Enabled = false;
             this.textBoxX1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

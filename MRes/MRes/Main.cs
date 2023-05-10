@@ -78,12 +78,16 @@ namespace MRes
         {
             staff = new Fm_Staff();
             CreateForm(staff, null);
+            this.Chonse = Const.MANAGER_STAFF;
+
         }
 
         private void btn_category_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Category = new Fm_category();
             CreateForm(Category, null);
+            this.Chonse = Const.MANAGER_CATEGORY;
+
         }
         //
         private void setshoseadd(bool set)
@@ -117,10 +121,14 @@ namespace MRes
                     setshoseadd(false);
                     break;
                 case "QLCATEGORY":
-
+                    Category.setPanel(true);
+                    Category.Cleartext();
+                    setshoseadd(false);
                     break;
                 case "QLSTAFF":
-
+                    staff.setPanel(true);
+                    staff.Cleartext();
+                    setshoseadd(false);
                     break;
             }    
         }
@@ -136,10 +144,12 @@ namespace MRes
                     setshoseedit(false);
                     break;
                 case "QLCATEGORY":
-
+                    Category.setPanel(true);
+                    setshoseedit(false);
                     break;
                 case "QLSTAFF":
-
+                    staff.setPanel(true);
+                    setshoseedit(false);
                     break;
             }
         }
@@ -158,10 +168,16 @@ namespace MRes
                         CheckClick = false;
                     break;
                 case "QLCATEGORY":
-
+                    Category.setPanel(false);
+                    Category.ClearandAdd();
+                    setshoseall(true);
+                    CheckClick = false;
                     break;
                 case "QLSTAFF":
-
+                    staff.setPanel(false);
+                    staff.ClearandAdd();
+                    setshoseall(true);
+                    CheckClick = false;
                     break;
             }
         }
@@ -203,10 +219,62 @@ namespace MRes
                     }
                     break;
                 case "QLCATEGORY":
+                    if (this.type == "add")
+                    {
+                        if (Category.check())
+                        {
+                            Category.Add();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    if (this.type == "edit")
+                    {
 
+                        if (Category.check())
+                        {
+                            Category.edit();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
                     break;
                 case "QLSTAFF":
+                    if (this.type == "add")
+                    {
+                        if (staff.check())
+                        {
+                            staff.Add();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    if (this.type == "edit")
+                    {
 
+                        if (staff.check())
+                        {
+                            staff.edit();
+                            setshoseall(true);
+                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
                     break;
             }
         }
@@ -225,10 +293,18 @@ namespace MRes
                     }
                     break;
                 case "QLCATEGORY":
+                    if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không ! Nếu Xóa Thì Sẽ cùng Xóa Hết Danh Sách Món Ăn Đã Theo Danh Mục Này ", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                    {
+                        Category.delete();
 
+                    }
                     break;
                 case "QLSTAFF":
+                    if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                    {
+                        staff.delete();
 
+                    }
                     break;
             }
         }
