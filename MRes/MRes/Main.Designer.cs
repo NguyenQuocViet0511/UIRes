@@ -36,11 +36,10 @@ namespace MRes
             this.btn_food = new DevExpress.XtraNavBar.NavBarItem();
             this.btn_category = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.btn_material = new DevExpress.XtraNavBar.NavBarControl();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ManagerController = new DevExpress.XtraEditors.GroupControl();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -60,7 +59,10 @@ namespace MRes
             this.btn_excel = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarItem1 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_material)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
             this.SuspendLayout();
@@ -133,17 +135,8 @@ namespace MRes
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_staff),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem2),
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_food),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_category),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_category)});
             this.navBarGroup1.Name = "navBarGroup1";
-            // 
-            // navBarItem5
-            // 
-            this.navBarItem5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.navBarItem5.Appearance.Options.UseFont = true;
-            this.navBarItem5.Caption = "Kho";
-            this.navBarItem5.ImageOptions.LargeImage = global::MRes.Properties.Resources.warehouse;
-            this.navBarItem5.Name = "navBarItem5";
             // 
             // navBarGroup2
             // 
@@ -169,33 +162,35 @@ namespace MRes
             this.navBarItem6.Caption = "Doanh Thu";
             this.navBarItem6.Name = "navBarItem6";
             // 
-            // navBarControl1
+            // btn_material
             // 
-            this.navBarControl1.ActiveGroup = this.navBarGroup1;
-            this.navBarControl1.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
-            this.navBarControl1.Appearance.Background.Options.UseFont = true;
-            this.navBarControl1.BackColor = System.Drawing.Color.Gray;
-            this.navBarControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
-            this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
+            this.btn_material.ActiveGroup = this.navBarGroup1;
+            this.btn_material.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.btn_material.Appearance.Background.Options.UseFont = true;
+            this.btn_material.BackColor = System.Drawing.Color.Gray;
+            this.btn_material.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.btn_material.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_material.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
             this.navBarGroup2,
-            this.navBarGroup3});
-            this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
+            this.navBarGroup3,
+            this.navBarGroup4});
+            this.btn_material.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.btn_staff,
             this.navBarItem2,
             this.btn_food,
             this.btn_category,
-            this.navBarItem5,
-            this.navBarItem6});
-            this.navBarControl1.Location = new System.Drawing.Point(0, 157);
-            this.navBarControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 268;
-            this.navBarControl1.Size = new System.Drawing.Size(268, 553);
-            this.navBarControl1.TabIndex = 8;
-            this.navBarControl1.Text = "Nhân Viên";
-            this.navBarControl1.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Black");
+            this.navBarItem6,
+            this.navBarItem1,
+            this.navBarItem3});
+            this.btn_material.Location = new System.Drawing.Point(0, 157);
+            this.btn_material.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_material.Name = "btn_material";
+            this.btn_material.OptionsNavPane.ExpandedWidth = 268;
+            this.btn_material.Size = new System.Drawing.Size(268, 553);
+            this.btn_material.TabIndex = 8;
+            this.btn_material.Text = "Nhân Viên";
+            this.btn_material.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinExplorerBarViewInfoRegistrator("Office 2010 Black");
             // 
             // ribbonPageGroup1
             // 
@@ -418,6 +413,33 @@ namespace MRes
             this.barSubItem1.LargeWidth = 200;
             this.barSubItem1.Name = "barSubItem1";
             // 
+            // navBarGroup4
+            // 
+            this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarGroup4.Appearance.Options.UseFont = true;
+            this.navBarGroup4.Caption = "kho";
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
+            this.navBarGroup4.ImageOptions.SmallImage = global::MRes.Properties.Resources.warehouse;
+            this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem1),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3)});
+            this.navBarGroup4.Name = "navBarGroup4";
+            // 
+            // navBarItem1
+            // 
+            this.navBarItem1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarItem1.Appearance.Options.UseFont = true;
+            this.navBarItem1.Caption = "Vật liệu";
+            this.navBarItem1.Name = "navBarItem1";
+            // 
+            // navBarItem3
+            // 
+            this.navBarItem3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.navBarItem3.Appearance.Options.UseFont = true;
+            this.navBarItem3.Caption = "nhập xuất kho";
+            this.navBarItem3.Name = "navBarItem3";
+            // 
             // Main
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -425,7 +447,7 @@ namespace MRes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 710);
             this.Controls.Add(this.ManagerController);
-            this.Controls.Add(this.navBarControl1);
+            this.Controls.Add(this.btn_material);
             this.Controls.Add(this.ribbonControl2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -434,7 +456,7 @@ namespace MRes
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Main_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_material)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
             this.ResumeLayout(false);
@@ -450,8 +472,7 @@ namespace MRes
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarControl navBarControl1;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
+        private DevExpress.XtraNavBar.NavBarControl btn_material;
         private DevExpress.XtraNavBar.NavBarItem navBarItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.GroupControl ManagerController;
@@ -472,5 +493,8 @@ namespace MRes
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btn_excel;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem1;
+        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
     }
 }

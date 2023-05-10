@@ -157,6 +157,10 @@
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
+    <Compile Include="Models\MaterialBill\MaterialBill.cs" />
+    <Compile Include="Models\MaterialBill\MaterialBillDao.cs" />
+    <Compile Include="Models\Material\Material.cs" />
+    <Compile Include="Models\Material\MaterialDao.cs" />
     <Compile Include="Models\Role\Role.cs" />
     <Compile Include="Models\Role\RoleDao.cs" />
     <Compile Include="Models\Staff\Staff.cs" />
@@ -240,6 +244,7 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DAL\API\Material\" />
     <Folder Include="GUI\Manager\Customer\" />
     <Folder Include="GUI\Manager\Inventory\" />
   </ItemGroup>

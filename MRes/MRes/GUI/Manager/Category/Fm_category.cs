@@ -44,12 +44,16 @@ namespace MRes.GUI.Manager.Category
                 {
 
                     category = APICategory.Instance.GetAll();
-                    gridController.BeginInvoke((Action)delegate ()
+                    if(category != null)
                     {
-                        gridController.DataSource = category.data.data;
-                        ClearandAdd();
+                        gridController.BeginInvoke((Action)delegate ()
+                        {
+                            gridController.DataSource = category.data.data;
+                            ClearandAdd();
 
-                    });
+                        });
+                    }    
+                   
                 }
                 );
             t.Start();

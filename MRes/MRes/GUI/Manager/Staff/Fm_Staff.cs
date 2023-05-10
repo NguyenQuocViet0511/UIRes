@@ -44,12 +44,16 @@ namespace MRes.GUI.Manager.Staff
                 {
 
                     staff = APIStaff.Instance.GetAll();
-                    gridController.BeginInvoke((Action)delegate ()
+                    if(staff != null)
                     {
-                        gridController.DataSource = staff.data.data;
-                        ClearandAdd();
+                        gridController.BeginInvoke((Action)delegate ()
+                        {
+                            gridController.DataSource = staff.data.data;
+                            ClearandAdd();
 
-                    });
+                        });
+                    }    
+                  
                 }
                 );
             t.Start();
@@ -61,13 +65,17 @@ namespace MRes.GUI.Manager.Staff
              () =>
              {
                  Role = APIRole.Instance.GetAll();
-                 cbn_role.BeginInvoke((Action)delegate ()
+                 if(Role != null)
                  {
-                     cbn_role.Properties.DisplayMember = "name";
-                     cbn_role.Properties.ValueMember = "id";
-                     cbn_role.Properties.DataSource = Role.data.data;
+                     cbn_role.BeginInvoke((Action)delegate ()
+                     {
+                         cbn_role.Properties.DisplayMember = "name";
+                         cbn_role.Properties.ValueMember = "id";
+                         cbn_role.Properties.DataSource = Role.data.data;
 
-                 });
+                     });
+                 }    
+               
 
              }
              );
