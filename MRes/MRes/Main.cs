@@ -3,6 +3,7 @@ using MRes.GUI.Manager.Category;
 using MRes.GUI.Manager.Food;
 using MRes.GUI.Manager.Inventory;
 using MRes.GUI.Manager.Staff;
+using MRes.GUI.Manager.Table;
 using MRes.GUI.Oder.Table;
 using System;
 using System.Collections.Generic;
@@ -363,6 +364,18 @@ namespace MRes
         }
 
         private void btn_table_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Fm_Talbeoder tableoder = new Fm_Talbeoder();
+            CreateForm(tableoder, null);
+        }
+
+        private void btn_sum_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Fm_Sum sum = new Fm_Sum();
+            CreateForm(sum, null);
+        }
+
+        private void btn_tb_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Fm_Table table = new Fm_Table();
             CreateForm(table, null);

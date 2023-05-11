@@ -432,4 +432,8 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Staff.Fm_Staff.
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Category.Fm_category.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Inventory.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Material.resources
-C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.Fm_Table.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.widgetoder.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.WidgetTable.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Sum.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Table.Fm_Table.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.Fm_Talbeoder.resources

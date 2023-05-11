@@ -93,10 +93,13 @@
   <ItemGroup>
     <Compile Include="DAL\API\BaseAPI.cs" />
     <Compile Include="DAL\API\BaseAPIInterface.cs" />
+    <Compile Include="DAL\API\BillInfo\APIBillInfo.cs" />
+    <Compile Include="DAL\API\Bill\APIBill.cs" />
     <Compile Include="DAL\API\Category\APICategory.cs" />
     <Compile Include="DAL\API\Food\APIFood.cs" />
     <Compile Include="DAL\API\Role\APIRole.cs" />
     <Compile Include="DAL\API\Staff\APIStaff.cs" />
+    <Compile Include="DAL\API\Table\APITable.cs" />
     <Compile Include="DAL\Const.cs" />
     <Compile Include="GUI\Login\Login.cs">
       <SubType>Form</SubType>
@@ -140,17 +143,41 @@
     <Compile Include="GUI\Manager\Inventory\Fm_Material.Designer.cs">
       <DependentUpon>Fm_Material.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Sum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Sum.Designer.cs">
+      <DependentUpon>Fm_Sum.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Manager\Staff\Fm_Staff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Manager\Staff\Fm_Staff.Designer.cs">
       <DependentUpon>Fm_Staff.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Oder\Table\Fm_Table.cs">
+    <Compile Include="GUI\Manager\Table\Fm_Table.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Oder\Table\Fm_Table.Designer.cs">
+    <Compile Include="GUI\Manager\Table\Fm_Table.Designer.cs">
       <DependentUpon>Fm_Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\Fm_Talbeoder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\Fm_Talbeoder.Designer.cs">
+      <DependentUpon>Fm_Talbeoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\widgetoder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\widgetoder.Designer.cs">
+      <DependentUpon>widgetoder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\WidgetTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Oder\Table\WidgetTable.Designer.cs">
+      <DependentUpon>WidgetTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
@@ -171,6 +198,8 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\BillInfo\BillInfo.cs" />
+    <Compile Include="Models\BillInfo\BillInfoDao.cs" />
     <Compile Include="Models\Category\Category.cs" />
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
@@ -183,6 +212,8 @@
     <Compile Include="Models\Role\RoleDao.cs" />
     <Compile Include="Models\Staff\Staff.cs" />
     <Compile Include="Models\Staff\StaffDao.cs" />
+    <Compile Include="Models\Table\Table.cs" />
+    <Compile Include="Models\Table\TableDao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Progress\awaitprogress.cs">
       <SubType>Form</SubType>
@@ -212,11 +243,23 @@
     <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Material.resx">
       <DependentUpon>Fm_Material.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Sum.resx">
+      <DependentUpon>Fm_Sum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Staff\Fm_Staff.resx">
       <DependentUpon>Fm_Staff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Oder\Table\Fm_Table.resx">
+    <EmbeddedResource Include="GUI\Manager\Table\Fm_Table.resx">
       <DependentUpon>Fm_Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Oder\Table\Fm_Talbeoder.resx">
+      <DependentUpon>Fm_Talbeoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Oder\Table\widgetoder.resx">
+      <DependentUpon>widgetoder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Oder\Table\WidgetTable.resx">
+      <DependentUpon>WidgetTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -272,7 +315,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DAL\API\Material\" />
-    <Folder Include="DAL\API\Table\" />
     <Folder Include="GUI\Manager\Customer\" />
   </ItemGroup>
   <ItemGroup>
@@ -295,6 +337,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\app.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\circle-table.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

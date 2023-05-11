@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,6 +28,13 @@ namespace MRes.GUI.Manager.Food
             GetData();
             GetCategory();
             init();
+            //var request = WebRequest.Create("http://www.gravatar.com/avatar/6810d91caff032b202c50701dd3af745?d=identicon&r=PG");
+
+            //using (var response = request.GetResponse())
+            //using (var stream = response.GetResponseStream())
+            //{
+            //    pictureEdit1.Image = Bitmap.FromStream(stream);
+            //}
 
 
         }
