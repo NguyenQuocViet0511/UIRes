@@ -1,4 +1,5 @@
 ﻿using MRes.DAL;
+using MRes.DAL.API.Bill;
 using MRes.DAL.API.BillInfo;
 using MRes.DAL.API.Table;
 using MRes.GUI.Pay;
@@ -28,6 +29,7 @@ namespace MRes.GUI.Oder.Table
         {
             InitializeComponent();
             loadTable();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         //Created one new form
@@ -83,9 +85,7 @@ namespace MRes.GUI.Oder.Table
             txt_name.Text = ""; ;
             txt_idbill.Text = "";
             txt_sum1.Text = "";
-            txt_number.Text = "";
-            lbl_name.Text = "BÀN";
-
+            txt_number.Value = 0;
 
 
 
@@ -138,7 +138,7 @@ namespace MRes.GUI.Oder.Table
                                Button.Text = item.name;
                                Button.FlatStyle = FlatStyle.Flat;
                                Button.Click += Button_Click1;
-                               Button.Tag = item.id +"," +item.id_bill;
+                               Button.Tag = item.id +"," +item.id_bill + "," +item.status;
                                Button.FlatAppearance.BorderSize = 0;
                                switch (item.status)
                                {
@@ -177,7 +177,8 @@ namespace MRes.GUI.Oder.Table
             Const.table.id_bill = "";
             Const.tableMove.id = Split[0];
             Const.tableMove.id_bill = Split[1];
-
+            Const.tableMove.status = Split[2];
+            Cleartext();
             LoadDataBill();
         }
 
@@ -194,14 +195,19 @@ namespace MRes.GUI.Oder.Table
                     {
                         grid_billinfo.BeginInvoke((Action)delegate ()
                         {
+                            Const.billinfo.Clear();
                             double sum = 0;
                             grid_billinfo.DataSource = null;
                             grid_billinfo.DataSource = billInfo.data.data;
                             foreach (var item in billInfo.data.data)
                             {
                                 sum += item.sum;
+                                item.sumpay = sum;
+                                Const.billinfo.Add(item);
+
                             }
                             txt_sum.Text = sum.ToString();
+                            Const.SumPay = sum;
                             ClearandAdd();
 
                         });
@@ -254,18 +260,24 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_move_Click_1(object sender, EventArgs e)
         {
-
+            
             if (ClickTalbe == true)
             {
-
-                WidgetTable WidgetTable = new WidgetTable()
+                if(Split[2].Equals("No"))
                 {
-                    LoadBillandtable = new WidgetTable.Loadbill(LoadBillandtable)
+                    MessageBox.Show("Bàn này đang trống không thể chuyển qua bàn khác được");
+                }else
+                {
+                    WidgetTable WidgetTable = new WidgetTable()
+                    {
+                        LoadBillandtable = new WidgetTable.Loadbill(LoadBillandtable)
 
-                };
-                chonse = "move";
-                enablebutton("move", false);
-                CreateForm(null, WidgetTable);
+                    };
+                    chonse = "move";
+                    enablebutton("move", false);
+                    CreateForm(null, WidgetTable);
+                }    
+              
             }
             else
             {
@@ -378,9 +390,67 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_pay_Click(object sender, EventArgs e)
         {
-            PayM pay = new PayM();
-            pay.Show();
+            if(ClickTalbe)
+            {
+                if (MessageBox.Show("Bạn Có Muốn thanh toán Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    if (Const.billinfo.Count > 0)
+                    {
+                        pay();
+                        crpPay p = new crpPay();
+                        p.Show();
+                        
+                    }
+                    else
+                    {
+                    MessageBox.Show("bàn này chưa oder không thanh toán được");
+
+                    }
+                
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Bạn Chưa Chọn Bàn Thanh Toán");
+            }    
+           
+           
         }
-       
+        public void pay()
+        {
+            Task t = new Task(
+                () =>
+                {
+                 
+                        String result = APIBill.Instance.update(Split[0], Const.table.id_bill, Const.SumPay);
+                        loadTable();
+                        Cleartext();
+                        grid_billinfo.DataSource = null;
+                        ClickTalbe = false;
+                        lbl_name.Text = "BÀN";
+                  
+                
+
+
+
+
+                }
+                );
+            t.Start();
+
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (ClickTalbe)
+            {
+                if (MessageBox.Show("Bạn Có Muốn in Hóa Đơn nháp không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    crpPay p = new crpPay();
+                    p.Show();
+                }
+            }
+        }
     }
 }

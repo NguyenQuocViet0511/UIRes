@@ -34,7 +34,7 @@ namespace MRes.DAL.API.Bill
 
         public APIBill GetAll()
         {
-            string Result = BaseAPI.Instance.Get(Const.URL + "food/list");
+            string Result = BaseAPI.Instance.Get(Const.URL + "bill/list");
             if (Result == null)
             {
                 return null;
@@ -51,27 +51,23 @@ namespace MRes.DAL.API.Bill
             table["status"] = status;
             table["created_by"] = created_by;
             table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/create", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "bill/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name, double price, string discount, string status, string created_by, string id_category)
+        public String update(string id_table,string id_bill,double sum)
         {
             NameValueCollection table = new NameValueCollection();
-            table["id"] = id;
-            table["name"] = name;
-            table["price"] = price.ToString();
-            table["discount"] = discount;
-            table["status"] = status;
-            table["created_by"] = created_by;
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/update", table, "POST");
+            table["id_table"] = id_table;
+            table["id_bill"] = id_bill;
+            table["sum"] = sum.ToString();
+            string Result = BaseAPI.Instance.All(Const.URL + "bill/update", table, "POST");
             return Result;
         }
         public string delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "food/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "bill/delete", table, "POST");
             return Result;
         }
     }

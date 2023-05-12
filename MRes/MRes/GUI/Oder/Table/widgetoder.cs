@@ -85,7 +85,15 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            Order();
+            if(txt_number.Value > 0)
+            {
+                Order();
+
+            }else
+            {
+                MessageBox.Show("Bạn Chưa thêm Số lượng món ăn");
+
+            }
         }
 
         public delegate void Loadbill();

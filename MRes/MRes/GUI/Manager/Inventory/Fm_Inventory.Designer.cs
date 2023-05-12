@@ -64,6 +64,7 @@ namespace MRes.GUI.Manager.Inventory
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -276,6 +277,7 @@ namespace MRes.GUI.Manager.Inventory
             // 
             // panelControl4
             // 
+            this.panelControl4.Controls.Add(this.simpleButton5);
             this.panelControl4.Controls.Add(this.txt_id);
             this.panelControl4.Controls.Add(this.label5);
             this.panelControl4.Controls.Add(this.simpleButton2);
@@ -490,6 +492,16 @@ namespace MRes.GUI.Manager.Inventory
             this.simpleButton4.TabIndex = 31;
             this.simpleButton4.Text = "Thêm";
             // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
+            this.simpleButton5.Appearance.Options.UseBackColor = true;
+            this.simpleButton5.Location = new System.Drawing.Point(339, 170);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton5.TabIndex = 33;
+            this.simpleButton5.Text = "Xóa Bỏ";
+            // 
             // Fm_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,5 +570,6 @@ namespace MRes.GUI.Manager.Inventory
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
     }
 }

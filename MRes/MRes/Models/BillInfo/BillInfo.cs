@@ -17,13 +17,15 @@ namespace MRes.Models.BillInfo
         private string Billstatus;
         private string Foodname;
         private string Foodprice;
+        private string Timein;
+        private double Sumpay;
 
 
         public BillInfo()
         {
 
         }
-        public BillInfo(string id, string id_bill, int count, double sum, string note, string billstatus, string foodname,string foodprice ,string status)
+        public BillInfo(string id, string id_bill, int count, double sum, string note, string billstatus, string foodname,string foodprice ,string status,string timein)
         {
             this.ID = id;
             this.Id_Bill = id_bill;
@@ -34,6 +36,7 @@ namespace MRes.Models.BillInfo
             this.Foodname = foodname;
             this.Foodprice = foodprice;
             this.Status = status;
+            this.Timein = timein;
 
 
 
@@ -51,5 +54,7 @@ namespace MRes.Models.BillInfo
         public string foodname { get => Foodname; set => Foodname = value; }
         public string foodprice { get => Foodprice; set => Foodprice = value; }
         public string status { get => Status; set => Status = value; }
+        public string timein { get => Timein; set => Timein = value; }
+        public double sumpay { get => Sumpay; set => Sumpay = value; }
     }
 }

@@ -38,8 +38,6 @@ namespace MRes
 
             food = new QL_Food();
             CreateForm(food,null);
-            Category.Dispose();
-            staff.Dispose();
             this.Chonse = Const.MANAGER_FOOD;
 
         }

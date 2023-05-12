@@ -76,6 +76,7 @@ namespace MRes.GUI.Oder.Table
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.txt_sum = new DevExpress.XtraEditors.TextEdit();
             this.Manager_controller = new DevExpress.XtraEditors.PanelControl();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -164,6 +165,7 @@ namespace MRes.GUI.Oder.Table
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Image = global::MRes.Properties.Resources.eat;
@@ -177,6 +179,7 @@ namespace MRes.GUI.Oder.Table
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Image = global::MRes.Properties.Resources.eating;
@@ -190,6 +193,7 @@ namespace MRes.GUI.Oder.Table
             // 
             // lbl_name
             // 
+            this.lbl_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_name.ForeColor = System.Drawing.Color.White;
@@ -521,6 +525,7 @@ namespace MRes.GUI.Oder.Table
             this.simpleButton5.Size = new System.Drawing.Size(90, 58);
             this.simpleButton5.TabIndex = 35;
             this.simpleButton5.Text = "Tạm Tính";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // btn_pay
             // 
@@ -823,5 +828,6 @@ namespace MRes.GUI.Oder.Table
         private DevExpress.XtraEditors.SimpleButton btn_delete;
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.TextEdit txt_note;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
     }
 }

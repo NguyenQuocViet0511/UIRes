@@ -1,4 +1,5 @@
-﻿using MRes.Models.Table;
+﻿using MRes.Models.BillInfo;
+using MRes.Models.Table;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,8 @@ namespace MRes.DAL
         public static string MANAGER_STAFF = "QLSTAFF";
         public static Table table = new Table();
         public static Table tableMove = new Table();
+        public static List<BillInfo> billinfo = new List<BillInfo>();
+        public static double SumPay = 0;
         public string GetProjectLinkDirectory()
         {
             string currentLink = Directory.GetCurrentDirectory();
