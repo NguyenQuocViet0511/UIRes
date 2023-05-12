@@ -30,11 +30,10 @@ namespace MRes.GUI.Oder.Table
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_agree = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.flow_Table = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
@@ -43,7 +42,7 @@ namespace MRes.GUI.Oder.Table
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.flowLayoutPanel1);
+            this.panelControl1.Controls.Add(this.flow_Table);
             this.panelControl1.Controls.Add(this.panelControl5);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -52,49 +51,28 @@ namespace MRes.GUI.Oder.Table
             this.panelControl1.Size = new System.Drawing.Size(361, 531);
             this.panelControl1.TabIndex = 0;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(2, 48);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(357, 415);
-            this.flowLayoutPanel1.TabIndex = 40;
-            // 
             // panelControl5
             // 
-            this.panelControl5.Controls.Add(this.simpleButton8);
-            this.panelControl5.Controls.Add(this.simpleButton6);
+            this.panelControl5.Controls.Add(this.btn_agree);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl5.Location = new System.Drawing.Point(2, 463);
+            this.panelControl5.Location = new System.Drawing.Point(2, 493);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(357, 66);
+            this.panelControl5.Size = new System.Drawing.Size(357, 36);
             this.panelControl5.TabIndex = 38;
             // 
-            // simpleButton8
+            // btn_agree
             // 
-            this.simpleButton8.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
-            this.simpleButton8.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton8.Appearance.Options.UseBackColor = true;
-            this.simpleButton8.Appearance.Options.UseFont = true;
-            this.simpleButton8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton8.Location = new System.Drawing.Point(2, 6);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(353, 29);
-            this.simpleButton8.TabIndex = 34;
-            this.simpleButton8.Text = "đồng ý";
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton6.Location = new System.Drawing.Point(2, 35);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(353, 29);
-            this.simpleButton6.TabIndex = 33;
-            this.simpleButton6.Text = "Hủy";
+            this.btn_agree.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
+            this.btn_agree.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_agree.Appearance.Options.UseBackColor = true;
+            this.btn_agree.Appearance.Options.UseFont = true;
+            this.btn_agree.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_agree.Location = new System.Drawing.Point(2, 5);
+            this.btn_agree.Name = "btn_agree";
+            this.btn_agree.Size = new System.Drawing.Size(353, 29);
+            this.btn_agree.TabIndex = 34;
+            this.btn_agree.Text = "đồng ý";
+            this.btn_agree.Click += new System.EventHandler(this.btn_agree_Click);
             // 
             // label1
             // 
@@ -108,6 +86,16 @@ namespace MRes.GUI.Oder.Table
             this.label1.TabIndex = 37;
             this.label1.Text = "Bàn Còn Trống";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // flow_Table
+            // 
+            this.flow_Table.AutoScroll = true;
+            this.flow_Table.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow_Table.Location = new System.Drawing.Point(2, 48);
+            this.flow_Table.Name = "flow_Table";
+            this.flow_Table.Padding = new System.Windows.Forms.Padding(5);
+            this.flow_Table.Size = new System.Drawing.Size(357, 445);
+            this.flow_Table.TabIndex = 40;
             // 
             // WidgetTable
             // 
@@ -128,9 +116,8 @@ namespace MRes.GUI.Oder.Table
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.SimpleButton btn_agree;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flow_Table;
     }
 }

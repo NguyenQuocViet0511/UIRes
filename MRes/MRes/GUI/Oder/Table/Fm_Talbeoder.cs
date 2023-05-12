@@ -1,6 +1,7 @@
 ﻿using MRes.DAL;
 using MRes.DAL.API.BillInfo;
 using MRes.DAL.API.Table;
+using MRes.GUI.Pay;
 using MRes.Models.BillInfo;
 using MRes.Models.Table;
 using System;
@@ -18,7 +19,7 @@ namespace MRes.GUI.Oder.Table
     public partial class Fm_Talbeoder : Form
     {
         TableData table;
-        BillInfo billinfoadd;
+        string chonse = "";
         string[] Split;
         BillInfoData billInfo; 
         Button Button;
@@ -49,6 +50,49 @@ namespace MRes.GUI.Oder.Table
             }
 
         }
+        //clearbingding
+        public void ClearandAdd()
+        {
+            if (billInfo != null)
+            {
+                txt_id.DataBindings.Clear();
+                txt_id.DataBindings.Add("text", billInfo.data.data, "id");
+                //
+                txt_name.DataBindings.Clear();
+                txt_name.DataBindings.Add("text", billInfo.data.data, "foodname");
+                //
+                txt_idbill.DataBindings.Clear();
+                txt_idbill.DataBindings.Add("text", billInfo.data.data, "id_bill");
+                //
+                txt_number.DataBindings.Clear();
+                txt_number.DataBindings.Add("text", billInfo.data.data, "count");
+                //
+                txt_sum1.DataBindings.Clear();
+                txt_sum1.DataBindings.Add("text", billInfo.data.data, "sum");
+                //
+                txt_note.DataBindings.Clear();
+                txt_note.DataBindings.Add("text", billInfo.data.data, "note");
+                Const.table.id_bill = txt_idbill.Text;
+
+
+            }
+        }
+        private void Cleartext()
+        {
+            txt_id.Text = "";
+            txt_name.Text = ""; ;
+            txt_idbill.Text = "";
+            txt_sum1.Text = "";
+            txt_number.Text = "";
+            lbl_name.Text = "BÀN";
+
+
+
+
+        }
+
+
+        //
         private void enablebutton(string  chonse,bool check)
         {
             switch(chonse)
@@ -72,7 +116,6 @@ namespace MRes.GUI.Oder.Table
         {
 
 
-            flow_Table.Controls.Clear();
             Task t = new Task(
                () =>
                {
@@ -80,6 +123,7 @@ namespace MRes.GUI.Oder.Table
 
                    flow_Table.BeginInvoke((Action)delegate ()
                    {
+                       flow_Table.Controls.Clear();
                        if (table != null)
                        {
                            foreach(var item in table.data.data)
@@ -110,6 +154,7 @@ namespace MRes.GUI.Oder.Table
 
                            }
 
+
                        }
 
 
@@ -128,9 +173,11 @@ namespace MRes.GUI.Oder.Table
             ClickTalbe = true;
             string str = btn.Tag.ToString();
             Split = str.Split(',');
-            billinfoadd = new BillInfo();
-            billinfoadd.id = Split[0];
-            billinfoadd.id_bill = Split[1];
+            Const.table.id = Split[0];
+            Const.table.id_bill = "";
+            Const.tableMove.id = Split[0];
+            Const.tableMove.id_bill = Split[1];
+
             LoadDataBill();
         }
 
@@ -142,7 +189,7 @@ namespace MRes.GUI.Oder.Table
                 () =>
                 {
                     
-                    billInfo = APIBillInfo.Instance.GetBillInfo(Split[1].ToString());
+                    billInfo = APIBillInfo.Instance.GetBillInfo(Split[1].ToString(), Split[0].ToString());
                     if (billInfo != null)
                     {
                         grid_billinfo.BeginInvoke((Action)delegate ()
@@ -150,11 +197,12 @@ namespace MRes.GUI.Oder.Table
                             double sum = 0;
                             grid_billinfo.DataSource = null;
                             grid_billinfo.DataSource = billInfo.data.data;
-                            foreach(var item in billInfo.data.data)
+                            foreach (var item in billInfo.data.data)
                             {
                                 sum += item.sum;
                             }
                             txt_sum.Text = sum.ToString();
+                            ClearandAdd();
 
                         });
                     }
@@ -190,7 +238,12 @@ namespace MRes.GUI.Oder.Table
             {
               
                 enablebutton("order", false);
-                widgetoder widgetoder = new widgetoder(billinfoadd);
+                chonse = "order";
+                widgetoder widgetoder = new widgetoder()
+                {
+                    LoadBillandtable = new widgetoder.Loadbill(LoadBillandtable)
+
+            };
                 CreateForm(null, widgetoder);
             }
             else
@@ -201,8 +254,23 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_move_Click_1(object sender, EventArgs e)
         {
-            WidgetTable WidgetTable = new WidgetTable();
-            CreateForm(null, WidgetTable);
+
+            if (ClickTalbe == true)
+            {
+
+                WidgetTable WidgetTable = new WidgetTable()
+                {
+                    LoadBillandtable = new WidgetTable.Loadbill(LoadBillandtable)
+
+                };
+                chonse = "move";
+                enablebutton("move", false);
+                CreateForm(null, WidgetTable);
+            }
+            else
+            {
+                MessageBox.Show("Bạn Chưa Chọn Bàn Cần Chuyển");
+            }
         }
 
         private void btn_into_Click(object sender, EventArgs e)
@@ -213,25 +281,106 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-
-            if (MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            if(ClickTalbe)
             {
-                btn_into.Enabled = true;
-                btn_oder.Enabled = true;
-                btn_move.Enabled = true;
-                lbl_name.Text = "BÀN";
-                ClickTalbe = false;
-                grid_billinfo.DataSource = null;
-                Manager_controller.Controls.Clear();
-
-                foreach (Control c in flow_Table.Controls)
+                if (MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
-                    c.BackColor = Color.FromArgb(133, 133, 133);
-                    c.ForeColor = Color.White;
-                }
-                txt_sum.Text = "Tiền";
+                    btn_into.Enabled = true;
+                    btn_oder.Enabled = true;
+                    btn_move.Enabled = true;
+                    lbl_name.Text = "BÀN";
+                    ClickTalbe = false;
+                    grid_billinfo.DataSource = null;
+                    Manager_controller.Controls.Clear();
+
+                    foreach (Control c in flow_Table.Controls)
+                    {
+                        c.BackColor = Color.FromArgb(133, 133, 133);
+                        c.ForeColor = Color.White;
+                    }
+                    txt_sum.Text = "Tiền";
+                    Cleartext();
+                }    
+           
             }
            
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                delete();
+            }
+        }
+        //clear
+        public void delete()
+        {
+            Task t = new Task(
+                () =>
+                {
+                    String result = APIBillInfo.Instance.delete(txt_id.Text, Const.table.id_bill, Const.table.id);
+                    MessageBox.Show("" + result);
+                    LoadDataBill();
+                }
+                );
+            t.Start();
+
+        }
+        //send
+        public void SendCook()
+        {
+            Task t = new Task(
+                () =>
+                {
+                    String result = APIBillInfo.Instance.SendCook(txt_id.Text, Const.table.id_bill, Const.table.id);
+                    MessageBox.Show("" + result);
+                    LoadDataBill();
+
+                }
+                );
+            t.Start();
+
+        }
+        private void btn_bar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn Có Muốn Gửi Bếp Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                SendCook();
+
+            }
+        }
+        //event load
+        public delegate void Loadbill();
+        public void LoadBillandtable()
+        {
+            chonseLoad(chonse);
+        }
+         private void chonseLoad(string text)
+        {
+            switch(text)
+            {
+                case "move":
+                    loadTable();
+                    flow_Table.BeginInvoke((Action)delegate ()
+                       {
+                           grid_billinfo.DataSource = null;
+                           Cleartext();
+
+                       });
+                    break;
+                case "order":
+                    loadTable();
+                    LoadDataBill();
+                    break;
+            }    
+        }
+
+        private void btn_pay_Click(object sender, EventArgs e)
+        {
+            PayM pay = new PayM();
+            pay.Show();
+        }
+       
     }
 }

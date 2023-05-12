@@ -437,3 +437,4 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.WidgetTable.
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Sum.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Table.Fm_Table.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Oder.Table.Fm_Talbeoder.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Pay.PayM.resources

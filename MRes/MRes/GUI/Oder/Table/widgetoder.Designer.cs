@@ -41,7 +41,6 @@ namespace MRes.GUI.Oder.Table
             this.txt_note = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_number = new System.Windows.Forms.NumericUpDown();
             this.txt_name = new DevExpress.XtraEditors.TextEdit();
@@ -170,7 +169,6 @@ namespace MRes.GUI.Oder.Table
             this.panelControl5.Controls.Add(this.txt_note);
             this.panelControl5.Controls.Add(this.label6);
             this.panelControl5.Controls.Add(this.btn_add);
-            this.panelControl5.Controls.Add(this.simpleButton6);
             this.panelControl5.Controls.Add(this.label5);
             this.panelControl5.Controls.Add(this.txt_number);
             this.panelControl5.Controls.Add(this.txt_name);
@@ -216,25 +214,12 @@ namespace MRes.GUI.Oder.Table
             this.btn_add.Appearance.Options.UseBackColor = true;
             this.btn_add.Appearance.Options.UseFont = true;
             this.btn_add.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_add.Location = new System.Drawing.Point(2, 228);
+            this.btn_add.Location = new System.Drawing.Point(2, 257);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(438, 29);
             this.btn_add.TabIndex = 34;
             this.btn_add.Text = "Thêm";
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
-            this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton6.Appearance.Options.UseBackColor = true;
-            this.simpleButton6.Appearance.Options.UseFont = true;
-            this.simpleButton6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.simpleButton6.Location = new System.Drawing.Point(2, 257);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(438, 29);
-            this.simpleButton6.TabIndex = 33;
-            this.simpleButton6.Text = "Hủy";
             // 
             // label5
             // 
@@ -375,7 +360,6 @@ namespace MRes.GUI.Oder.Table
         private DevExpress.XtraGrid.Columns.GridColumn colcount;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private DevExpress.XtraEditors.SimpleButton btn_add;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown txt_number;
         private DevExpress.XtraEditors.TextEdit txt_name;

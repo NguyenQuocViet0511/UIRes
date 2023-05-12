@@ -43,7 +43,7 @@ namespace MRes.DAL.API.BillInfo
             APIBillInfo data = JsonConvert.DeserializeObject<APIBillInfo>(Result);
             return data;
         }
-        public string Add(string id,string idtalbe ,string id_bill, int count,string note,string id_user)
+        public string CreateOrUpdate(string id,string idtalbe ,string id_bill, int count,string note,string id_user)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
@@ -55,10 +55,12 @@ namespace MRes.DAL.API.BillInfo
             string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/CreateOrUpdate", table, "POST");
             return Result;
         }
-        public BillInfoData GetBillInfo(string id_bill)
+        public BillInfoData GetBillInfo(string id_bill,string id_table)
         {
             NameValueCollection table = new NameValueCollection();
-            table["id"] = id_bill;
+            table["id_bill"] = id_bill;
+            table["id_table"] = id_table;
+
             string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/show", table, "POST");
             if (Result == null)
             {
@@ -69,24 +71,23 @@ namespace MRes.DAL.API.BillInfo
 
         }
 
-        public String Edit(string id, string name, double price, string discount, string status, string created_by, string id_category)
+        public string delete(string id, string id_bill,string id_table)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            table["name"] = name;
-            table["price"] = price.ToString();
-            table["discount"] = discount;
-            table["status"] = status;
-            table["created_by"] = created_by;
-            table["id_category"] = id_category;
-            string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/update", table, "POST");
+            table["id_bill"] = id_bill;
+            table["id_table"] = id_table;
+            string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/delete", table, "POST");
             return Result;
         }
-        public string delete(string id)
+
+        public string SendCook(string id, string id_bill, string id_table)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/delete", table, "POST");
+            table["id_bill"] = id_bill;
+            table["id_table"] = id_table;
+            string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/update", table, "POST");
             return Result;
         }
     }

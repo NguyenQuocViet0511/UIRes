@@ -1,4 +1,5 @@
-﻿using MRes.DAL.API.BillInfo;
+﻿using MRes.DAL;
+using MRes.DAL.API.BillInfo;
 using MRes.DAL.API.Food;
 using MRes.Models.BillInfo;
 using MRes.Models.Food;
@@ -17,11 +18,9 @@ namespace MRes.GUI.Oder.Table
     public partial class widgetoder : UserControl
     {
         FoodData food;
-        BillInfo billinfo = new BillInfo();
-        public widgetoder(BillInfo billinfo)
+        public widgetoder()
         {
             InitializeComponent();
-            this.billinfo = billinfo;
             GetData();
         }
         //get data
@@ -53,13 +52,16 @@ namespace MRes.GUI.Oder.Table
             Task t = new Task(
                 () =>
                 {
-                    String result = APIBillInfo.Instance.Add(txt_id.Text,billinfo.id,billinfo.id_bill,Convert.ToInt32(txt_number.Value),txt_note.Text,"US000000");
+                    String result = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.table.id_bill,Convert.ToInt32(txt_number.Value),txt_note.Text,"US000000");
                      MessageBox.Show("" + result);
+                    LoadBillandtable();
+
                 }
                 );
             t.Start();
 
         }
+      
         //clearbingding
         public void ClearandAdd()
         {
@@ -85,5 +87,8 @@ namespace MRes.GUI.Oder.Table
         {
             Order();
         }
+
+        public delegate void Loadbill();
+        public Loadbill LoadBillandtable;
     }
 }

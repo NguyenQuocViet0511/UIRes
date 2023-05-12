@@ -179,6 +179,12 @@
     <Compile Include="GUI\Oder\Table\WidgetTable.Designer.cs">
       <DependentUpon>WidgetTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Pay\PayM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pay\PayM.Designer.cs">
+      <DependentUpon>PayM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -260,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Oder\Table\WidgetTable.resx">
       <DependentUpon>WidgetTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pay\PayM.resx">
+      <DependentUpon>PayM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

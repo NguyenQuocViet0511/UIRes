@@ -43,6 +43,16 @@ namespace MRes.DAL.API.Table
             TableData data = JsonConvert.DeserializeObject<TableData>(Result);
             return data;
         }
+        public TableData GetStatus()
+        {
+            string Result = BaseAPI.Instance.Get(Const.URL + "tables/show");
+            if (Result == null)
+            {
+                return null;
+            }
+            TableData data = JsonConvert.DeserializeObject<TableData>(Result);
+            return data;
+        }
         public String Add(string name, string email,string sex, string status, string number, string id_role, string date,string address)
         {
             NameValueCollection table = new NameValueCollection();
@@ -54,7 +64,7 @@ namespace MRes.DAL.API.Table
             table["address"] = address;
             table["id_role"] = id_role;
             table["date"] = date;
-            string Result = BaseAPI.Instance.All(Const.URL + "users/create", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/create", table, "POST");
             return Result;
         }
         public String Edit(string id, string name,string email, string sex, string status, string number,string id_role,string date, string address)
@@ -69,7 +79,17 @@ namespace MRes.DAL.API.Table
             table["id_role"] = id_role;
             table["address"] = address;
             table["date"] = date;
-            string Result = BaseAPI.Instance.All(Const.URL + "users/update", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
+            return Result;
+        }
+        public String Move(string id_tablePresent, string id_tableUpdate, string id_bill)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["id_tablePresent"] = id_tablePresent;
+            table["id_tableUpdate"] = id_tableUpdate;
+            table["id_bill"] = id_bill;
+           
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
             return Result;
         }
         public string delete(string id)

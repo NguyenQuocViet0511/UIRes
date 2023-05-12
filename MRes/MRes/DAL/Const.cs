@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MRes.Models.Table;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace MRes.DAL
         public static string MANAGER_FOOD = "QLFOOD";
         public static string MANAGER_CATEGORY = "QLCATEGORY";
         public static string MANAGER_STAFF = "QLSTAFF";
-
+        public static Table table = new Table();
+        public static Table tableMove = new Table();
         public string GetProjectLinkDirectory()
         {
             string currentLink = Directory.GetCurrentDirectory();
