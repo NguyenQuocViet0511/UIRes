@@ -58,12 +58,13 @@ namespace MRes.DAL.API.MaterialBillInfo
 
         }
 
-        public string CreateOrUpdate(string id_material, string id_material_bill, string count, string created_by)
+        public string CreateOrUpdate(string id_material, string id_material_bill, string count, string countout , string created_by)
         {
             NameValueCollection table = new NameValueCollection();
             table["id_material"] = id_material;
             table["id_material_bill"] = id_material_bill;
             table["count"] = count;
+            table["countout"] = countout;
             table["id_user"] = created_by;
             string Result = BaseAPI.Instance.All(Const.URL + "materialbillinfo/CreateOrUpdate", table, "POST");
             return Result;

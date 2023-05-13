@@ -123,6 +123,8 @@
     <Compile Include="DAL\API\Bill\APIBill.cs" />
     <Compile Include="DAL\API\Category\APICategory.cs" />
     <Compile Include="DAL\API\Food\APIFood.cs" />
+    <Compile Include="DAL\API\Inventory\APIHistoryInventory.cs" />
+    <Compile Include="DAL\API\Inventory\APIInventory.cs" />
     <Compile Include="DAL\API\MaterialBillInfo\APIMaterialBillInfo.cs" />
     <Compile Include="DAL\API\Materialbill\APIMaterialBill.cs" />
     <Compile Include="DAL\API\Material\APIMaterial.cs" />
@@ -165,6 +167,12 @@
     </Compile>
     <Compile Include="GUI\Manager\Inventory\Fm_Inventory.Designer.cs">
       <DependentUpon>Fm_Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Inventory_out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Manager\Inventory\Fm_Inventory_out.Designer.cs">
+      <DependentUpon>Fm_Inventory_out.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Manager\Inventory\Fm_Material.cs">
       <SubType>Form</SubType>
@@ -245,6 +253,10 @@
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
+    <Compile Include="Models\Inventory\InventoryDao.cs" />
+    <Compile Include="Models\Inventory\Inventory.cs" />
+    <Compile Include="Models\Inventory\Historyinventory.cs" />
+    <Compile Include="Models\Inventory\HistoryinventoryDao.cs" />
     <Compile Include="Models\MaterialBillInfo\MaterialBillInfoDao.cs" />
     <Compile Include="Models\MaterialBillInfo\MaterialBillDao.cs" />
     <Compile Include="Models\MaterialBill\MaterialBill.cs" />
@@ -283,6 +295,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Inventory.resx">
       <DependentUpon>Fm_Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Inventory_out.resx">
+      <DependentUpon>Fm_Inventory_out.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Manager\Inventory\Fm_Material.resx">
       <DependentUpon>Fm_Material.cs</DependentUpon>

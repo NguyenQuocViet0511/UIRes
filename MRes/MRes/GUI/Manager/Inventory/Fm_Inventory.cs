@@ -261,7 +261,7 @@ namespace MRes.GUI.Manager.Inventory
             Task t1 = new Task(
              () =>
              {
-                 string result = APIMaterialBillInfo.Instance.CreateOrUpdate(id_material, id_material_bill, count.ToString(),id_user);
+                 string result = APIMaterialBillInfo.Instance.CreateOrUpdate(id_material, id_material_bill, count.ToString(),"0",id_user);
                  MessageBox.Show(result);
                  LoadDataBillAdd(id_material_bill);
                  GetmaterialBill();

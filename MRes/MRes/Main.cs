@@ -451,8 +451,8 @@ namespace MRes
 
         private void btn_sum_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_Sum sum = new Fm_Sum();
-            CreateForm(sum, null);
+            Fm_Inventory_out Inventory_out = new Fm_Inventory_out();
+            CreateForm(Inventory_out, null);
         }
 
         private void btn_tb_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

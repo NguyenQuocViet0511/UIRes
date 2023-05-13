@@ -120,7 +120,6 @@ namespace MRes
             this.navBarGroup1.AppearancePressed.Options.UseTextOptions = true;
             this.navBarGroup1.AppearancePressed.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.navBarGroup1.Caption = "Quản Lý";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroup1.ImageOptions.LargeImage = global::MRes.Properties.Resources.project_manager;
             this.navBarGroup1.ImageOptions.SmallImageSize = new System.Drawing.Size(20, 20);
@@ -180,7 +179,7 @@ namespace MRes
             // 
             // a
             // 
-            this.a.ActiveGroup = this.navBarGroup1;
+            this.a.ActiveGroup = this.navBarGroup4;
             this.a.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
             this.a.Appearance.Background.Options.UseFont = true;
             this.a.BackColor = System.Drawing.Color.Gray;
@@ -215,6 +214,7 @@ namespace MRes
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroup4.Appearance.Options.UseFont = true;
             this.navBarGroup4.Caption = "kho";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroup4.ImageOptions.SmallImage = global::MRes.Properties.Resources.warehouse;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -237,7 +237,7 @@ namespace MRes
             // 
             this.btn_input.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_input.Appearance.Options.UseFont = true;
-            this.btn_input.Caption = "nhập xuất kho";
+            this.btn_input.Caption = "Nhập kho";
             this.btn_input.ImageOptions.LargeImage = global::MRes.Properties.Resources.inventory;
             this.btn_input.ImageOptions.SmallImage = global::MRes.Properties.Resources.healthy_food;
             this.btn_input.Name = "btn_input";

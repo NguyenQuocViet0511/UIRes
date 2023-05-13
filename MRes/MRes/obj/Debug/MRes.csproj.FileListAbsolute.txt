@@ -514,3 +514,4 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\bin\Debug\AxShockwaveFlashObjects.dll
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\bin\Debug\CrystalDecisions.Windows.Forms.dll
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Pay.crpPay.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Inventory_out.resources
