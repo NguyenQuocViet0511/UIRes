@@ -27,6 +27,8 @@ namespace MRes
         bool CheckClick = false;
         Fm_category Category;
         Fm_Staff staff;
+        Fm_Table table;
+        Fm_Material Material;
         QL_Food food;
         public Main()
         {
@@ -133,6 +135,16 @@ namespace MRes
                     staff.Cleartext();
                     setshoseadd(false);
                     break;
+                case "QLTABLE":
+                    table.setPanel(true);
+                    table.Cleartext(); 
+                    setshoseadd(false);
+                    break;
+                case "QLMATERIAL":
+                    Material.setPanel(true);
+                    Material.Cleartext(); 
+                    setshoseadd(false);
+                    break;
             }    
         }
         private void Choseedit(string text)
@@ -152,6 +164,14 @@ namespace MRes
                     break;
                 case "QLSTAFF":
                     staff.setPanel(true);
+                    setshoseedit(false);
+                    break;
+                case "QLTABLE":
+                    table.setPanel(true);
+                    setshoseedit(false);
+                    break;
+                case "QLMATERIAL":
+                    Material.setPanel(true);
                     setshoseedit(false);
                     break;
             }
@@ -182,6 +202,12 @@ namespace MRes
                     setshoseall(true);
                     CheckClick = false;
                     break;
+                case "QLTABLE":
+                    table.setPanel(false);
+                    table.ClearandAdd();
+                    setshoseall(true);
+                    CheckClick = false;
+                    break;
             }
         }
         // save
@@ -198,8 +224,6 @@ namespace MRes
                         if (food.check())
                         {
                             food.Add();
-                            setshoseall(true);
-                            CheckClick = false;
                         }
                         else
                         {
@@ -212,8 +236,6 @@ namespace MRes
                         if (food.check())
                         {
                             food.edit();
-                            setshoseall(true);
-                            CheckClick = false;
                         }
                         else
                         {
@@ -227,8 +249,6 @@ namespace MRes
                         if (Category.check())
                         {
                             Category.Add();
-                            setshoseall(true);
-                            CheckClick = false;
                         }
                         else
                         {
@@ -241,8 +261,6 @@ namespace MRes
                         if (Category.check())
                         {
                             Category.edit();
-                            setshoseall(true);
-                            CheckClick = false;
                         }
                         else
                         {
@@ -256,8 +274,6 @@ namespace MRes
                         if (staff.check())
                         {
                             staff.Add();
-                            setshoseall(true);
-                            CheckClick = false;
                         }
                         else
                         {
@@ -270,8 +286,56 @@ namespace MRes
                         if (staff.check())
                         {
                             staff.edit();
-                            setshoseall(true);
-                            CheckClick = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    break;
+                case "QLTABLE":
+                    if (this.type == "add")
+                    {
+                        if (table.check())
+                        {
+                            table.Add();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    if (this.type == "edit")
+                    {
+
+                        if (table.check())
+                        {
+                            table.edit();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    break;
+                case "QLMATERIAL":
+                    if (this.type == "add")
+                    {
+                        if (Material.check())
+                        {
+                            Material.Add();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Vui lòng Nhập Vào Đầy Đủ ô cần nhập");
+                        }
+                    }
+                    if (this.type == "edit")
+                    {
+
+                        if (Material.check())
+                        {
+                            Material.edit();
                         }
                         else
                         {
@@ -306,6 +370,20 @@ namespace MRes
                     if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                     {
                         staff.delete();
+
+                    }
+                    break;
+                case "QLTABLE":
+                    if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                    {
+                        table.delete();
+
+                    }
+                    break;
+                case "QLMATERIAL":
+                    if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                    {
+                        Material.delete();
 
                     }
                     break;
@@ -359,8 +437,10 @@ namespace MRes
         private void btn_material_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            Fm_Material Material = new Fm_Material();
+            Material = new Fm_Material();
             CreateForm(Material, null);
+            this.Chonse = Const.MANAGER_MATERIAL;
+
         }
 
         private void btn_table_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -377,8 +457,10 @@ namespace MRes
 
         private void btn_tb_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_Table table = new Fm_Table();
+            table = new Fm_Table();
             CreateForm(table, null);
+            this.Chonse = Const.MANAGER_TALBE;
+
         }
     }
 }

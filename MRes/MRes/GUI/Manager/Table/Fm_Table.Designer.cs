@@ -33,7 +33,6 @@ namespace MRes.GUI.Manager.Table
             this.GidController = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colusername = new DevExpress.XtraGrid.Columns.GridColumn();
             this.status = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coliduser = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -44,7 +43,7 @@ namespace MRes.GUI.Manager.Table
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
             this.cbn_status = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_count = new DevExpress.XtraEditors.TextEdit();
+            this.txt_bill = new DevExpress.XtraEditors.TextEdit();
             this.txt_name = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +56,7 @@ namespace MRes.GUI.Manager.Table
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_bill.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
             this.SuspendLayout();
@@ -92,7 +91,6 @@ namespace MRes.GUI.Manager.Table
             this.GidController.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colid,
             this.colname,
-            this.colusername,
             this.status,
             this.coliduser});
             this.GidController.GridControl = this.gridController;
@@ -109,7 +107,7 @@ namespace MRes.GUI.Manager.Table
             // 
             // colid
             // 
-            this.colid.Caption = "Mã Nhóm";
+            this.colid.Caption = "Mã Bàn";
             this.colid.FieldName = "id";
             this.colid.Name = "colid";
             this.colid.OptionsColumn.AllowEdit = false;
@@ -118,21 +116,12 @@ namespace MRes.GUI.Manager.Table
             // 
             // colname
             // 
-            this.colname.Caption = "Tên Nhóm";
+            this.colname.Caption = "Tên Bàn";
             this.colname.FieldName = "name";
             this.colname.Name = "colname";
             this.colname.OptionsColumn.AllowEdit = false;
             this.colname.Visible = true;
             this.colname.VisibleIndex = 1;
-            // 
-            // colusername
-            // 
-            this.colusername.Caption = "Tổng số Lượng ";
-            this.colusername.FieldName = "count";
-            this.colusername.Name = "colusername";
-            this.colusername.OptionsColumn.AllowEdit = false;
-            this.colusername.Visible = true;
-            this.colusername.VisibleIndex = 2;
             // 
             // status
             // 
@@ -140,7 +129,7 @@ namespace MRes.GUI.Manager.Table
             this.status.FieldName = "status";
             this.status.Name = "status";
             this.status.Visible = true;
-            this.status.VisibleIndex = 3;
+            this.status.VisibleIndex = 2;
             // 
             // coliduser
             // 
@@ -148,7 +137,7 @@ namespace MRes.GUI.Manager.Table
             this.coliduser.FieldName = "created_by";
             this.coliduser.Name = "coliduser";
             this.coliduser.Visible = true;
-            this.coliduser.VisibleIndex = 4;
+            this.coliduser.VisibleIndex = 3;
             // 
             // panelControl2
             // 
@@ -220,7 +209,7 @@ namespace MRes.GUI.Manager.Table
             this.panel_info.Appearance.Options.UseBackColor = true;
             this.panel_info.Controls.Add(this.cbn_status);
             this.panel_info.Controls.Add(this.label2);
-            this.panel_info.Controls.Add(this.txt_count);
+            this.panel_info.Controls.Add(this.txt_bill);
             this.panel_info.Controls.Add(this.txt_name);
             this.panel_info.Controls.Add(this.label4);
             this.panel_info.Controls.Add(this.label3);
@@ -259,16 +248,16 @@ namespace MRes.GUI.Manager.Table
             this.label2.TabIndex = 9;
             this.label2.Text = "Trạng Thái";
             // 
-            // txt_count
+            // txt_bill
             // 
-            this.txt_count.Enabled = false;
-            this.txt_count.Location = new System.Drawing.Point(106, 107);
-            this.txt_count.Name = "txt_count";
-            this.txt_count.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.txt_count.Properties.Appearance.Options.UseForeColor = true;
-            this.txt_count.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.txt_count.Size = new System.Drawing.Size(228, 24);
-            this.txt_count.TabIndex = 8;
+            this.txt_bill.Enabled = false;
+            this.txt_bill.Location = new System.Drawing.Point(106, 107);
+            this.txt_bill.Name = "txt_bill";
+            this.txt_bill.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_bill.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_bill.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txt_bill.Size = new System.Drawing.Size(228, 24);
+            this.txt_bill.TabIndex = 8;
             // 
             // txt_name
             // 
@@ -343,7 +332,7 @@ namespace MRes.GUI.Manager.Table
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_bill.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -356,7 +345,6 @@ namespace MRes.GUI.Manager.Table
         private DevExpress.XtraGrid.Views.Grid.GridView GidController;
         private DevExpress.XtraGrid.Columns.GridColumn colid;
         private DevExpress.XtraGrid.Columns.GridColumn colname;
-        private DevExpress.XtraGrid.Columns.GridColumn colusername;
         private DevExpress.XtraGrid.Columns.GridColumn status;
         private DevExpress.XtraGrid.Columns.GridColumn coliduser;
         private DevExpress.XtraEditors.PanelControl panelControl2;
@@ -367,7 +355,7 @@ namespace MRes.GUI.Manager.Table
         private DevExpress.XtraEditors.PanelControl panel_info;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_status;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit txt_count;
+        private DevExpress.XtraEditors.TextEdit txt_bill;
         private DevExpress.XtraEditors.TextEdit txt_name;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

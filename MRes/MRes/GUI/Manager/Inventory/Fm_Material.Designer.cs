@@ -42,6 +42,8 @@ namespace MRes.GUI.Manager.Inventory
             this.btn_last = new DevExpress.XtraEditors.SimpleButton();
             this.btn_first = new DevExpress.XtraEditors.SimpleButton();
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.txt_unit = new DevExpress.XtraEditors.TextEdit();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_created_by = new DevExpress.XtraEditors.TextEdit();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_price = new DevExpress.XtraEditors.TextEdit();
@@ -58,6 +60,7 @@ namespace MRes.GUI.Manager.Inventory
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_unit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_created_by.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
@@ -131,6 +134,8 @@ namespace MRes.GUI.Manager.Inventory
             // colusername
             // 
             this.colusername.Caption = "giá";
+            this.colusername.DisplayFormat.FormatString = "#,#";
+            this.colusername.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colusername.FieldName = "price";
             this.colusername.Name = "colusername";
             this.colusername.OptionsColumn.AllowEdit = false;
@@ -221,6 +226,8 @@ namespace MRes.GUI.Manager.Inventory
             // 
             this.panel_info.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panel_info.Appearance.Options.UseBackColor = true;
+            this.panel_info.Controls.Add(this.txt_unit);
+            this.panel_info.Controls.Add(this.label5);
             this.panel_info.Controls.Add(this.txt_created_by);
             this.panel_info.Controls.Add(this.label7);
             this.panel_info.Controls.Add(this.txt_price);
@@ -237,10 +244,34 @@ namespace MRes.GUI.Manager.Inventory
             this.panel_info.Size = new System.Drawing.Size(1163, 149);
             this.panel_info.TabIndex = 7;
             // 
+            // txt_unit
+            // 
+            this.txt_unit.Location = new System.Drawing.Point(469, 62);
+            this.txt_unit.Name = "txt_unit";
+            this.txt_unit.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_unit.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txt_unit.Properties.Appearance.Options.UseFont = true;
+            this.txt_unit.Properties.Appearance.Options.UseForeColor = true;
+            this.txt_unit.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.txt_unit.Size = new System.Drawing.Size(278, 24);
+            this.txt_unit.TabIndex = 31;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Gray;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(405, 66);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Đơn vị";
+            // 
             // txt_created_by
             // 
             this.txt_created_by.Enabled = false;
-            this.txt_created_by.Location = new System.Drawing.Point(469, 62);
+            this.txt_created_by.Location = new System.Drawing.Point(469, 102);
             this.txt_created_by.Name = "txt_created_by";
             this.txt_created_by.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_created_by.Properties.Appearance.ForeColor = System.Drawing.Color.White;
@@ -256,7 +287,7 @@ namespace MRes.GUI.Manager.Inventory
             this.label7.BackColor = System.Drawing.Color.Gray;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(405, 66);
+            this.label7.Location = new System.Drawing.Point(405, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 16);
             this.label7.TabIndex = 28;
@@ -385,6 +416,7 @@ namespace MRes.GUI.Manager.Inventory
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_unit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_created_by.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
@@ -419,5 +451,7 @@ namespace MRes.GUI.Manager.Inventory
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.TextEdit txt_created_by;
         private System.Windows.Forms.Label label7;
+        private DevExpress.XtraEditors.TextEdit txt_unit;
+        private System.Windows.Forms.Label label5;
     }
 }

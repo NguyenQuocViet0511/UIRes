@@ -1,4 +1,5 @@
 ﻿using MRes.Models.BillInfo;
+using MRes.Models.Staff;
 using MRes.Models.Table;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,12 @@ namespace MRes.DAL
         public static string MANAGER_FOOD = "QLFOOD";
         public static string MANAGER_CATEGORY = "QLCATEGORY";
         public static string MANAGER_STAFF = "QLSTAFF";
+        public static string MANAGER_TALBE = "QLTABLE";
+        public static string MANAGER_MATERIAL = "QLMATERIAL";
         public static Table table = new Table();
+        public static Staff staff = new Staff() {
+        id = "US000000"
+        };
         public static Table tableMove = new Table();
         public static List<BillInfo> billinfo = new List<BillInfo>();
         public static double SumPay = 0;

@@ -60,7 +60,6 @@ namespace MRes.DAL.API.BillInfo
             NameValueCollection table = new NameValueCollection();
             table["id_bill"] = id_bill;
             table["id_table"] = id_table;
-
             string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/show", table, "POST");
             if (Result == null)
             {

@@ -1,4 +1,4 @@
-﻿using MRes.Models.Category;
+﻿using MRes.Models.MaterialBill;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MRes.DAL.API.Category
+namespace MRes.DAL.API.Materialbill
 {
-    class APICategory
+    class APIMaterialBill
     {
-        private static APICategory instance;
+        MaterialBillData MaterialBillData;
+        private static APIMaterialBill instance;
 
-        public static APICategory Instance
+        public static APIMaterialBill Instance
         {
             get
             {
                 if (instance == null)
-                    instance = new APICategory();
+                    instance = new APIMaterialBill();
                 return instance;
 
             }
@@ -33,50 +34,51 @@ namespace MRes.DAL.API.Category
 
 
 
-        public CategoryData GetAll()
+        public MaterialBillData GetAll()
         {
-            string Result = BaseAPI.Instance.Get(Const.URL + "category/list");
+            string Result = BaseAPI.Instance.Get(Const.URL + "materialbill/list");
             if (Result == null)
             {
                 return null;
             }
-            CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
+            MaterialBillData data = JsonConvert.DeserializeObject<MaterialBillData>(Result);
             return data;
         }
-        public CategoryData GetByStatus()
+        public MaterialBillData GetByStatus()
         {
-            string Result = BaseAPI.Instance.Get(Const.URL + "category/GetByStatus");
+            string Result = BaseAPI.Instance.Get(Const.URL + "materialbill/Show");
             if (Result == null)
             {
                 return null;
             }
-            CategoryData data = JsonConvert.DeserializeObject<CategoryData>(Result);
+            MaterialBillData data = JsonConvert.DeserializeObject<MaterialBillData>(Result);
             return data;
         }
-        public String Add(string name,string status,string created_by)
+
+        public string Add(string status, string created_by)
         {
             NameValueCollection table = new NameValueCollection();
-            table["name"] = name;
             table["status"] = status;
-            table["created_by"] = created_by;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/create", table, "POST");
+            table["id_user"] = created_by;
+            string Result = BaseAPI.Instance.All(Const.URL + "materialbill/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name, string status, string count)
+        public string update(string id, string name, double price, string unit, string status)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
+            table["price"] = price.ToString();
+            table["unit"] = unit;
             table["status"] = status;
-            table["count"] = count;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/update", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "material/update", table, "POST");
             return Result;
         }
         public string delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "category/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "material/delete", table, "POST");
             return Result;
         }
     }

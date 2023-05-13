@@ -98,11 +98,9 @@ namespace MRes.GUI.Oder.Table
             switch(chonse)
             {
                 case "move":
-                    btn_into.Enabled = check;
                     btn_oder.Enabled = check;
                     break;
                 case "order":
-                    btn_into.Enabled = check;
                     btn_move.Enabled = check;
                     break;
                 case "into":
@@ -297,7 +295,6 @@ namespace MRes.GUI.Oder.Table
             {
                 if (MessageBox.Show("Bạn Có Muốn Hủy Bỏ Không", "Thông Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
                 {
-                    btn_into.Enabled = true;
                     btn_oder.Enabled = true;
                     btn_move.Enabled = true;
                     lbl_name.Text = "BÀN";
@@ -429,8 +426,10 @@ namespace MRes.GUI.Oder.Table
                         grid_billinfo.DataSource = null;
                         ClickTalbe = false;
                         lbl_name.Text = "BÀN";
-                  
-                
+                        Manager_controller.Controls.Clear();
+
+
+
 
 
 

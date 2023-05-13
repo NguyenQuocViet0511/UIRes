@@ -1,4 +1,5 @@
-﻿using MRes.DAL.API.Category;
+﻿using MRes.DAL;
+using MRes.DAL.API.Category;
 using MRes.Models.Category;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace MRes.GUI.Manager.Category
         {
             InitializeComponent();
             GetData();
-
+            CheckForIllegalCrossThreadCalls = false;
             init();
 
         }
@@ -54,6 +55,26 @@ namespace MRes.GUI.Manager.Category
                         });
                     }    
                    
+                }
+                );
+            t.Start();
+        }
+        public void GetDataater()
+        {
+            Task t = new Task(
+                () =>
+                {
+
+                    category = APICategory.Instance.GetAll();
+                    if (category != null)
+                    {
+                        gridController.BeginInvoke((Action)delegate ()
+                        {
+                            gridController.DataSource = category.data.data;
+                            Cleartext();
+                        });
+                    }
+
                 }
                 );
             t.Start();
@@ -136,12 +157,12 @@ namespace MRes.GUI.Manager.Category
             Task add = new Task(
                         () =>
                         {
-                            String result = APICategory.Instance.Add(txt_name.Text, cbn_status.Text,"US000000");
+                            String result = APICategory.Instance.Add(txt_name.Text, cbn_status.Text,Const.staff.id);
                             panel_info.BeginInvoke((Action)delegate ()
                             {
                                 setPanel(false);
                             });
-                            GetData();
+                            GetDataater();
                             MessageBox.Show("" + result);
                         }
                         );

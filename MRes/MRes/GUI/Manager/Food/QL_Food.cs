@@ -1,4 +1,5 @@
-﻿using MRes.DAL.API.Category;
+﻿using MRes.DAL;
+using MRes.DAL.API.Category;
 using MRes.DAL.API.Food;
 using MRes.Models.Category;
 using MRes.Models.Food;
@@ -62,7 +63,6 @@ namespace MRes.GUI.Manager.Food
                         {
                             gridController.DataSource = food.data.data;
                             ClearandAdd();
-                            setPanel(false);
                         }
                      
 
@@ -71,6 +71,27 @@ namespace MRes.GUI.Manager.Food
                 );
             t.Start();
           
+        }
+        public void GetDataafter()
+        {
+            Task t = new Task(
+                () =>
+                {
+                    food = APIFood.Instance.GetAll();
+
+                    gridController.BeginInvoke((Action)delegate ()
+                    {
+                        if (food != null)
+                        {
+                            gridController.DataSource = food.data.data;
+                        }
+
+
+                    });
+                }
+                );
+            t.Start();
+
         }
         //get category
         public void GetCategory()
@@ -199,12 +220,12 @@ namespace MRes.GUI.Manager.Food
                 Task add = new Task(
                             () =>
                             {
-                                String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, "US000000", cbn_category.EditValue.ToString());
+                                String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, Const.staff.id, cbn_category.EditValue.ToString());
                                 panel_info.BeginInvoke((Action)delegate ()
                                 {
-                                    setPanel(false);
+                                    Cleartext();
                                 });
-                                GetData();
+                                GetDataafter();
                                 MessageBox.Show("" + result);
                             }
                             );

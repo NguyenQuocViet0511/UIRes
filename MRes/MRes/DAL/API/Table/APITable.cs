@@ -53,32 +53,20 @@ namespace MRes.DAL.API.Table
             TableData data = JsonConvert.DeserializeObject<TableData>(Result);
             return data;
         }
-        public String Add(string name, string email,string sex, string status, string number, string id_role, string date,string address)
+        public String Add(string name ,string id_users)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
-            table["email"] = email;
-            table["sex"] = sex;
-            table["status"] = status;
-            table["number"] = number;
-            table["address"] = address;
-            table["id_role"] = id_role;
-            table["date"] = date;
+            table["created_by"] = id_users;
             string Result = BaseAPI.Instance.All(Const.URL + "tables/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name,string email, string sex, string status, string number,string id_role,string date, string address)
+        public String update(string id,string name, string status)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
             table["name"] = name;
-            table["email"] = email;
-            table["sex"] = sex;
             table["status"] = status;
-            table["number"] = number;
-            table["id_role"] = id_role;
-            table["address"] = address;
-            table["date"] = date;
             string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
             return Result;
         }
@@ -89,14 +77,14 @@ namespace MRes.DAL.API.Table
             table["id_tableUpdate"] = id_tableUpdate;
             table["id_bill"] = id_bill;
            
-            string Result = BaseAPI.Instance.All(Const.URL + "tables/update", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/updateMoveTable", table, "POST");
             return Result;
         }
         public string delete(string id)
         {
             NameValueCollection table = new NameValueCollection();
             table["id"] = id;
-            string Result = BaseAPI.Instance.All(Const.URL + "users/delete", table, "POST");
+            string Result = BaseAPI.Instance.All(Const.URL + "tables/delete", table, "POST");
             return Result;
         }
     }

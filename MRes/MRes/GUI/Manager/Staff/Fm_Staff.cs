@@ -58,6 +58,26 @@ namespace MRes.GUI.Manager.Staff
                 );
             t.Start();
         }
+        public void GetDataater()
+        {
+            Task t = new Task(
+                () =>
+                {
+
+                    staff = APIStaff.Instance.GetAll();
+                    if (staff != null)
+                    {
+                        gridController.BeginInvoke((Action)delegate ()
+                        {
+                            gridController.DataSource = staff.data.data;
+
+                        });
+                    }
+
+                }
+                );
+            t.Start();
+        }
         // get data role
         public void Getrole()
         {
@@ -197,9 +217,9 @@ namespace MRes.GUI.Manager.Staff
                             String result = APIStaff.Instance.Add(txt_name.Text,txt_email.Text,cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(),date.Text,txt_address.Text);
                             panel_info.BeginInvoke((Action)delegate ()
                             {
-                                setPanel(false);
+                                Cleartext();
                             });
-                            GetData();
+                            GetDataater();
                             MessageBox.Show("" + result);
                         }
                         );

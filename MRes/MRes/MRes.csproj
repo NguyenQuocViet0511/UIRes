@@ -123,6 +123,9 @@
     <Compile Include="DAL\API\Bill\APIBill.cs" />
     <Compile Include="DAL\API\Category\APICategory.cs" />
     <Compile Include="DAL\API\Food\APIFood.cs" />
+    <Compile Include="DAL\API\MaterialBillInfo\APIMaterialBillInfo.cs" />
+    <Compile Include="DAL\API\Materialbill\APIMaterialBill.cs" />
+    <Compile Include="DAL\API\Material\APIMaterial.cs" />
     <Compile Include="DAL\API\Role\APIRole.cs" />
     <Compile Include="DAL\API\Staff\APIStaff.cs" />
     <Compile Include="DAL\API\Table\APITable.cs" />
@@ -242,6 +245,8 @@
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
     <Compile Include="Models\Food\FoodDao.cs" />
+    <Compile Include="Models\MaterialBillInfo\MaterialBillInfoDao.cs" />
+    <Compile Include="Models\MaterialBillInfo\MaterialBillDao.cs" />
     <Compile Include="Models\MaterialBill\MaterialBill.cs" />
     <Compile Include="Models\MaterialBill\MaterialBillDao.cs" />
     <Compile Include="Models\Material\Material.cs" />
@@ -360,7 +365,6 @@
     <None Include="Resources\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\API\Material\" />
     <Folder Include="GUI\Manager\Customer\" />
   </ItemGroup>
   <ItemGroup>

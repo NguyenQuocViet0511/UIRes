@@ -55,7 +55,6 @@ namespace MRes.GUI.Oder.Table
             this.btn_delete = new DevExpress.XtraEditors.SimpleButton();
             this.btn_close = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
-            this.btn_into = new DevExpress.XtraEditors.SimpleButton();
             this.btn_oder = new DevExpress.XtraEditors.SimpleButton();
             this.btn_move = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
@@ -439,7 +438,6 @@ namespace MRes.GUI.Oder.Table
             // 
             // panelControl9
             // 
-            this.panelControl9.Controls.Add(this.btn_into);
             this.panelControl9.Controls.Add(this.btn_oder);
             this.panelControl9.Controls.Add(this.btn_move);
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -447,22 +445,6 @@ namespace MRes.GUI.Oder.Table
             this.panelControl9.Name = "panelControl9";
             this.panelControl9.Size = new System.Drawing.Size(349, 43);
             this.panelControl9.TabIndex = 0;
-            // 
-            // btn_into
-            // 
-            this.btn_into.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_into.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
-            this.btn_into.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_into.Appearance.Options.UseBackColor = true;
-            this.btn_into.Appearance.Options.UseFont = true;
-            this.btn_into.AppearanceHovered.BackColor = System.Drawing.Color.Red;
-            this.btn_into.AppearanceHovered.Options.UseBackColor = true;
-            this.btn_into.Location = new System.Drawing.Point(226, 6);
-            this.btn_into.Name = "btn_into";
-            this.btn_into.Size = new System.Drawing.Size(97, 29);
-            this.btn_into.TabIndex = 38;
-            this.btn_into.Text = "gộp bàn";
-            this.btn_into.Click += new System.EventHandler(this.btn_into_Click);
             // 
             // btn_oder
             // 
@@ -481,7 +463,7 @@ namespace MRes.GUI.Oder.Table
             this.btn_oder.AppearancePressed.BackColor = System.Drawing.Color.Red;
             this.btn_oder.AppearancePressed.Options.UseBackColor = true;
             this.btn_oder.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btn_oder.Location = new System.Drawing.Point(17, 5);
+            this.btn_oder.Location = new System.Drawing.Point(83, 6);
             this.btn_oder.Name = "btn_oder";
             this.btn_oder.Size = new System.Drawing.Size(96, 29);
             this.btn_oder.TabIndex = 36;
@@ -495,7 +477,7 @@ namespace MRes.GUI.Oder.Table
             this.btn_move.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_move.Appearance.Options.UseBackColor = true;
             this.btn_move.Appearance.Options.UseFont = true;
-            this.btn_move.Location = new System.Drawing.Point(119, 6);
+            this.btn_move.Location = new System.Drawing.Point(226, 6);
             this.btn_move.Name = "btn_move";
             this.btn_move.Size = new System.Drawing.Size(97, 29);
             this.btn_move.TabIndex = 37;
@@ -799,7 +781,6 @@ namespace MRes.GUI.Oder.Table
         private DevExpress.XtraEditors.TextEdit txt_sum;
         private DevExpress.XtraEditors.PanelControl Manager_controller;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private DevExpress.XtraEditors.SimpleButton btn_into;
         private DevExpress.XtraEditors.SimpleButton btn_move;
         private DevExpress.XtraEditors.SimpleButton btn_oder;
         private DevExpress.XtraEditors.SimpleButton btn_close;
