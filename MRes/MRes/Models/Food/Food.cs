@@ -13,7 +13,7 @@ namespace MRes.Models.Food
         private double Price;
         private double Discount;
         private int Count;
-        private string Images;
+        private string Image;
         private string Status;
         private string Id_category;
         private string Category_status;
@@ -31,7 +31,7 @@ namespace MRes.Models.Food
             this.Price = price;
             this.Discount = discount;
             this.count = count;
-            this.images = images;
+            this.Image = images;
             this.Status = Status;
             this.Id_category = id_Category;
             this.Category_status = category_status;
@@ -46,7 +46,7 @@ namespace MRes.Models.Food
         public double discount { get => Discount; set => Discount = value; }
         public int count { get => Count; set => Count = value; }
         public string status { get => Status; set => Status = value; }
-        public string images { get => Images; set => Images = value; }
+        public string image{ get => Image; set => Image = value; }
         public string id_category { get => Id_category; set => Id_category = value; }
         public string username { get => Username; set => Username = value; }
         public string category { get => Category; set => Category = value; }

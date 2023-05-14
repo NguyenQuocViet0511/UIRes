@@ -29,9 +29,7 @@ namespace MRes.GUI.Manager.Inventory
         public Fm_Inventory()
         {
             InitializeComponent();
-            Getmaterial();
-            GetmaterialBill();
-            CheckForIllegalCrossThreadCalls = false;
+    
         }
 
 
@@ -312,6 +310,13 @@ namespace MRes.GUI.Manager.Inventory
              }
              );
             t1.Start();
+        }
+
+        private void Fm_Inventory_Load(object sender, EventArgs e)
+        {
+            Getmaterial();
+            GetmaterialBill();
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

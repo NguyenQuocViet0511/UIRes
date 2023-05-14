@@ -63,7 +63,20 @@ namespace MRes.DAL.API.BillInfo
             string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/show", table, "POST");
             if (Result == null)
             {
-                return null;
+                return null; 
+            }
+            BillInfoData data = JsonConvert.DeserializeObject<BillInfoData>(Result);
+            return data;
+
+        }
+        public BillInfoData GetJoinBill(string id_bill)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["id_bill"] = id_bill;
+            string Result = BaseAPI.Instance.All(Const.URL + "BillInfo/GetJoinBill", table, "POST");
+            if (Result == null)
+            {
+                return null; 
             }
             BillInfoData data = JsonConvert.DeserializeObject<BillInfoData>(Result);
             return data;

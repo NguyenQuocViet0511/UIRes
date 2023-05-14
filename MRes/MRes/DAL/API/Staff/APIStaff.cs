@@ -43,7 +43,16 @@ namespace MRes.DAL.API.Staff
             StaffData data = JsonConvert.DeserializeObject<StaffData>(Result);
             return data;
         }
-        public String Add(string name, string email,string sex, string status, string number, string id_role, string date,string address)
+        public StaffData GetLogin(string username, string password)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["username"] = username;
+            table["password"] = password;
+            string Result = BaseAPI.Instance.All(Const.URL + "users/login", table, "POST");
+            StaffData data = JsonConvert.DeserializeObject<StaffData>(Result);
+            return data;
+        }
+        public String Add(string name, string email,string sex, string status, string number, string id_role, string date,string address,string image)
         {
             NameValueCollection table = new NameValueCollection();
             table["name"] = name;
@@ -51,26 +60,47 @@ namespace MRes.DAL.API.Staff
             table["sex"] = sex;
             table["status"] = status;
             table["number"] = number;
+            table["image"] = image;
             table["address"] = address;
             table["id_role"] = id_role;
             table["date"] = date;
             string Result = BaseAPI.Instance.All(Const.URL + "users/create", table, "POST");
             return Result;
         }
-        public String Edit(string id, string name,string email, string sex, string status, string number,string id_role,string date, string address)
+        public String Edit(string id, string name,string email, string sex, string status, string number,string id_role,string date, string address, string image)
         {
-            NameValueCollection table = new NameValueCollection();
-            table["id"] = id;
-            table["name"] = name;
-            table["email"] = email;
-            table["sex"] = sex;
-            table["status"] = status;
-            table["number"] = number;
-            table["id_role"] = id_role;
-            table["address"] = address;
-            table["date"] = date;
-            string Result = BaseAPI.Instance.All(Const.URL + "users/update", table, "POST");
-            return Result;
+            if(string.IsNullOrEmpty(image))
+            {
+                NameValueCollection table = new NameValueCollection();
+                table["id"] = id;
+                table["name"] = name;
+                table["email"] = email;
+                table["sex"] = sex;
+                table["status"] = status;
+                table["number"] = number;
+                table["id_role"] = id_role;
+                table["address"] = address;
+                table["date"] = date;
+                string Result = BaseAPI.Instance.All(Const.URL + "users/update", table, "POST");
+                return Result;
+            }  
+            else
+            {
+                NameValueCollection table = new NameValueCollection();
+                table["id"] = id;
+                table["name"] = name;
+                table["email"] = email;
+                table["sex"] = sex;
+                table["image"] = image;
+                table["status"] = status;
+                table["number"] = number;
+                table["id_role"] = id_role;
+                table["address"] = address;
+                table["date"] = date;
+                string Result = BaseAPI.Instance.All(Const.URL + "users/update", table, "POST");
+                return Result;
+            }    
+           
         }
         public string delete(string id)
         {

@@ -29,7 +29,6 @@ namespace MRes
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, null, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.btn_staff = new DevExpress.XtraNavBar.NavBarItem();
             this.btn_food = new DevExpress.XtraNavBar.NavBarItem();
@@ -39,7 +38,8 @@ namespace MRes
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btn_table = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.btn_Revenue = new DevExpress.XtraNavBar.NavBarItem();
+            this.btn_history = new DevExpress.XtraNavBar.NavBarItem();
             this.a = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btn_material = new DevExpress.XtraNavBar.NavBarItem();
@@ -68,10 +68,6 @@ namespace MRes
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // splashScreenManager1
-            // 
-            splashScreenManager1.ClosingDelay = 500;
             // 
             // btn_staff
             // 
@@ -163,23 +159,33 @@ namespace MRes
             this.navBarGroup3.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.navBarGroup3.Appearance.Options.UseFont = true;
             this.navBarGroup3.Caption = "Thống Kê";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroup3.ImageOptions.LargeImage = global::MRes.Properties.Resources.monitoring;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_Revenue),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_history)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
-            // navBarItem6
+            // btn_Revenue
             // 
-            this.navBarItem6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
-            this.navBarItem6.Appearance.Options.UseFont = true;
-            this.navBarItem6.Caption = "Doanh Thu";
-            this.navBarItem6.ImageOptions.LargeImage = global::MRes.Properties.Resources.revenue;
-            this.navBarItem6.Name = "navBarItem6";
+            this.btn_Revenue.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btn_Revenue.Appearance.Options.UseFont = true;
+            this.btn_Revenue.Caption = "Doanh Thu";
+            this.btn_Revenue.ImageOptions.LargeImage = global::MRes.Properties.Resources.revenue;
+            this.btn_Revenue.Name = "btn_Revenue";
+            this.btn_Revenue.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_Revenue_LinkClicked);
+            // 
+            // btn_history
+            // 
+            this.btn_history.Caption = "Lịch Sử Nhập Kho";
+            this.btn_history.ImageOptions.LargeImage = global::MRes.Properties.Resources.clock;
+            this.btn_history.Name = "btn_history";
+            this.btn_history.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_history_LinkClicked);
             // 
             // a
             // 
-            this.a.ActiveGroup = this.navBarGroup4;
+            this.a.ActiveGroup = this.navBarGroup3;
             this.a.Appearance.Background.Font = new System.Drawing.Font("Tahoma", 14.25F);
             this.a.Appearance.Background.Options.UseFont = true;
             this.a.BackColor = System.Drawing.Color.Gray;
@@ -194,17 +200,18 @@ namespace MRes
             this.btn_staff,
             this.btn_food,
             this.btn_category,
-            this.navBarItem6,
+            this.btn_Revenue,
             this.btn_material,
             this.btn_input,
             this.btn_sum,
             this.btn_table,
-            this.btn_tb});
-            this.a.Location = new System.Drawing.Point(0, 157);
+            this.btn_tb,
+            this.btn_history});
+            this.a.Location = new System.Drawing.Point(0, 88);
             this.a.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.a.Name = "a";
             this.a.OptionsNavPane.ExpandedWidth = 269;
-            this.a.Size = new System.Drawing.Size(269, 553);
+            this.a.Size = new System.Drawing.Size(269, 622);
             this.a.TabIndex = 8;
             this.a.Text = "Nhân Viên";
             this.a.View = new DevExpress.XtraNavBar.ViewInfo.StandardSkinNavigationPaneViewInfoRegistrator("DevExpress Dark Style");
@@ -214,7 +221,6 @@ namespace MRes
             this.navBarGroup4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.navBarGroup4.Appearance.Options.UseFont = true;
             this.navBarGroup4.Caption = "kho";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.GroupStyle = DevExpress.XtraNavBar.NavBarGroupStyle.LargeIconsList;
             this.navBarGroup4.ImageOptions.SmallImage = global::MRes.Properties.Resources.warehouse;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -261,10 +267,10 @@ namespace MRes
             // 
             this.ManagerController.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.ManagerController.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ManagerController.Location = new System.Drawing.Point(269, 157);
+            this.ManagerController.Location = new System.Drawing.Point(269, 88);
             this.ManagerController.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ManagerController.Name = "ManagerController";
-            this.ManagerController.Size = new System.Drawing.Size(906, 553);
+            this.ManagerController.Size = new System.Drawing.Size(906, 622);
             this.ManagerController.TabIndex = 13;
             // 
             // barButtonItem4
@@ -465,7 +471,8 @@ namespace MRes
             this.ribbonControl2.Name = "ribbonControl2";
             this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl2.Size = new System.Drawing.Size(1175, 157);
+            this.ribbonControl2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal;
+            this.ribbonControl2.Size = new System.Drawing.Size(1175, 88);
             // 
             // barSubItem1
             // 
@@ -475,7 +482,6 @@ namespace MRes
             // 
             // Main
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1175, 710);
@@ -488,6 +494,8 @@ namespace MRes
             this.Ribbon = this.ribbonControl2;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ManagerController)).EndInit();
@@ -505,7 +513,7 @@ namespace MRes
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarControl a;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem btn_Revenue;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.GroupControl ManagerController;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -531,5 +539,6 @@ namespace MRes
         private DevExpress.XtraNavBar.NavBarItem btn_sum;
         private DevExpress.XtraNavBar.NavBarItem btn_table;
         private DevExpress.XtraNavBar.NavBarItem btn_tb;
+        private DevExpress.XtraNavBar.NavBarItem btn_history;
     }
 }

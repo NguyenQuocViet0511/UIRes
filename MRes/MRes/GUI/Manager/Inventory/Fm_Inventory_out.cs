@@ -22,9 +22,7 @@ namespace MRes.GUI.Manager.Inventory
         public Fm_Inventory_out()
         {
             InitializeComponent();
-            Getinventory();
-            Gethistoryinventory();
-            CheckForIllegalCrossThreadCalls = false;
+     
         }
 
         public void Getinventory()
@@ -143,6 +141,13 @@ namespace MRes.GUI.Manager.Inventory
         {
             Click = false;
             panel_controller.Enabled = false;
+        }
+
+        private void Fm_Inventory_out_Load(object sender, EventArgs e)
+        {
+            Getinventory();
+            Gethistoryinventory();
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

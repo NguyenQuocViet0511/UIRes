@@ -104,6 +104,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -132,6 +133,7 @@
     <Compile Include="DAL\API\Staff\APIStaff.cs" />
     <Compile Include="DAL\API\Table\APITable.cs" />
     <Compile Include="DAL\Const.cs" />
+    <Compile Include="DAL\Role.cs" />
     <Compile Include="GUI\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +230,18 @@
       <DependentUpon>CrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GUI\Revenue\Revenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Revenue\Revenue.Designer.cs">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Revenue\Revenueinventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Revenue\Revenueinventory.Designer.cs">
+      <DependentUpon>Revenueinventory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -249,6 +263,8 @@
     </Compile>
     <Compile Include="Models\BillInfo\BillInfo.cs" />
     <Compile Include="Models\BillInfo\BillInfoDao.cs" />
+    <Compile Include="Models\Bill\Bill.cs" />
+    <Compile Include="Models\Bill\BillDao.cs" />
     <Compile Include="Models\Category\Category.cs" />
     <Compile Include="Models\Category\CategoryDao.cs" />
     <Compile Include="Models\Food\Food.cs" />
@@ -327,6 +343,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Revenue\Revenue.resx">
+      <DependentUpon>Revenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Revenue\Revenueinventory.resx">
+      <DependentUpon>Revenueinventory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +366,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="MRes.Models.Bill.Bill.datasource" />
+    <None Include="MRes.Models.Inventory.Historyinventory.datasource" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -416,6 +440,17 @@
     <None Include="Resources\circle-table.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\clock.png" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\icons8_female_user_64.png" />
+    <None Include="Resources\icons8_password_key_64.png" />
+    <None Include="Resources\logo1.png" />
+    <None Include="Resources\ten.png" />
+    <None Include="Resources\ten1.png" />
+    <None Include="Resources\Untitled.png" />
+    <None Include="Resources\programmer.png" />
+    <None Include="Resources\key.png" />
+    <None Include="Resources\avatar.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

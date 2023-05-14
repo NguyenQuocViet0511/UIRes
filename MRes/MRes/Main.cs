@@ -1,10 +1,14 @@
-﻿using MRes.DAL;
+﻿using DevExpress.Skins;
+using DevExpress.UserSkins;
+using MRes.DAL;
+using MRes.GUI.Login;
 using MRes.GUI.Manager.Category;
 using MRes.GUI.Manager.Food;
 using MRes.GUI.Manager.Inventory;
 using MRes.GUI.Manager.Staff;
 using MRes.GUI.Manager.Table;
 using MRes.GUI.Oder.Table;
+using MRes.GUI.Revenue;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,15 +37,24 @@ namespace MRes
         public Main()
         {
             InitializeComponent();
+    
+
+
         }
 
         private void btn_food_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            food = new QL_Food();
-            CreateForm(food,null);
-            this.Chonse = Const.MANAGER_FOOD;
-
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                food = new QL_Food();
+                CreateForm(food, null);
+                this.Chonse = Const.MANAGER_FOOD;
+            }
         }
 
 
@@ -68,6 +81,10 @@ namespace MRes
 
         private void Main_Load(object sender, EventArgs e)
         {
+            Login login = new Login();
+            Revenue revenue = new Revenue();
+            CreateForm(revenue, null);
+            login.ShowDialog();
 
         }
 
@@ -81,18 +98,32 @@ namespace MRes
 
         private void btn_staff_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            staff = new Fm_Staff();
-            CreateForm(staff, null);
-            this.Chonse = Const.MANAGER_STAFF;
+            if(CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }  
+            else
+            {
+                staff = new Fm_Staff();
+                CreateForm(staff, null);
+                this.Chonse = Const.MANAGER_STAFF;
+            }    
+           
 
         }
 
         private void btn_category_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Category = new Fm_category();
-            CreateForm(Category, null);
-            this.Chonse = Const.MANAGER_CATEGORY;
-
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Category = new Fm_category();
+                CreateForm(Category, null);
+                this.Chonse = Const.MANAGER_CATEGORY;
+            }
         }
         //
         private void setshoseadd(bool set)
@@ -145,7 +176,9 @@ namespace MRes
                     Material.Cleartext(); 
                     setshoseadd(false);
                     break;
-            }    
+                    CheckClick = false;
+
+            }
         }
         private void Choseedit(string text)
         {
@@ -205,6 +238,12 @@ namespace MRes
                 case "QLTABLE":
                     table.setPanel(false);
                     table.ClearandAdd();
+                    setshoseall(true);
+                    CheckClick = false;
+                    break;
+                case "QLMATERIAL":
+                    Material.setPanel(false);
+                    Material.ClearandAdd();
                     setshoseall(true);
                     CheckClick = false;
                     break;
@@ -429,37 +468,116 @@ namespace MRes
 
         private void btn_input_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
-            Fm_Inventory inventory = new Fm_Inventory();
-            CreateForm(inventory, null);
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Fm_Inventory inventory = new Fm_Inventory();
+                CreateForm(inventory, null);
+            }
         }
 
         private void btn_material_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
-            Material = new Fm_Material();
-            CreateForm(Material, null);
-            this.Chonse = Const.MANAGER_MATERIAL;
-
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Material = new Fm_Material();
+                CreateForm(Material, null);
+                this.Chonse = Const.MANAGER_MATERIAL;
+            }
         }
 
         private void btn_table_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_Talbeoder tableoder = new Fm_Talbeoder();
-            CreateForm(tableoder, null);
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Fm_Talbeoder tableoder = new Fm_Talbeoder();
+                CreateForm(tableoder, null);
+            }
         }
 
         private void btn_sum_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Fm_Inventory_out Inventory_out = new Fm_Inventory_out();
-            CreateForm(Inventory_out, null);
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Fm_Inventory_out Inventory_out = new Fm_Inventory_out();
+                CreateForm(Inventory_out, null);
+            }
         }
 
         private void btn_tb_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            table = new Fm_Table();
-            CreateForm(table, null);
-            this.Chonse = Const.MANAGER_TALBE;
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                table = new Fm_Table();
+                CreateForm(table, null);
+                this.Chonse = Const.MANAGER_TALBE;
+            }
+
+        }
+
+        private void btn_Revenue_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Revenue revenue = new Revenue();
+                CreateForm(revenue, null);
+            }
+        }
+
+        private void btn_history_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            if (CheckClick)
+            {
+                MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+            }
+            else
+            {
+                Revenueinventory Revenueinventory = new Revenueinventory();
+                CreateForm(Revenueinventory, null);
+            }
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult diaglog = (MessageBox.Show("Bạn có chắc là muốn thoát không?", "Quản Lý", MessageBoxButtons.OKCancel, MessageBoxIcon.Question));
+            if(diaglog == DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+
+            }
+
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
 
         }
     }

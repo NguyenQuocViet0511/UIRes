@@ -30,7 +30,13 @@ namespace MRes.GUI.Oder.Table
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.tabtable = new DevExpress.XtraTab.XtraTabControl();
+            this.TADTABLE = new DevExpress.XtraTab.XtraTabPage();
             this.flow_Table = new System.Windows.Forms.FlowLayoutPanel();
+            this.TADOUT = new DevExpress.XtraTab.XtraTabPage();
+            this.flow_home = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelControl11 = new DevExpress.XtraEditors.PanelControl();
+            this.btn_created = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
@@ -78,6 +84,12 @@ namespace MRes.GUI.Oder.Table
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabtable)).BeginInit();
+            this.tabtable.SuspendLayout();
+            this.TADTABLE.SuspendLayout();
+            this.TADOUT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).BeginInit();
+            this.panelControl11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -114,22 +126,94 @@ namespace MRes.GUI.Oder.Table
             this.panelControl1.Appearance.BorderColor = System.Drawing.Color.Black;
             this.panelControl1.Appearance.Options.UseBorderColor = true;
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.panelControl1.Controls.Add(this.flow_Table);
+            this.panelControl1.Controls.Add(this.tabtable);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(368, 678);
             this.panelControl1.TabIndex = 0;
             // 
+            // tabtable
+            // 
+            this.tabtable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabtable.Location = new System.Drawing.Point(2, 2);
+            this.tabtable.Name = "tabtable";
+            this.tabtable.SelectedTabPage = this.TADTABLE;
+            this.tabtable.Size = new System.Drawing.Size(364, 674);
+            this.tabtable.TabIndex = 0;
+            this.tabtable.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.TADTABLE,
+            this.TADOUT});
+            this.tabtable.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.tabtable_SelectedPageChanged);
+            this.tabtable.Click += new System.EventHandler(this.tabtable_Click);
+            // 
+            // TADTABLE
+            // 
+            this.TADTABLE.Controls.Add(this.flow_Table);
+            this.TADTABLE.Name = "TADTABLE";
+            this.TADTABLE.Size = new System.Drawing.Size(359, 646);
+            this.TADTABLE.Text = "gọi Theo Bàn";
+            // 
             // flow_Table
             // 
             this.flow_Table.AutoScroll = true;
             this.flow_Table.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flow_Table.Location = new System.Drawing.Point(2, 2);
+            this.flow_Table.Location = new System.Drawing.Point(0, 0);
             this.flow_Table.Name = "flow_Table";
             this.flow_Table.Padding = new System.Windows.Forms.Padding(10);
-            this.flow_Table.Size = new System.Drawing.Size(364, 674);
+            this.flow_Table.Size = new System.Drawing.Size(359, 646);
             this.flow_Table.TabIndex = 1;
+            // 
+            // TADOUT
+            // 
+            this.TADOUT.Controls.Add(this.flow_home);
+            this.TADOUT.Controls.Add(this.panelControl11);
+            this.TADOUT.Name = "TADOUT";
+            this.TADOUT.Size = new System.Drawing.Size(359, 646);
+            this.TADOUT.Text = "Mang Về";
+            // 
+            // flow_home
+            // 
+            this.flow_home.AutoScroll = true;
+            this.flow_home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flow_home.Location = new System.Drawing.Point(0, 49);
+            this.flow_home.Name = "flow_home";
+            this.flow_home.Padding = new System.Windows.Forms.Padding(10);
+            this.flow_home.Size = new System.Drawing.Size(359, 597);
+            this.flow_home.TabIndex = 4;
+            // 
+            // panelControl11
+            // 
+            this.panelControl11.Controls.Add(this.btn_created);
+            this.panelControl11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl11.Location = new System.Drawing.Point(0, 0);
+            this.panelControl11.Name = "panelControl11";
+            this.panelControl11.Size = new System.Drawing.Size(359, 49);
+            this.panelControl11.TabIndex = 0;
+            // 
+            // btn_created
+            // 
+            this.btn_created.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_created.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(133)))), ((int)(((byte)(133)))));
+            this.btn_created.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_created.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btn_created.Appearance.Options.UseBackColor = true;
+            this.btn_created.Appearance.Options.UseFont = true;
+            this.btn_created.Appearance.Options.UseForeColor = true;
+            this.btn_created.AppearanceDisabled.BackColor = System.Drawing.Color.Red;
+            this.btn_created.AppearanceDisabled.Options.UseBackColor = true;
+            this.btn_created.AppearanceDisabled.Options.UseBorderColor = true;
+            this.btn_created.AppearanceHovered.BackColor = System.Drawing.Color.Red;
+            this.btn_created.AppearanceHovered.Options.UseBackColor = true;
+            this.btn_created.AppearancePressed.BackColor = System.Drawing.Color.Red;
+            this.btn_created.AppearancePressed.Options.UseBackColor = true;
+            this.btn_created.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
+            this.btn_created.Location = new System.Drawing.Point(258, 14);
+            this.btn_created.Name = "btn_created";
+            this.btn_created.Size = new System.Drawing.Size(96, 29);
+            this.btn_created.TabIndex = 37;
+            this.btn_created.Text = "Tạo HD";
+            this.btn_created.Click += new System.EventHandler(this.btn_created_Click);
             // 
             // panelControl3
             // 
@@ -724,6 +808,12 @@ namespace MRes.GUI.Oder.Table
             this.Text = "Fm_Table";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabtable)).EndInit();
+            this.tabtable.ResumeLayout(false);
+            this.TADTABLE.ResumeLayout(false);
+            this.TADOUT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl11)).EndInit();
+            this.panelControl11.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -810,5 +900,11 @@ namespace MRes.GUI.Oder.Table
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.TextEdit txt_note;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private DevExpress.XtraTab.XtraTabControl tabtable;
+        private DevExpress.XtraTab.XtraTabPage TADTABLE;
+        private DevExpress.XtraTab.XtraTabPage TADOUT;
+        private System.Windows.Forms.FlowLayoutPanel flow_home;
+        private DevExpress.XtraEditors.PanelControl panelControl11;
+        private DevExpress.XtraEditors.SimpleButton btn_created;
     }
 }

@@ -47,6 +47,11 @@ namespace MRes.GUI.Manager.Food
             this.btn_last = new DevExpress.XtraEditors.SimpleButton();
             this.btn_first = new DevExpress.XtraEditors.SimpleButton();
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.txt_image = new System.Windows.Forms.TextBox();
+            this.cbn_statuscategory = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_price = new DevExpress.XtraEditors.TextEdit();
             this.cbn_category = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -54,7 +59,6 @@ namespace MRes.GUI.Manager.Food
             this.txt_discount = new MRes.Lib.numbertextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_created_by = new DevExpress.XtraEditors.TextEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cbn_status = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -65,25 +69,25 @@ namespace MRes.GUI.Manager.Food
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_id = new DevExpress.XtraEditors.TextEdit();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cbn_statuscategory = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GidController)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbn_statuscategory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_category.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_discount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_created_by.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbn_statuscategory.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridController
@@ -96,6 +100,7 @@ namespace MRes.GUI.Manager.Food
             this.gridController.TabIndex = 6;
             this.gridController.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GidController});
+            this.gridController.Click += new System.EventHandler(this.gridController_Click);
             // 
             // GidController
             // 
@@ -294,6 +299,7 @@ namespace MRes.GUI.Manager.Food
             // 
             this.panel_info.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panel_info.Appearance.Options.UseBackColor = true;
+            this.panel_info.Controls.Add(this.panelControl1);
             this.panel_info.Controls.Add(this.cbn_statuscategory);
             this.panel_info.Controls.Add(this.label9);
             this.panel_info.Controls.Add(this.txt_price);
@@ -302,7 +308,6 @@ namespace MRes.GUI.Manager.Food
             this.panel_info.Controls.Add(this.txt_discount);
             this.panel_info.Controls.Add(this.label4);
             this.panel_info.Controls.Add(this.txt_created_by);
-            this.panel_info.Controls.Add(this.pictureEdit1);
             this.panel_info.Controls.Add(this.label8);
             this.panel_info.Controls.Add(this.label7);
             this.panel_info.Controls.Add(this.cbn_status);
@@ -318,6 +323,68 @@ namespace MRes.GUI.Manager.Food
             this.panel_info.Name = "panel_info";
             this.panel_info.Size = new System.Drawing.Size(1376, 149);
             this.panel_info.TabIndex = 4;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelControl1.Controls.Add(this.pictureEdit1);
+            this.panelControl1.Controls.Add(this.txt_image);
+            this.panelControl1.Location = new System.Drawing.Point(1127, 12);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(244, 121);
+            this.panelControl1.TabIndex = 7;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(2, 2);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(240, 117);
+            this.pictureEdit1.TabIndex = 29;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click_1);
+            // 
+            // txt_image
+            // 
+            this.txt_image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_image.Location = new System.Drawing.Point(2, 2);
+            this.txt_image.Name = "txt_image";
+            this.txt_image.Size = new System.Drawing.Size(240, 23);
+            this.txt_image.TabIndex = 28;
+            // 
+            // cbn_statuscategory
+            // 
+            this.cbn_statuscategory.EditValue = "Chọn trạng thái";
+            this.cbn_statuscategory.Enabled = false;
+            this.cbn_statuscategory.Location = new System.Drawing.Point(487, 105);
+            this.cbn_statuscategory.Name = "cbn_statuscategory";
+            this.cbn_statuscategory.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbn_statuscategory.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.cbn_statuscategory.Properties.Appearance.Options.UseFont = true;
+            this.cbn_statuscategory.Properties.Appearance.Options.UseForeColor = true;
+            this.cbn_statuscategory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.cbn_statuscategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbn_statuscategory.Properties.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
+            this.cbn_statuscategory.Size = new System.Drawing.Size(215, 24);
+            this.cbn_statuscategory.TabIndex = 27;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Gray;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(732, 113);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 16);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Trạng Thái";
             // 
             // txt_price
             // 
@@ -411,16 +478,6 @@ namespace MRes.GUI.Manager.Food
             this.txt_created_by.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
             this.txt_created_by.Size = new System.Drawing.Size(265, 24);
             this.txt_created_by.TabIndex = 19;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit1.Location = new System.Drawing.Point(1134, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(230, 121);
-            this.pictureEdit1.TabIndex = 18;
             // 
             // label8
             // 
@@ -555,39 +612,6 @@ namespace MRes.GUI.Manager.Food
             this.txt_id.Size = new System.Drawing.Size(228, 24);
             this.txt_id.TabIndex = 0;
             // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Gray;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(732, 113);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 16);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "Trạng Thái";
-            // 
-            // cbn_statuscategory
-            // 
-            this.cbn_statuscategory.EditValue = "Chọn trạng thái";
-            this.cbn_statuscategory.Enabled = false;
-            this.cbn_statuscategory.Location = new System.Drawing.Point(487, 105);
-            this.cbn_statuscategory.Name = "cbn_statuscategory";
-            this.cbn_statuscategory.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbn_statuscategory.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.cbn_statuscategory.Properties.Appearance.Options.UseFont = true;
-            this.cbn_statuscategory.Properties.Appearance.Options.UseForeColor = true;
-            this.cbn_statuscategory.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.cbn_statuscategory.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbn_statuscategory.Properties.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
-            this.cbn_statuscategory.Size = new System.Drawing.Size(215, 24);
-            this.cbn_statuscategory.TabIndex = 27;
-            // 
             // QL_Food
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,17 +631,20 @@ namespace MRes.GUI.Manager.Food
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbn_statuscategory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_price.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_category.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_count.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_discount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_created_by.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_id.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbn_statuscategory.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -637,7 +664,6 @@ namespace MRes.GUI.Manager.Food
         private DevExpress.XtraEditors.SimpleButton btn_last;
         private DevExpress.XtraEditors.SimpleButton btn_first;
         private DevExpress.XtraEditors.PanelControl panel_info;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_status;
@@ -662,5 +688,8 @@ namespace MRes.GUI.Manager.Food
         private DevExpress.XtraGrid.Columns.GridColumn colcategoryname;
         private DevExpress.XtraEditors.ComboBoxEdit cbn_statuscategory;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_image;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
     }
 }

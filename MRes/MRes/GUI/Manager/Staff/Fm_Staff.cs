@@ -1,4 +1,5 @@
-﻿using MRes.DAL.API.Role;
+﻿using MRes.DAL;
+using MRes.DAL.API.Role;
 using MRes.DAL.API.Staff;
 using MRes.Models.Role;
 using MRes.Models.Staff;
@@ -16,6 +17,7 @@ namespace MRes.GUI.Manager.Staff
 {
     public partial class Fm_Staff : Form
     {
+        string url = "";
         StaffData staff;
         RoleData Role;
         public Fm_Staff()
@@ -132,6 +134,14 @@ namespace MRes.GUI.Manager.Staff
                 //
                 txt_number.DataBindings.Clear();
                 txt_number.DataBindings.Add("text", staff.data.data, "number");
+
+                txt_image.DataBindings.Clear();
+                txt_image.DataBindings.Add("text", staff.data.data, "image");
+                 if (!string.IsNullOrEmpty(txt_image.Text))
+                {
+                    pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
+
+                }
             }    
 
              
@@ -214,7 +224,7 @@ namespace MRes.GUI.Manager.Staff
             Task add = new Task(
                         () =>
                         {
-                            String result = APIStaff.Instance.Add(txt_name.Text,txt_email.Text,cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(),date.Text,txt_address.Text);
+                            String result = APIStaff.Instance.Add(txt_name.Text,txt_email.Text,cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(),date.Text,txt_address.Text,url);
                             panel_info.BeginInvoke((Action)delegate ()
                             {
                                 Cleartext();
@@ -248,7 +258,7 @@ namespace MRes.GUI.Manager.Staff
             Task edit = new Task(
              () =>
              {
-                 String result = APIStaff.Instance.Edit(txt_id.Text,txt_name.Text,txt_email.Text, cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(), date.Text, txt_address.Text);
+                 String result = APIStaff.Instance.Edit(txt_id.Text,txt_name.Text,txt_email.Text, cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(), date.Text, txt_address.Text, url);
                  GetData();
                  MessageBox.Show("" + result);
 
@@ -270,6 +280,33 @@ namespace MRes.GUI.Manager.Staff
                 e.Handled = true;
             }
          
+        }
+
+        private void pictureEdit1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = openFileDialog.Filter = "JPG files (*.Jpg)|*.jpg|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                url = Const.GetStringFromImage(new Bitmap(openFileDialog.FileName));
+                pictureEdit1.Image = new Bitmap(openFileDialog.FileName);
+            }
+        }
+
+        private void gridController_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_image.Text))
+            {
+                pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
+
+            }
+            else
+            {
+                pictureEdit1.Image = null;
+            }
+
         }
     }
 }

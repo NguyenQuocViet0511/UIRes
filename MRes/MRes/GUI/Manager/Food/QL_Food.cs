@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -19,9 +20,13 @@ namespace MRes.GUI.Manager.Food
 {
     public partial class QL_Food : Form
     {
+    
         bool enable = false;
+        TextBox TextBox = new TextBox();
         FoodData food;
         CategoryData category;
+        string url = "";
+
         Item_Food item_food;
         public QL_Food()
         {
@@ -34,8 +39,7 @@ namespace MRes.GUI.Manager.Food
             //using (var response = request.GetResponse())
             //using (var stream = response.GetResponseStream())
             //{
-            //    pictureEdit1.Image = Bitmap.FromStream(stream);
-            //}
+          
 
 
         }
@@ -148,6 +152,16 @@ namespace MRes.GUI.Manager.Food
                 //
                 this.cbn_category.DataBindings.Clear();
                 this.cbn_category.DataBindings.Add("EditValue", food.data.data, "id_category");
+
+
+                txt_image.DataBindings.Clear();
+                txt_image.DataBindings.Add("text", food.data.data, "image");
+
+                if (!string.IsNullOrEmpty(txt_image.Text))
+                {
+                    pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
+
+                }
             }
 
             //
@@ -202,6 +216,7 @@ namespace MRes.GUI.Manager.Food
             //
             this.cbn_category.DataBindings.Clear();
 
+           
         }
         //check empty
         public bool check()
@@ -220,7 +235,7 @@ namespace MRes.GUI.Manager.Food
                 Task add = new Task(
                             () =>
                             {
-                                String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, Const.staff.id, cbn_category.EditValue.ToString());
+                                String result = APIFood.Instance.Add(txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, Const.staff.id, cbn_category.EditValue.ToString(), url);
                                 panel_info.BeginInvoke((Action)delegate ()
                                 {
                                     Cleartext();
@@ -254,13 +269,48 @@ namespace MRes.GUI.Manager.Food
             Task edit = new Task(
              () =>
              {
-                 String result = APIFood.Instance.Edit(txt_id.Text, txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, "US000000", cbn_category.EditValue.ToString());
-                 GetData();
-                 MessageBox.Show("" + result);
+                 
+                     String result = APIFood.Instance.Edit(txt_id.Text, txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, Const.staff.id, cbn_category.EditValue.ToString(), url);
+                     GetData();
+                     MessageBox.Show("" + result);
+                 
+             
+               
 
              }
              );
             edit.Start();
+        }
+
+
+       
+
+        private void gridController_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txt_image.Text))
+            {
+                pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
+
+            }else
+            {
+                pictureEdit1.Image = null;
+            }    
+
+          
+        }
+
+        private void pictureEdit1_Click_1(object sender, EventArgs e)
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = openFileDialog.Filter = "JPG files (*.Jpg)|*.jpg|All files (*.*)|*.*";
+            openFileDialog.FilterIndex = 1;
+            openFileDialog.RestoreDirectory = true;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                url = Const.GetStringFromImage(new Bitmap(openFileDialog.FileName));
+                pictureEdit1.Image = new Bitmap(openFileDialog.FileName);
+            }
         }
     }
 }

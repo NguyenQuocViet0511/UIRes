@@ -1,8 +1,10 @@
-﻿using MRes.Models.BillInfo;
+﻿using MRes.Models.Bill;
+using MRes.Models.BillInfo;
 using MRes.Models.Staff;
 using MRes.Models.Table;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -22,7 +24,9 @@ namespace MRes.DAL
         public static string MANAGER_STAFF = "QLSTAFF";
         public static string MANAGER_TALBE = "QLTABLE";
         public static string MANAGER_MATERIAL = "QLMATERIAL";
+        public static string CHONSE = "";
         public static Table table = new Table();
+        public static Bill bill = new Bill();
         public static Staff staff = new Staff() {
         id = "US000000"
         };
@@ -99,8 +103,28 @@ namespace MRes.DAL
                 return;
             }
         }
-  
 
+        public static string GetStringFromImage(Image image)
+        {
+            if (image != null)
+            {
+                ImageConverter ic = new ImageConverter();
+                byte[] buffer = (byte[])ic.ConvertTo(image, typeof(byte[]));
+                return Convert.ToBase64String(
+                    buffer,
+                    Base64FormattingOptions.InsertLineBreaks);
+            }
+            else
+                return null;
+        }
+        public static Image Base64ToImage(string base64String)
+        {
+            byte[] imageBytes = Convert.FromBase64String(base64String);
+            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
+            ms.Write(imageBytes, 0, imageBytes.Length);
+            System.Drawing.Image image = System.Drawing.Image.FromStream(ms, true);
+            return image;
+        }
 
 
     }

@@ -409,6 +409,7 @@ namespace MRes.GUI.Manager.Inventory
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fm_Material";
             this.Text = "Fm_Material";
+            this.Load += new System.EventHandler(this.Fm_Material_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GidController)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();

@@ -11,6 +11,7 @@ namespace MRes.Models.Staff
         private string ID;
         private string Name;
         private string Username;
+        private string Password;
         private string Email;
         private string Date;
         private string Sex;
@@ -18,12 +19,13 @@ namespace MRes.Models.Staff
         private string Address;
         private string Status;
         private string Id_role;
+        private string Image;
 
         public Staff()
         {
 
         }
-        public Staff(string id, string name, string username, string email, string date,string sex, string number, string address, string status, string id_role)
+        public Staff(string id, string name, string username, string email, string date,string sex, string number, string address, string status, string id_role,string image)
         {
             this.ID = id;
             this.Name = name;
@@ -35,7 +37,9 @@ namespace MRes.Models.Staff
             this.Address = address;
             this.Status = status;
             this.Id_role = id_role;
-       
+            this.Image = image;
+
+
         }
 
         public string id { get => ID; set => ID = value; }
@@ -47,6 +51,9 @@ namespace MRes.Models.Staff
         public string number { get => Number; set => Number = value; }
         public string address { get => Address; set => Address = value; }
         public string status { get => Status; set => Status = value; }
+        public string password { get => Password; set => Password = value; }
         public string id_role { get => Id_role; set => Id_role = value; }
+        public string image { get => Image; set => Image = value; }
+
     }
 }

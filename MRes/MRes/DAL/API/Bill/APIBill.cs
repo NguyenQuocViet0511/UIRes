@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MRes.Models.Bill;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -32,25 +33,30 @@ namespace MRes.DAL.API.Bill
 
 
 
-        public APIBill GetAll()
+        public BillData GetAll()
         {
             string Result = BaseAPI.Instance.Get(Const.URL + "bill/list");
             if (Result == null)
             {
                 return null;
             }
-            APIBill data = JsonConvert.DeserializeObject<APIBill>(Result);
+            BillData data = JsonConvert.DeserializeObject<BillData>(Result);
             return data;
         }
-        public string Add(string name, double price, string discount, string status, string created_by, string id_category)
+        public BillData GetBillOut()
+        {
+            string Result = BaseAPI.Instance.Get(Const.URL + "bill/GetBillOut");
+            if (Result == null)
+            {
+                return null;
+            }
+            BillData data = JsonConvert.DeserializeObject<BillData>(Result);
+            return data;
+        }
+        public string Add(string created_by)
         {
             NameValueCollection table = new NameValueCollection();
-            table["name"] = name;
-            table["price"] = price.ToString();
-            table["discount"] = discount;
-            table["status"] = status;
-            table["created_by"] = created_by;
-            table["id_category"] = id_category;
+            table["id_user"] = created_by;
             string Result = BaseAPI.Instance.All(Const.URL + "bill/create", table, "POST");
             return Result;
         }

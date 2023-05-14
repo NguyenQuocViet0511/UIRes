@@ -19,8 +19,7 @@ namespace MRes.GUI.Manager.Inventory
         public Fm_Material()
         {
             InitializeComponent();
-            GetData();
-            init();
+        
         }
         // add intit
         private void init()
@@ -180,6 +179,12 @@ namespace MRes.GUI.Manager.Inventory
              }
              );
             edit.Start();
+        }
+
+        private void Fm_Material_Load(object sender, EventArgs e)
+        {
+            GetData();
+            init();
         }
     }
 }

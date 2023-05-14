@@ -3,6 +3,7 @@ using MRes.DAL.API.Bill;
 using MRes.DAL.API.BillInfo;
 using MRes.DAL.API.Table;
 using MRes.GUI.Pay;
+using MRes.Models.Bill;
 using MRes.Models.BillInfo;
 using MRes.Models.Table;
 using System;
@@ -22,14 +23,20 @@ namespace MRes.GUI.Oder.Table
         TableData table;
         string chonse = "";
         string[] Split;
+        string id_billout;
+        BillData billData;
         BillInfoData billInfo; 
         Button Button;
+        Button ButtonGet;
+
         bool ClickTalbe = false;
         public Fm_Talbeoder()
         {
             InitializeComponent();
             loadTable();
             CheckForIllegalCrossThreadCalls = false;
+            loadBillOut();
+            Const.CHONSE = "TADTABLE";
         }
 
         //Created one new form
@@ -330,11 +337,23 @@ namespace MRes.GUI.Oder.Table
                 {
                     String result = APIBillInfo.Instance.delete(txt_id.Text, Const.table.id_bill, Const.table.id);
                     MessageBox.Show("" + result);
-                    LoadDataBill();
+                    Load();
                 }
                 );
             t.Start();
 
+        }
+        private void Load()
+        {
+            switch (Const.CHONSE)
+            {
+                case "TADTABLE":
+                    LoadDataBill();
+                    break;
+                case "TADOUT":
+                    LoadDataBillOut();
+                    break;
+            }
         }
         //send
         public void SendCook()
@@ -344,7 +363,7 @@ namespace MRes.GUI.Oder.Table
                 {
                     String result = APIBillInfo.Instance.SendCook(txt_id.Text, Const.table.id_bill, Const.table.id);
                     MessageBox.Show("" + result);
-                    LoadDataBill();
+                    Load();
 
                 }
                 );
@@ -379,8 +398,18 @@ namespace MRes.GUI.Oder.Table
                        });
                     break;
                 case "order":
-                    loadTable();
-                    LoadDataBill();
+
+                    switch (Const.CHONSE)
+                    {
+                        case "TADTABLE":
+                            loadTable();
+                            LoadDataBill();
+                            break;
+                        case "TADOUT":
+                            LoadDataBillOut();
+                            break;
+                    }
+ 
                     break;
             }    
         }
@@ -419,14 +448,32 @@ namespace MRes.GUI.Oder.Table
             Task t = new Task(
                 () =>
                 {
-                 
-                        String result = APIBill.Instance.update(Split[0], Const.table.id_bill, Const.SumPay);
-                        loadTable();
-                        Cleartext();
-                        grid_billinfo.DataSource = null;
-                        ClickTalbe = false;
-                        lbl_name.Text = "BÀN";
-                        Manager_controller.Controls.Clear();
+
+
+                    switch (Const.CHONSE)
+                    {
+                        case "TADTABLE":
+                            String result = APIBill.Instance.update(Split[0], Const.table.id_bill, Const.SumPay);
+                            MessageBox.Show(result);
+                            loadTable();
+                            Cleartext();
+                            grid_billinfo.DataSource = null;
+                            ClickTalbe = false;
+                            lbl_name.Text = "BÀN";
+                            Manager_controller.Controls.Clear();
+                            break;
+                        case "TADOUT":
+                            LoadDataBillOut();
+                            String result1 = APIBill.Instance.update(Split[0], Const.bill.id, Const.SumPay);
+                            MessageBox.Show(result1);
+                            loadBillOut();
+                            Cleartext();
+                            grid_billinfo.DataSource = null;
+                            ClickTalbe = false;
+                            lbl_name.Text = "BÀN";
+                            Manager_controller.Controls.Clear();
+                            break;
+                    }
 
 
 
@@ -450,6 +497,132 @@ namespace MRes.GUI.Oder.Table
                     p.Show();
                 }
             }
+        }
+
+        private void btn_created_Click(object sender, EventArgs e)
+        {
+            Addnew(Const.staff.id);
+        }
+        private void Addnew(string id_user)
+        {
+            Task t = new Task(
+                () =>
+                {
+
+                    String result = APIBill.Instance.Add(id_user);
+                    MessageBox.Show(result);
+                    loadBillOut();
+                }
+                );
+            t.Start();
+        }
+        private void loadBillOut()
+        {
+
+
+            Task t = new Task(
+               () =>
+               {
+                   billData = APIBill.Instance.GetBillOut();
+
+                   flow_home.BeginInvoke((Action)delegate ()
+                   {
+                       flow_home.Controls.Clear();
+                       if (billData != null)
+                       {
+                           foreach (var item in billData.data.data)
+                           {
+                               ButtonGet = new Button();
+                               ButtonGet.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                               ButtonGet.ForeColor = Color.White;
+                               ButtonGet.BackColor = Color.FromArgb(133, 133, 133);
+                               ButtonGet.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+                               ButtonGet.Location = new System.Drawing.Point(49, 196);
+                               ButtonGet.Size = new System.Drawing.Size(120, 60);
+                               ButtonGet.Text = item.id;
+                               ButtonGet.FlatStyle = FlatStyle.Flat;
+                               ButtonGet.Click += ButtonGet_Click;
+                               ButtonGet.Tag = item.id;
+                               ButtonGet.FlatAppearance.BorderSize = 0;
+                               ButtonGet.Image = global::MRes.Properties.Resources.eat;
+                               ButtonGet.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+                               flow_home.Controls.Add(ButtonGet);
+
+                           }
+
+
+                       }
+
+
+                   });
+               }
+               );
+            t.Start();
+
+        }
+
+        //button oder out 
+        private void ButtonGet_Click(object sender, EventArgs e)
+        {
+
+            Button btn = sender as Button;
+            SetClickButton(btn, null);
+            ClickTalbe = true;
+            Const.bill.id = btn.Tag.ToString();
+            id_billout = btn.Tag.ToString();
+            Cleartext();
+            LoadDataBillOut();
+        }
+        private void LoadDataBillOut()
+        {
+
+
+            Task t = new Task(
+                () =>
+                {
+
+                    billInfo = APIBillInfo.Instance.GetJoinBill(id_billout);
+                    if (billInfo != null)
+                    {
+                        grid_billinfo.BeginInvoke((Action)delegate ()
+                        {
+                            Const.billinfo.Clear();
+                            double sum = 0;
+                            grid_billinfo.DataSource = null;
+                            grid_billinfo.DataSource = billInfo.data.data;
+                            foreach (var item in billInfo.data.data)
+                            {
+                                sum += item.sum;
+                                item.sumpay = sum;
+                                Const.billinfo.Add(item);
+
+                            }
+                            txt_sum.Text = sum.ToString();
+                            Const.SumPay = sum;
+                            ClearandAdd();
+
+                        });
+                    }
+
+                }
+                );
+            t.Start();
+        }
+
+        private void tabtable_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void tabtable_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            Const.CHONSE = e.Page.Name;
+            MessageBox.Show(e.Page.Name);
+            Cleartext();
+            grid_billinfo.DataSource = null;
+            ClickTalbe = false;
+            lbl_name.Text = "BÀN";
+            Manager_controller.Controls.Clear();
+
         }
     }
 }

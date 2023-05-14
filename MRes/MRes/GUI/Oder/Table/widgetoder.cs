@@ -52,9 +52,21 @@ namespace MRes.GUI.Oder.Table
             Task t = new Task(
                 () =>
                 {
-                    String result = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.table.id_bill,Convert.ToInt32(txt_number.Value),txt_note.Text,"US000000");
-                     MessageBox.Show("" + result);
-                    LoadBillandtable();
+
+                    switch (Const.CHONSE)
+                    {
+                        case "TADTABLE":
+                            String result = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.table.id_bill, Convert.ToInt32(txt_number.Value), txt_note.Text, Const.staff.id);
+                            MessageBox.Show("" + result);
+                            LoadBillandtable();
+                            break;
+                        case "TADOUT":
+                            String result1 = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.bill.id, Convert.ToInt32(txt_number.Value), txt_note.Text, Const.staff.id);
+                            MessageBox.Show("" + result1);
+                            LoadBillandtable();
+                            break;
+                    }
+                
 
                 }
                 );

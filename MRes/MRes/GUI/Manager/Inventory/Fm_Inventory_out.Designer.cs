@@ -29,7 +29,7 @@ namespace MRes.GUI.Manager.Inventory
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.gird_material = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -50,6 +50,7 @@ namespace MRes.GUI.Manager.Inventory
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.btn_add = new DevExpress.XtraEditors.SimpleButton();
             this.panel_controller = new DevExpress.XtraEditors.PanelControl();
+            this.txt_name = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_number = new System.Windows.Forms.NumericUpDown();
             this.txt_id = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.label5 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@ namespace MRes.GUI.Manager.Inventory
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_out = new DevExpress.XtraEditors.SimpleButton();
-            this.txt_name = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gird_material)).BeginInit();
@@ -167,9 +167,9 @@ namespace MRes.GUI.Manager.Inventory
             // grid_history
             // 
             this.grid_history.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.grid_history.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.grid_history.Location = new System.Drawing.Point(2, 244);
             this.grid_history.MainView = this.GidController;
             this.grid_history.Name = "grid_history";
@@ -311,6 +311,27 @@ namespace MRes.GUI.Manager.Inventory
             this.panel_controller.Size = new System.Drawing.Size(721, 137);
             this.panel_controller.TabIndex = 11;
             // 
+            // txt_name
+            // 
+            this.txt_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            // 
+            // 
+            // 
+            this.txt_name.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_name.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_name.Border.BorderBottomWidth = 3;
+            this.txt_name.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_name.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.txt_name.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txt_name.Border.BorderRightWidth = 3;
+            this.txt_name.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
+            this.txt_name.Border.Class = "TextBoxBorder";
+            this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_name.Location = new System.Drawing.Point(149, 53);
+            this.txt_name.Name = "txt_name";
+            this.txt_name.Size = new System.Drawing.Size(344, 24);
+            this.txt_name.TabIndex = 36;
+            // 
             // txt_number
             // 
             this.txt_number.Location = new System.Drawing.Point(150, 90);
@@ -429,27 +450,6 @@ namespace MRes.GUI.Manager.Inventory
             this.btn_out.Text = "xuất";
             this.btn_out.Click += new System.EventHandler(this.btn_out_Click);
             // 
-            // txt_name
-            // 
-            this.txt_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            // 
-            // 
-            // 
-            this.txt_name.Border.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.txt_name.Border.BorderBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txt_name.Border.BorderBottomWidth = 3;
-            this.txt_name.Border.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Etched;
-            this.txt_name.Border.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.txt_name.Border.BorderRightColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txt_name.Border.BorderRightWidth = 3;
-            this.txt_name.Border.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Etched;
-            this.txt_name.Border.Class = "TextBoxBorder";
-            this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(149, 53);
-            this.txt_name.Name = "txt_name";
-            this.txt_name.Size = new System.Drawing.Size(344, 24);
-            this.txt_name.TabIndex = 36;
-            // 
             // Fm_Inventory_out
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +461,7 @@ namespace MRes.GUI.Manager.Inventory
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Fm_Inventory_out";
             this.Text = "Fm_Inventory_out";
+            this.Load += new System.EventHandler(this.Fm_Inventory_out_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gird_material)).EndInit();

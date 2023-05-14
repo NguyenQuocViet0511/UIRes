@@ -515,3 +515,5 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\bin\Debug\CrystalDecisions.Windows.Forms.d
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Pay.crpPay.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_Inventory_out.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.Revenue.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.Revenueinventory.resources

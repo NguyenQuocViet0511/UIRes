@@ -30,13 +30,15 @@ namespace MRes.GUI.Manager.Staff
         private void InitializeComponent()
         {
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.txt_image = new System.Windows.Forms.TextBox();
             this.txt_address = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_number = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txt_email = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbn_role = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.date = new DevExpress.XtraEditors.DateEdit();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -69,11 +71,13 @@ namespace MRes.GUI.Manager.Staff
             this.colstatus = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_sex.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).BeginInit();
@@ -88,12 +92,12 @@ namespace MRes.GUI.Manager.Staff
             // 
             this.panel_info.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.panel_info.Appearance.Options.UseBackColor = true;
+            this.panel_info.Controls.Add(this.panelControl1);
             this.panel_info.Controls.Add(this.txt_address);
             this.panel_info.Controls.Add(this.txt_number);
             this.panel_info.Controls.Add(this.txt_email);
             this.panel_info.Controls.Add(this.cbn_role);
             this.panel_info.Controls.Add(this.date);
-            this.panel_info.Controls.Add(this.pictureEdit1);
             this.panel_info.Controls.Add(this.label9);
             this.panel_info.Controls.Add(this.label8);
             this.panel_info.Controls.Add(this.label7);
@@ -112,6 +116,35 @@ namespace MRes.GUI.Manager.Staff
             this.panel_info.Name = "panel_info";
             this.panel_info.Size = new System.Drawing.Size(1336, 149);
             this.panel_info.TabIndex = 0;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panelControl1.Controls.Add(this.pictureEdit1);
+            this.panelControl1.Controls.Add(this.txt_image);
+            this.panelControl1.Location = new System.Drawing.Point(1086, 12);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(244, 121);
+            this.panelControl1.TabIndex = 25;
+            // 
+            // pictureEdit1
+            // 
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureEdit1.Location = new System.Drawing.Point(2, 2);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
+            this.pictureEdit1.Size = new System.Drawing.Size(240, 117);
+            this.pictureEdit1.TabIndex = 29;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
+            // 
+            // txt_image
+            // 
+            this.txt_image.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_image.Location = new System.Drawing.Point(2, 2);
+            this.txt_image.Name = "txt_image";
+            this.txt_image.Size = new System.Drawing.Size(240, 23);
+            this.txt_image.TabIndex = 28;
             // 
             // txt_address
             // 
@@ -222,16 +255,6 @@ namespace MRes.GUI.Manager.Staff
             this.date.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.date.Size = new System.Drawing.Size(228, 24);
             this.date.TabIndex = 19;
-            // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureEdit1.Location = new System.Drawing.Point(1116, 12);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Size = new System.Drawing.Size(208, 121);
-            this.pictureEdit1.TabIndex = 18;
             // 
             // label9
             // 
@@ -484,6 +507,7 @@ namespace MRes.GUI.Manager.Staff
             this.gridController.TabIndex = 3;
             this.gridController.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.GidController});
+            this.gridController.Click += new System.EventHandler(this.gridController_Click);
             // 
             // GidController
             // 
@@ -529,6 +553,7 @@ namespace MRes.GUI.Manager.Staff
             this.colemail.Caption = "Email";
             this.colemail.FieldName = "email";
             this.colemail.Name = "colemail";
+            this.colemail.OptionsColumn.AllowEdit = false;
             this.colemail.Visible = true;
             this.colemail.VisibleIndex = 3;
             // 
@@ -566,6 +591,7 @@ namespace MRes.GUI.Manager.Staff
             this.coldate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.coldate.FieldName = "date";
             this.coldate.Name = "coldate";
+            this.coldate.OptionsColumn.AllowEdit = false;
             this.coldate.Visible = true;
             this.coldate.VisibleIndex = 4;
             // 
@@ -580,7 +606,7 @@ namespace MRes.GUI.Manager.Staff
             // 
             // colnumber
             // 
-            this.colnumber.Caption = "number";
+            this.colnumber.Caption = "Số Điện Thoại";
             this.colnumber.FieldName = "number";
             this.colnumber.Name = "colnumber";
             this.colnumber.OptionsColumn.AllowEdit = false;
@@ -610,6 +636,7 @@ namespace MRes.GUI.Manager.Staff
             this.colstatus.Caption = "Trạng Thái";
             this.colstatus.FieldName = "status";
             this.colstatus.Name = "colstatus";
+            this.colstatus.OptionsColumn.AllowEdit = false;
             this.colstatus.Visible = true;
             this.colstatus.VisibleIndex = 9;
             // 
@@ -628,11 +655,14 @@ namespace MRes.GUI.Manager.Staff
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             this.panel_info.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
+            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_role.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_sex.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbn_status.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_name.Properties)).EndInit();
@@ -661,7 +691,6 @@ namespace MRes.GUI.Manager.Staff
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.DateEdit date;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraGrid.GridControl gridController;
@@ -685,5 +714,8 @@ namespace MRes.GUI.Manager.Staff
         private DevComponents.DotNetBar.Controls.TextBoxX txt_number;
         private DevExpress.XtraGrid.Columns.GridColumn colemail;
         private DevExpress.XtraGrid.Columns.GridColumn colstatus;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private System.Windows.Forms.TextBox txt_image;
     }
 }
