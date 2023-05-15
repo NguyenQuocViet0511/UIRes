@@ -25,6 +25,7 @@ namespace MRes.DAL
         public static string MANAGER_TALBE = "QLTABLE";
         public static string MANAGER_MATERIAL = "QLMATERIAL";
         public static string CHONSE = "";
+        public static string LISTEN = "";
         public static Table table = new Table();
         public static Bill bill = new Bill();
         public static Staff staff = new Staff() {

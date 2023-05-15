@@ -19,6 +19,7 @@ namespace MRes.GUI.Login
         Main main;
         public Login()
         {
+            Client.Connect();
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }
@@ -62,6 +63,7 @@ namespace MRes.GUI.Login
                         else
                         {
                             MessageBox.Show("Đăng  Nhập Thành Công");
+                          
                             this.Close();
 
                         }

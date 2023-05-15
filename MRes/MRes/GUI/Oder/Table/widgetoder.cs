@@ -57,7 +57,7 @@ namespace MRes.GUI.Oder.Table
                     {
                         case "TADTABLE":
                             String result = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.table.id_bill, Convert.ToInt32(txt_number.Value), txt_note.Text, Const.staff.id);
-                            MessageBox.Show("" + result);
+                            MessageBox.Show("" + result + Const.LISTEN);
                             LoadBillandtable();
                             break;
                         case "TADOUT":
@@ -100,8 +100,10 @@ namespace MRes.GUI.Oder.Table
             if(txt_number.Value > 0)
             {
                 Order();
+              
 
-            }else
+            }
+            else
             {
                 MessageBox.Show("Bạn Chưa thêm Số lượng món ăn");
 

@@ -37,7 +37,7 @@ namespace MRes
         public Main()
         {
             InitializeComponent();
-    
+
 
 
         }
@@ -566,6 +566,7 @@ namespace MRes
             if(diaglog == DialogResult.OK)
             {
                 Application.Exit();
+                Client.close();
             }
             else
             {

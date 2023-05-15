@@ -132,6 +132,7 @@
     <Compile Include="DAL\API\Role\APIRole.cs" />
     <Compile Include="DAL\API\Staff\APIStaff.cs" />
     <Compile Include="DAL\API\Table\APITable.cs" />
+    <Compile Include="DAL\Client.cs" />
     <Compile Include="DAL\Const.cs" />
     <Compile Include="DAL\Role.cs" />
     <Compile Include="GUI\Login\Login.cs">
