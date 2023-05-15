@@ -178,7 +178,7 @@ namespace MRes
             // 
             // btn_history
             // 
-            this.btn_history.Caption = "Lịch Sử Nhập Kho";
+            this.btn_history.Caption = "Số Lượng Kho";
             this.btn_history.ImageOptions.LargeImage = global::MRes.Properties.Resources.clock;
             this.btn_history.Name = "btn_history";
             this.btn_history.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_history_LinkClicked);

@@ -1,4 +1,6 @@
-﻿using MRes.DAL.API.Inventory;
+﻿using DevExpress.Utils;
+using DevExpress.XtraCharts;
+using MRes.DAL.API.Inventory;
 using MRes.Models.Inventory;
 using System;
 using System.Collections.Generic;
@@ -28,13 +30,21 @@ namespace MRes.GUI.Revenue
                 Task t1 = new Task(() =>
                 {
                     historyinventory = APIHistoryInventory.Instance.GetAll();
+
                     chartControl1.DataSource = historyinventory.data.data;
+   
+
                 });
 
 
                 t1.Start();
 
             }
+
+        private void chartControl1_Click(object sender, EventArgs e)
+        {
+
         }
+    }
     
 }
