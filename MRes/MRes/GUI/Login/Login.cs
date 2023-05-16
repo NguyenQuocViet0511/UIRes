@@ -56,7 +56,7 @@ namespace MRes.GUI.Login
                             Const.staff = item;
 
                         }
-                        if (Const.staff.name.Equals("staff") || Const.staff.name.Equals("user"))
+                        if (Const.staff.id_role.Equals("staff") || Const.staff.id_role.Equals("user"))
                         {
                             MessageBox.Show("Bạn Không Có Quyền Đăng Nhập Vào Phần Mềm Này");
                         }  

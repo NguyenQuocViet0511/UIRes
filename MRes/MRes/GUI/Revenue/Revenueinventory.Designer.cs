@@ -69,7 +69,7 @@ namespace MRes.GUI.Revenue
             series1.ValueDataMembersSerializable = "quantityfirst";
             series2.ArgumentDataMember = "name";
             series2.Name = "Nhập";
-            series2.ValueDataMembersSerializable = "quantityfirst";
+            series2.ValueDataMembersSerializable = "quantityin";
             series3.ArgumentDataMember = "name";
             series3.Name = "Xuất";
             series3.ValueDataMembersSerializable = "quantityout";

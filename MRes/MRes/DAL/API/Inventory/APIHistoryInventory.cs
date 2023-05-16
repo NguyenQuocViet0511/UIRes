@@ -34,9 +34,20 @@ namespace MRes.DAL.API.Inventory
 
 
 
-        public HistoryinventoryData GetAll()
+        public HistoryinventoryData GethistorySum()
         {
             string Result = BaseAPI.Instance.Get(Const.URL + "historyinventory/list");
+            if (Result == null)
+            {
+                return null;
+            }
+            HistoryinventoryData data = JsonConvert.DeserializeObject<HistoryinventoryData>(Result);
+            return data;
+        }
+
+        public HistoryinventoryData GetAll()
+        {
+            string Result = BaseAPI.Instance.Get(Const.URL + "historyinventory/all");
             if (Result == null)
             {
                 return null;

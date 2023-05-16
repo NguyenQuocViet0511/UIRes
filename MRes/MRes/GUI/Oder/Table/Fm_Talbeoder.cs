@@ -202,13 +202,17 @@ namespace MRes.GUI.Oder.Table
                         {
                             Const.billinfo.Clear();
                             double sum = 0;
+                            double sumpay = 0;
                             grid_billinfo.DataSource = null;
                             grid_billinfo.DataSource = billInfo.data.data;
                             foreach (var item in billInfo.data.data)
                             {
-                                sum += item.sum;
-                                item.sumpay = sum;
-                                Const.billinfo.Add(item);
+                                if (item.status.Equals("Yes"))
+                                {
+                                    sumpay += item.sum;
+                                    item.sumpay = sumpay;
+                                    Const.billinfo.Add(item);
+                                }
 
                             }
                             txt_sum.Text = sum.ToString();
@@ -324,10 +328,14 @@ namespace MRes.GUI.Oder.Table
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            if(ClickTalbe)
             {
-                delete();
-            }
+                if (MessageBox.Show("Bạn Có Muốn Xóa Bỏ Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+                {
+                    delete();
+                }
+            }    
+          
         }
         //clear
         public void delete()
@@ -429,7 +437,7 @@ namespace MRes.GUI.Oder.Table
                     }
                     else
                     {
-                    MessageBox.Show("bàn này chưa oder không thanh toán được");
+                    MessageBox.Show("bàn này chưa oder không thanh toán được, hoặc chưa có món nào gửi bếp bar");
 
                     }
                 
@@ -461,10 +469,11 @@ namespace MRes.GUI.Oder.Table
                             ClickTalbe = false;
                             lbl_name.Text = "BÀN";
                             Manager_controller.Controls.Clear();
+                            btn_move.Enabled = true;
                             break;
                         case "TADOUT":
                             LoadDataBillOut();
-                            String result1 = APIBill.Instance.update(Split[0], Const.bill.id, Const.SumPay);
+                            String result1 = APIBill.Instance.update("", Const.bill.id, Const.SumPay);
                             MessageBox.Show(result1);
                             loadBillOut();
                             Cleartext();
@@ -588,17 +597,23 @@ namespace MRes.GUI.Oder.Table
                         {
                             Const.billinfo.Clear();
                             double sum = 0;
+                            double sumpay = 0;
                             grid_billinfo.DataSource = null;
                             grid_billinfo.DataSource = billInfo.data.data;
                             foreach (var item in billInfo.data.data)
                             {
                                 sum += item.sum;
-                                item.sumpay = sum;
-                                Const.billinfo.Add(item);
+                                if (item.status.Equals("Yes"))
+                                {
+                                    sumpay += item.sum;
+                                    item.sumpay = sumpay;
+                                    Const.billinfo.Add(item);
+                                }    
+                      
 
                             }
                             txt_sum.Text = sum.ToString();
-                            Const.SumPay = sum;
+                            Const.SumPay = sumpay;
                             ClearandAdd();
 
                         });
@@ -616,7 +631,6 @@ namespace MRes.GUI.Oder.Table
         private void tabtable_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
             Const.CHONSE = e.Page.Name;
-            MessageBox.Show(e.Page.Name);
             Cleartext();
             grid_billinfo.DataSource = null;
             ClickTalbe = false;

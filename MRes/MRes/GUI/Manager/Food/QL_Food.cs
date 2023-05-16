@@ -287,16 +287,21 @@ namespace MRes.GUI.Manager.Food
 
         private void gridController_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_image.Text))
+            Task t = new Task(() =>
             {
-                pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
+                if (!string.IsNullOrEmpty(txt_image.Text))
+                {
+                    pictureEdit1.Image = Const.Base64ToImage(txt_image.Text);
 
-            }else
-            {
-                pictureEdit1.Image = null;
-            }    
+                }
+                else
+                {
+                    pictureEdit1.Image = null;
+                }
 
-          
+            });
+            t.Start();
+
         }
 
         private void pictureEdit1_Click_1(object sender, EventArgs e)

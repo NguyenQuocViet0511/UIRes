@@ -175,6 +175,7 @@ namespace MRes.GUI.Manager.Food
             this.coldiscount.Caption = "Giảm Giá";
             this.coldiscount.FieldName = "discount";
             this.coldiscount.Name = "coldiscount";
+            this.coldiscount.OptionsColumn.AllowEdit = false;
             this.coldiscount.Visible = true;
             this.coldiscount.VisibleIndex = 3;
             // 
@@ -192,6 +193,7 @@ namespace MRes.GUI.Manager.Food
             this.colstatus.Caption = "Trạng Thái";
             this.colstatus.FieldName = "status";
             this.colstatus.Name = "colstatus";
+            this.colstatus.OptionsColumn.AllowEdit = false;
             this.colstatus.Visible = true;
             this.colstatus.VisibleIndex = 9;
             // 
@@ -200,6 +202,7 @@ namespace MRes.GUI.Manager.Food
             this.colcategory.Caption = "Mã Nhóm Món";
             this.colcategory.FieldName = "id_category";
             this.colcategory.Name = "colcategory";
+            this.colcategory.OptionsColumn.AllowEdit = false;
             this.colcategory.Visible = true;
             this.colcategory.VisibleIndex = 5;
             // 
@@ -208,6 +211,7 @@ namespace MRes.GUI.Manager.Food
             this.colusername.Caption = "Tạo Bởi";
             this.colusername.FieldName = "username";
             this.colusername.Name = "colusername";
+            this.colusername.OptionsColumn.AllowEdit = false;
             this.colusername.Visible = true;
             this.colusername.VisibleIndex = 8;
             // 
@@ -216,6 +220,7 @@ namespace MRes.GUI.Manager.Food
             this.colstatuscategory.Caption = "Trạng Thái Nhóm Món";
             this.colstatuscategory.FieldName = "category_status";
             this.colstatuscategory.Name = "colstatuscategory";
+            this.colstatuscategory.OptionsColumn.AllowEdit = false;
             this.colstatuscategory.Visible = true;
             this.colstatuscategory.VisibleIndex = 7;
             // 
@@ -224,6 +229,7 @@ namespace MRes.GUI.Manager.Food
             this.colcategoryname.Caption = "Tên Nhóm Món";
             this.colcategoryname.FieldName = "category";
             this.colcategoryname.Name = "colcategoryname";
+            this.colcategoryname.OptionsColumn.AllowEdit = false;
             this.colcategoryname.Visible = true;
             this.colcategoryname.VisibleIndex = 6;
             // 

@@ -29,7 +29,7 @@ namespace MRes.GUI.Revenue
             {
                 Task t1 = new Task(() =>
                 {
-                    historyinventory = APIHistoryInventory.Instance.GetAll();
+                    historyinventory = APIHistoryInventory.Instance.GethistorySum();
 
                     chartControl1.DataSource = historyinventory.data.data;
    
