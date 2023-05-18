@@ -11,8 +11,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,6 +41,7 @@ namespace MRes.GUI.Oder.Table
             CheckForIllegalCrossThreadCalls = false;
             loadBillOut();
             Const.CHONSE = "TADTABLE";
+            //Connect();
         }
 
         //Created one new form
@@ -117,7 +122,7 @@ namespace MRes.GUI.Oder.Table
             }    
         }
         //get table
-        private void loadTable()
+         public void loadTable()
         {
 
 
@@ -201,6 +206,7 @@ namespace MRes.GUI.Oder.Table
                         grid_billinfo.BeginInvoke((Action)delegate ()
                         {
                             Const.billinfo.Clear();
+                            Const.billinfoBar.Clear();
                             double sum = 0;
                             double sumpay = 0;
                             grid_billinfo.DataSource = null;
@@ -212,6 +218,10 @@ namespace MRes.GUI.Oder.Table
                                     sumpay += item.sum;
                                     item.sumpay = sumpay;
                                     Const.billinfo.Add(item);
+                                }
+                                else
+                                {
+                                    Const.billinfoBar.Add(item);
                                 }
 
                             }
@@ -382,7 +392,10 @@ namespace MRes.GUI.Oder.Table
         {
             if (MessageBox.Show("Bạn Có Muốn Gửi Bếp Không", "Cảnh Báo", MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
+                crpBar p = new crpBar();
+                p.Show();
                 SendCook();
+             
 
             }
         }
@@ -596,6 +609,7 @@ namespace MRes.GUI.Oder.Table
                         grid_billinfo.BeginInvoke((Action)delegate ()
                         {
                             Const.billinfo.Clear();
+                            Const.billinfoBar.Clear();
                             double sum = 0;
                             double sumpay = 0;
                             grid_billinfo.DataSource = null;
@@ -608,6 +622,9 @@ namespace MRes.GUI.Oder.Table
                                     sumpay += item.sum;
                                     item.sumpay = sumpay;
                                     Const.billinfo.Add(item);
+                                }else
+                                {
+                                    Const.billinfoBar.Add(item);
                                 }    
                       
 
@@ -637,6 +654,64 @@ namespace MRes.GUI.Oder.Table
             lbl_name.Text = "BÀN";
             Manager_controller.Controls.Clear();
 
+        }
+        //socket
+        public void receive()
+        {
+            try
+            {
+                while (true)
+                {
+                    data = new byte[BUFFER_SIZE];
+                    stream.Read(data, 0, BUFFER_SIZE);
+                    string str = (encoding.GetString(data));
+                    MessageBox.Show(str);
+                    if(Const.LISTEN.Equals("1"))
+                    {
+                        loadTable();
+                    }
+
+                    Const.LISTEN = "";
+                }
+
+            }
+            catch (Exception)
+            {
+
+                //close();
+            }
+
+        }
+        private const int BUFFER_SIZE = 1024;
+        private const int PORT_NUMBER = 9999;
+        static TcpListener listener;
+        static IPAddress address;
+        static byte[] data;
+        static Stream stream;
+        static Socket socket;
+        static ASCIIEncoding encoding = new ASCIIEncoding();
+        private static TcpClient client;
+
+        public  void Connect()
+        {
+            client = new TcpClient();
+            try
+            {
+                client.Connect("127.0.0.1", PORT_NUMBER);
+                stream = client.GetStream();
+
+
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Không thể kết nối");
+                return;
+
+            }
+            Thread Listen = new Thread(receive);
+            Listen.IsBackground = true;
+            Listen.Start();
         }
     }
 }

@@ -61,7 +61,7 @@ namespace MRes.GUI.Oder.Table
                             LoadBillandtable();
                             break;
                         case "TADOUT":
-                            String result1 = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, Const.table.id, Const.bill.id, Convert.ToInt32(txt_number.Value), txt_note.Text, Const.staff.id);
+                            String result1 = APIBillInfo.Instance.CreateOrUpdate(txt_id.Text, "", Const.bill.id, Convert.ToInt32(txt_number.Value), txt_note.Text, Const.staff.id);
                             MessageBox.Show("" + result1);
                             LoadBillandtable();
                             break;

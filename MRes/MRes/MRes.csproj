@@ -219,11 +219,23 @@
     <Compile Include="GUI\Oder\Table\WidgetTable.Designer.cs">
       <DependentUpon>WidgetTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Pay\crpBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Pay\crpBar.Designer.cs">
+      <DependentUpon>crpBar.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Pay\crpPay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\Pay\crpPay.Designer.cs">
       <DependentUpon>crpPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Pay\CrystalReportBar.cs">
+      <DependentUpon>CrystalReportBar.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GUI\Pay\CrystalReport.cs">
       <AutoGen>True</AutoGen>
@@ -337,8 +349,15 @@
     <EmbeddedResource Include="GUI\Oder\Table\WidgetTable.resx">
       <DependentUpon>WidgetTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pay\crpBar.resx">
+      <DependentUpon>crpBar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Pay\crpPay.resx">
       <DependentUpon>crpPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Pay\CrystalReportBar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportBar.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Pay\CrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

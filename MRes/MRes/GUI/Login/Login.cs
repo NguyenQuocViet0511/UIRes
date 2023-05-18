@@ -36,8 +36,15 @@ namespace MRes.GUI.Login
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-            CheckLogin();
+            if(!string.IsNullOrEmpty(txt_username.Text) || !string.IsNullOrEmpty(txt_password.Text))
+            {
+                CheckLogin();
 
+            }
+            else
+            {
+                MessageBox.Show("Vui Lòng Nhập Vào Đầy Đủ");
+            }    
         }
 
 

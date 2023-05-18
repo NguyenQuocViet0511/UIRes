@@ -61,7 +61,7 @@ namespace MRes
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.btn_save = new DevExpress.XtraBars.BarButtonItem();
             this.btn_close = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_excel = new DevExpress.XtraBars.BarButtonItem();
+            this.btn_logout = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl2 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
@@ -394,7 +394,7 @@ namespace MRes
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_save);
             this.ribbonPageGroup2.ItemLinks.Add(this.btn_close);
-            this.ribbonPageGroup2.ItemLinks.Add(this.btn_excel);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btn_logout);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // btn_save
@@ -431,23 +431,24 @@ namespace MRes
             this.btn_close.Name = "btn_close";
             this.btn_close.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_close_ItemClick);
             // 
-            // btn_excel
+            // btn_logout
             // 
-            this.btn_excel.Caption = "Xuất Excel";
-            this.btn_excel.Id = 13;
-            this.btn_excel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.Image")));
-            this.btn_excel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.LargeImage")));
-            this.btn_excel.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excel.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
-            this.btn_excel.ItemAppearance.Disabled.Options.UseFont = true;
-            this.btn_excel.ItemAppearance.Disabled.Options.UseForeColor = true;
-            this.btn_excel.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
-            this.btn_excel.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.btn_excel.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excel.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
-            this.btn_excel.ItemAppearance.Normal.Options.UseFont = true;
-            this.btn_excel.ItemAppearance.Normal.Options.UseForeColor = true;
-            this.btn_excel.Name = "btn_excel";
+            this.btn_logout.Caption = "Đăng xuất";
+            this.btn_logout.Id = 13;
+            this.btn_logout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.Image")));
+            this.btn_logout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.LargeImage")));
+            this.btn_logout.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
+            this.btn_logout.ItemAppearance.Disabled.Options.UseFont = true;
+            this.btn_logout.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.btn_logout.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.btn_logout.ItemAppearance.Hovered.Options.UseForeColor = true;
+            this.btn_logout.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_logout.ItemAppearance.Normal.ForeColor = System.Drawing.Color.White;
+            this.btn_logout.ItemAppearance.Normal.Options.UseFont = true;
+            this.btn_logout.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btn_logout_ItemClick);
             // 
             // ribbonControl2
             // 
@@ -464,7 +465,7 @@ namespace MRes
             this.btn_close,
             this.btn_save,
             this.barSubItem1,
-            this.btn_excel});
+            this.btn_logout});
             this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ribbonControl2.MaxItemId = 14;
@@ -531,7 +532,7 @@ namespace MRes
         private DevExpress.XtraBars.BarButtonItem btn_save;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
-        private DevExpress.XtraBars.BarButtonItem btn_excel;
+        private DevExpress.XtraBars.BarButtonItem btn_logout;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
         private DevExpress.XtraNavBar.NavBarItem btn_material;

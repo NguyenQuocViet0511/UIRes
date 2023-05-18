@@ -581,5 +581,14 @@ namespace MRes
             
 
         }
+
+        private void btn_logout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(MessageBox.Show("Bạn Có Muốn Đăng Xuất Không","Thông Báo Cho Người Dùng",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
+            {
+                Login login = new Login();
+                login.ShowDialog();
+            }
+        }
     }
 }

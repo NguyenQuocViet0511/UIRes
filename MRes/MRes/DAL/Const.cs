@@ -33,6 +33,8 @@ namespace MRes.DAL
         };
         public static Table tableMove = new Table();
         public static List<BillInfo> billinfo = new List<BillInfo>();
+        public static List<BillInfo> billinfoBar = new List<BillInfo>();
+
         public static double SumPay = 0;
         public string GetProjectLinkDirectory()
         {
