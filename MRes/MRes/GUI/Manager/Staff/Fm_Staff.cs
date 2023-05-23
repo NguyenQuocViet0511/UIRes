@@ -201,6 +201,7 @@ namespace MRes.GUI.Manager.Staff
             //
             this.cbn_status.DataBindings.Clear();
             date.DataBindings.Clear();
+            pictureEdit1.Image = null;
 
         }
         //check empty
@@ -230,6 +231,7 @@ namespace MRes.GUI.Manager.Staff
                                 Cleartext();
                             });
                             GetDataater();
+                            url = "";
                             MessageBox.Show("" + result);
                         }
                         );
@@ -260,6 +262,7 @@ namespace MRes.GUI.Manager.Staff
              {
                  String result = APIStaff.Instance.Edit(txt_id.Text,txt_name.Text,txt_email.Text, cbn_sex.Text, cbn_status.Text, txt_number.Text, cbn_role.EditValue.ToString(), date.Text, txt_address.Text, url);
                  GetData();
+                 url = "";
                  MessageBox.Show("" + result);
 
              }

@@ -8,8 +8,7 @@ using MRes.Models.BillInfo;
 using MRes.Models.Table;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -41,7 +40,7 @@ namespace MRes.GUI.Oder.Table
             CheckForIllegalCrossThreadCalls = false;
             loadBillOut();
             Const.CHONSE = "TADTABLE";
-            //Connect();
+            Accept();
         }
 
         //Created one new form
@@ -213,6 +212,7 @@ namespace MRes.GUI.Oder.Table
                             grid_billinfo.DataSource = billInfo.data.data;
                             foreach (var item in billInfo.data.data)
                             {
+                                sum += item.sum;
                                 if (item.status.Equals("Yes"))
                                 {
                                     sumpay += item.sum;
@@ -443,6 +443,7 @@ namespace MRes.GUI.Oder.Table
                 {
                     if (Const.billinfo.Count > 0)
                     {
+                   
                         pay();
                         crpPay p = new crpPay();
                         p.Show();
@@ -656,62 +657,62 @@ namespace MRes.GUI.Oder.Table
 
         }
         //socket
-        public void receive()
+       
+
+        public void Accept()
         {
             try
             {
-                while (true)
+
+                Thread Listen = new Thread(() =>
                 {
-                    data = new byte[BUFFER_SIZE];
-                    stream.Read(data, 0, BUFFER_SIZE);
-                    string str = (encoding.GetString(data));
-                    MessageBox.Show(str);
-                    if(Const.LISTEN.Equals("1"))
+                    while(true)
                     {
-                        loadTable();
-                    }
+                        Server.server.Listen(100);
+                        Socket Client = Server.server.Accept();
+                        Server.ClientList.Add(Client);
+                        Thread receive = new Thread(Receive);
+                        receive.IsBackground = true;
+                        receive.Start(Client);
+                    }    
+              
 
-                    Const.LISTEN = "";
-                }
 
+                    
+
+                });
+                Listen.IsBackground = true;
+                Listen.Start();
             }
             catch (Exception)
             {
+                Server.IP = new IPEndPoint(IPAddress.Any, 9999);
+                Server.server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.IP);
 
-                //close();
             }
-
         }
-        private const int BUFFER_SIZE = 1024;
-        private const int PORT_NUMBER = 9999;
-        static TcpListener listener;
-        static IPAddress address;
-        static byte[] data;
-        static Stream stream;
-        static Socket socket;
-        static ASCIIEncoding encoding = new ASCIIEncoding();
-        private static TcpClient client;
-
-        public  void Connect()
+        public void Receive(object oj)
         {
-            client = new TcpClient();
+            Socket client = oj as Socket;
+
             try
             {
-                client.Connect("127.0.0.1", PORT_NUMBER);
-                stream = client.GetStream();
+           
+                    Server.data = new byte[Server.BUFFER_SIZE];
+                    client.Receive(Server.data);
+                    string str = Encoding.UTF8.GetString(Server.data);
+                    loadTable();
+
+                
+
 
 
             }
             catch (Exception)
             {
-
-                Console.WriteLine("Không thể kết nối");
-                return;
-
+                Server.server.Close();
             }
-            Thread Listen = new Thread(receive);
-            Listen.IsBackground = true;
-            Listen.Start();
+
         }
     }
 }

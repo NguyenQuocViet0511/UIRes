@@ -19,7 +19,6 @@ namespace MRes.GUI.Login
         Main main;
         public Login()
         {
-            Client.Connect();
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
         }

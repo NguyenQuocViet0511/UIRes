@@ -37,7 +37,7 @@ namespace MRes
         public Main()
         {
             InitializeComponent();
-
+            Server.Instance.Connect();
 
 
         }
@@ -81,10 +81,7 @@ namespace MRes
 
         private void Main_Load(object sender, EventArgs e)
         {
-            Login login = new Login();
-            Revenue revenue = new Revenue();
-            CreateForm(revenue, null);
-            login.ShowDialog();
+            showlogin();
 
         }
 
@@ -566,7 +563,6 @@ namespace MRes
             if(diaglog == DialogResult.OK)
             {
                 Application.Exit();
-                Client.close();
             }
             else
             {
@@ -581,13 +577,26 @@ namespace MRes
             
 
         }
-
+        private void showlogin()
+        {
+            Login login = new Login();
+            Revenue revenue = new Revenue();
+            CreateForm(revenue, null);
+            login.ShowDialog();
+        }
         private void btn_logout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if(MessageBox.Show("Bạn Có Muốn Đăng Xuất Không","Thông Báo Cho Người Dùng",MessageBoxButtons.OKCancel) != DialogResult.Cancel)
             {
-                Login login = new Login();
-                login.ShowDialog();
+                if (CheckClick)
+                {
+                    MessageBox.Show("Bạn  Vẫn Đang Hành Động Trong Form Này");
+                }
+                else
+                {
+                    showlogin();
+                }
+              
             }
         }
     }

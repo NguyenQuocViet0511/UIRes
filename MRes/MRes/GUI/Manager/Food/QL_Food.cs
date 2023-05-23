@@ -25,7 +25,7 @@ namespace MRes.GUI.Manager.Food
         TextBox TextBox = new TextBox();
         FoodData food;
         CategoryData category;
-        string url = "";
+        static string url = "";
 
         Item_Food item_food;
         public QL_Food()
@@ -216,7 +216,8 @@ namespace MRes.GUI.Manager.Food
             //
             this.cbn_category.DataBindings.Clear();
 
-           
+            pictureEdit1.Image = null;
+
         }
         //check empty
         public bool check()
@@ -241,6 +242,7 @@ namespace MRes.GUI.Manager.Food
                                     Cleartext();
                                 });
                                 GetDataafter();
+                                url = "";
                                 MessageBox.Show("" + result);
                             }
                             );
@@ -272,7 +274,8 @@ namespace MRes.GUI.Manager.Food
                  
                      String result = APIFood.Instance.Edit(txt_id.Text, txt_name.Text, Convert.ToDouble(txt_price.Text), txt_discount.Text.ToString(), cbn_status.Text, Const.staff.id, cbn_category.EditValue.ToString(), url);
                      GetData();
-                     MessageBox.Show("" + result);
+                     url = "";
+                 MessageBox.Show("" + result);
                  
              
                
