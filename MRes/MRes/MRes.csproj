@@ -255,6 +255,18 @@
     <Compile Include="GUI\Revenue\Revenueinventory.Designer.cs">
       <DependentUpon>Revenueinventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Revenue\statistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Revenue\statistical.Designer.cs">
+      <DependentUpon>statistical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Revenue\widgetstatistical.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Revenue\widgetstatistical.Designer.cs">
+      <DependentUpon>widgetstatistical.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lib\GraphicsEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -369,6 +381,12 @@
     <EmbeddedResource Include="GUI\Revenue\Revenueinventory.resx">
       <DependentUpon>Revenueinventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Revenue\statistical.resx">
+      <DependentUpon>statistical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Revenue\widgetstatistical.resx">
+      <DependentUpon>widgetstatistical.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,6 +489,7 @@
     <None Include="Resources\programmer.png" />
     <None Include="Resources\key.png" />
     <None Include="Resources\avatar.png" />
+    <None Include="Resources\monitoring1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -702,8 +702,11 @@ namespace MRes.GUI.Oder.Table
                     client.Receive(Server.data);
                     string str = Encoding.UTF8.GetString(Server.data);
                     loadTable();
+                    Load();
+                MessageBox.Show("datachange");
 
-                
+
+
 
 
 

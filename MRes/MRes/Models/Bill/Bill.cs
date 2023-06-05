@@ -11,6 +11,9 @@ namespace MRes.Models.Bill
         private string ID;
         private double Sum;
         private string Timein;
+        private string Timeout;
+        private string Status;
+
 
 
 
@@ -34,7 +37,7 @@ namespace MRes.Models.Bill
         public string id { get => ID; set => ID = value; }
         public double sum { get => Sum; set => Sum = value; }
         public string  timein { get => Timein; set => Timein = value; }
-
-
+        public string timeout { get => Timeout; set => Timeout = value; }
+        public string status { get => Status; set => Status = value; }
     }
 }

@@ -40,6 +40,7 @@ namespace MRes
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btn_Revenue = new DevExpress.XtraNavBar.NavBarItem();
             this.btn_history = new DevExpress.XtraNavBar.NavBarItem();
+            this.btnstatistical = new DevExpress.XtraNavBar.NavBarItem();
             this.a = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.btn_material = new DevExpress.XtraNavBar.NavBarItem();
@@ -164,14 +165,15 @@ namespace MRes
             this.navBarGroup3.ImageOptions.LargeImage = global::MRes.Properties.Resources.monitoring;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.btn_Revenue),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_history)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btn_history),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.btnstatistical)});
             this.navBarGroup3.Name = "navBarGroup3";
             // 
             // btn_Revenue
             // 
             this.btn_Revenue.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
             this.btn_Revenue.Appearance.Options.UseFont = true;
-            this.btn_Revenue.Caption = "Doanh Thu";
+            this.btn_Revenue.Caption = "Doanh Thu theo Sơ Đồ";
             this.btn_Revenue.ImageOptions.LargeImage = global::MRes.Properties.Resources.revenue;
             this.btn_Revenue.Name = "btn_Revenue";
             this.btn_Revenue.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_Revenue_LinkClicked);
@@ -182,6 +184,13 @@ namespace MRes
             this.btn_history.ImageOptions.LargeImage = global::MRes.Properties.Resources.clock;
             this.btn_history.Name = "btn_history";
             this.btn_history.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btn_history_LinkClicked);
+            // 
+            // btnstatistical
+            // 
+            this.btnstatistical.Caption = "Thống Kê";
+            this.btnstatistical.ImageOptions.LargeImage = global::MRes.Properties.Resources.monitoring1;
+            this.btnstatistical.Name = "btnstatistical";
+            this.btnstatistical.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.btnstatistical_LinkClicked);
             // 
             // a
             // 
@@ -206,7 +215,8 @@ namespace MRes
             this.btn_sum,
             this.btn_table,
             this.btn_tb,
-            this.btn_history});
+            this.btn_history,
+            this.btnstatistical});
             this.a.Location = new System.Drawing.Point(0, 88);
             this.a.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.a.Name = "a";
@@ -435,8 +445,8 @@ namespace MRes
             // 
             this.btn_logout.Caption = "Đăng xuất";
             this.btn_logout.Id = 13;
-            this.btn_logout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.Image")));
-            this.btn_logout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_excel.ImageOptions.LargeImage")));
+            this.btn_logout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_logout.ImageOptions.Image")));
+            this.btn_logout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btn_logout.ImageOptions.LargeImage")));
             this.btn_logout.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.White;
             this.btn_logout.ItemAppearance.Disabled.Options.UseFont = true;
@@ -541,5 +551,6 @@ namespace MRes
         private DevExpress.XtraNavBar.NavBarItem btn_table;
         private DevExpress.XtraNavBar.NavBarItem btn_tb;
         private DevExpress.XtraNavBar.NavBarItem btn_history;
+        private DevExpress.XtraNavBar.NavBarItem btnstatistical;
     }
 }

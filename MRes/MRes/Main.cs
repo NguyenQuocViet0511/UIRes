@@ -599,5 +599,11 @@ namespace MRes
               
             }
         }
+
+        private void btnstatistical_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            statistical statistical  = new statistical();
+            CreateForm(statistical, null);
+        }
     }
 }

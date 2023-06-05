@@ -18,7 +18,9 @@ namespace MRes.DAL
         private static Const instance;
 
 
-        public static string URL = "http://127.0.0.1:8000/api/";
+        public static string URL = "http://192.168.1.22/API-server/server.php/api/";
+        //public static string URL = "http://127.0.0.1:8000/api/";
+
         public static string MANAGER_FOOD = "QLFOOD";
         public static string MANAGER_CATEGORY = "QLCATEGORY";
         public static string MANAGER_STAFF = "QLSTAFF";

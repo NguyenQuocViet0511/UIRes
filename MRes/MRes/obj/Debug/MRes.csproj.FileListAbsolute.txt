@@ -518,3 +518,5 @@ C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Manager.Inventory.Fm_In
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.Revenue.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.Revenueinventory.resources
 C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Pay.crpBar.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.statistical.resources
+C:\Users\vieT\Desktop\UIRes\MRes\MRes\obj\Debug\MRes.GUI.Revenue.widgetstatistical.resources

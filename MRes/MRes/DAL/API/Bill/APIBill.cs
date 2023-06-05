@@ -76,5 +76,33 @@ namespace MRes.DAL.API.Bill
             string Result = BaseAPI.Instance.All(Const.URL + "bill/delete", table, "POST");
             return Result;
         }
+        public BillData GetBill(string start, string end)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["start"] = start;
+            table["end"] = end;
+            string Result = BaseAPI.Instance.All(Const.URL + "bill/GetStartAndEnd", table, "POST");
+            if (Result == null)
+            {
+                return null;
+            }
+            BillData data = JsonConvert.DeserializeObject<BillData>(Result);
+            return data;
+
+        }
+        public BillData GetBillByDate(string today)
+        {
+            NameValueCollection table = new NameValueCollection();
+            table["today"] = today;
+            string Result = BaseAPI.Instance.All(Const.URL + "bill/GetBillByDate", table, "POST");
+            if (Result == null)
+            {
+                return null;
+            }
+            BillData data = JsonConvert.DeserializeObject<BillData>(Result);
+            return data;
+
+        }
+
     }
 }
