@@ -16,14 +16,14 @@ namespace MRes.GUI.Pay {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport : ReportClass {
+    public class CrytallReport : ReportClass {
         
-        public CrystalReport() {
+        public CrytallReport() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport.rpt";
+                return "CrytallReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace MRes.GUI.Pay {
         
         public override string FullResourceName {
             get {
-                return "MRes.GUI.Pay.CrystalReport.rpt";
+                return "MRes.GUI.Pay.CrytallReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace MRes.GUI.Pay {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport : Component, ICachedReport {
+    public class CachedCrytallReport : Component, ICachedReport {
         
-        public CachedCrystalReport() {
+        public CachedCrytallReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace MRes.GUI.Pay {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport rpt = new CrystalReport();
+            CrytallReport rpt = new CrytallReport();
             rpt.Site = this.Site;
             return rpt;
         }

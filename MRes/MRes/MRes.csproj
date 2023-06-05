@@ -237,11 +237,11 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="GUI\Pay\CrystalReport.cs">
+    <Compile Include="GUI\Pay\CrytallReport.cs">
+      <DependentUpon>CrytallReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="GUI\Revenue\Revenue.cs">
       <SubType>Form</SubType>
@@ -371,9 +371,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportBar.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Pay\CrystalReport.rpt">
+    <EmbeddedResource Include="GUI\Pay\CrytallReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport.cs</LastGenOutput>
+      <LastGenOutput>CrytallReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Revenue\Revenue.resx">
       <DependentUpon>Revenue.cs</DependentUpon>

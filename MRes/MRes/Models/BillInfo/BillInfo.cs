@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace MRes.Models.BillInfo
         private string Foodprice;
         private string Timein;
         private double Sumpay;
+        private string Name;
 
 
         public BillInfo()
@@ -56,5 +58,7 @@ namespace MRes.Models.BillInfo
         public string status { get => Status; set => Status = value; }
         public string timein { get => Timein; set => Timein = value; }
         public double sumpay { get => Sumpay; set => Sumpay = value; }
+        public string name { get => Name; set => Name = value; }
+
     }
 }

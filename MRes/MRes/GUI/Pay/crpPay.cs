@@ -21,7 +21,7 @@ namespace MRes.GUI.Pay
 
         private void Load()
         {
-            CrystalReport crypay = new CrystalReport();
+            CrytallReport crypay = new CrytallReport();
             crypay.SetDataSource(Const.billinfo);
             crp.ReportSource = crypay;
             crypay.PrintToPrinter(1, true, 0, 0);

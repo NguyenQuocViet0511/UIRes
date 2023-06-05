@@ -217,10 +217,12 @@ namespace MRes.GUI.Oder.Table
                                 {
                                     sumpay += item.sum;
                                     item.sumpay = sumpay;
+                                    item.name = Const.staff.name;
                                     Const.billinfo.Add(item);
                                 }
                                 else
                                 {
+                                    item.name = Const.staff.name;
                                     Const.billinfoBar.Add(item);
                                 }
 
@@ -622,9 +624,11 @@ namespace MRes.GUI.Oder.Table
                                 {
                                     sumpay += item.sum;
                                     item.sumpay = sumpay;
+                                    item.name = Const.staff.name;
                                     Const.billinfo.Add(item);
                                 }else
                                 {
+                                    item.name = Const.staff.name;
                                     Const.billinfoBar.Add(item);
                                 }    
                       
